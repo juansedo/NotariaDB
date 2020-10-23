@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace NotariaDB
 {
-    public partial class Form1 : Form
+    public partial class formMain : Form
     {
-        public Form1()
+        public formMain()
         {
             InitializeComponent();
+        }
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

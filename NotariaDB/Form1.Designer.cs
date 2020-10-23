@@ -1,6 +1,9 @@
-﻿namespace NotariaDB
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace NotariaDB
 {
-    partial class Form1
+    partial class formMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -35,12 +38,15 @@
             this.excelButton = new System.Windows.Forms.Button();
             this.panel_buttons = new System.Windows.Forms.Panel();
             this.panel_search = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPageNAC = new System.Windows.Forms.TabPage();
+            this.tabPageMAT = new System.Windows.Forms.TabPage();
+            this.tabPageDEF = new System.Windows.Forms.TabPage();
+            this.tabPageUSER = new System.Windows.Forms.TabPage();
+            this.songsDataGridView = new System.Windows.Forms.DataGridView();
             this.panel_buttons.SuspendLayout();
             this.panel_search.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBuscador
@@ -123,55 +129,110 @@
             this.panel_search.Size = new System.Drawing.Size(313, 251);
             this.panel_search.TabIndex = 4;
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(667, 515);
-            this.tabControl1.TabIndex = 5;
+            this.tabControl.Controls.Add(this.tabPageNAC);
+            this.tabControl.Controls.Add(this.tabPageMAT);
+            this.tabControl.Controls.Add(this.tabPageDEF);
+            this.tabControl.Controls.Add(this.tabPageUSER);
+            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(667, 515);
+            this.tabControl.TabIndex = 5;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
-            // tabPage1
+            // tabPageNAC
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(659, 487);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            SetupDataGridView();
+            this.tabPageNAC.Controls.Add(this.songsDataGridView);
+            this.tabPageNAC.Location = new System.Drawing.Point(4, 24);
+            this.tabPageNAC.Name = "tabPageNAC";
+            this.tabPageNAC.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageNAC.Size = new System.Drawing.Size(659, 487);
+            this.tabPageNAC.TabIndex = 0;
+            this.tabPageNAC.Text = "NACIMIENTOS";
+            this.tabPageNAC.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabPageMAT
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(262, 142);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageMAT.Location = new System.Drawing.Point(4, 24);
+            this.tabPageMAT.Name = "tabPageMAT";
+            this.tabPageMAT.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMAT.Size = new System.Drawing.Size(659, 487);
+            this.tabPageMAT.TabIndex = 1;
+            this.tabPageMAT.Text = "MATRIMONIOS";
+            this.tabPageMAT.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // tabPageDEF
+            // 
+            this.tabPageDEF.Location = new System.Drawing.Point(4, 24);
+            this.tabPageDEF.Name = "tabPageDEF";
+            this.tabPageDEF.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDEF.Size = new System.Drawing.Size(659, 487);
+            this.tabPageDEF.TabIndex = 2;
+            this.tabPageDEF.Text = "DEFUNCIONES";
+            this.tabPageDEF.UseVisualStyleBackColor = true;
+            // 
+            // tabPageUSER
+            // 
+            this.tabPageUSER.Location = new System.Drawing.Point(4, 24);
+            this.tabPageUSER.Name = "tabPageUSER";
+            this.tabPageUSER.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageUSER.Size = new System.Drawing.Size(659, 487);
+            this.tabPageUSER.TabIndex = 3;
+            this.tabPageUSER.Text = "USUARIOS";
+            this.tabPageUSER.UseVisualStyleBackColor = true;
+            // 
+            // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel_search);
             this.Controls.Add(this.panel_buttons);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "formMain";
+            this.Text = "NOTARIA DB";
             this.panel_buttons.ResumeLayout(false);
             this.panel_search.ResumeLayout(false);
             this.panel_search.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private void SetupDataGridView()
+        {
+            songsDataGridView.ColumnCount = 5;
+
+            songsDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            songsDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            songsDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font(songsDataGridView.Font, FontStyle.Bold);
+
+            songsDataGridView.Name = "songsDataGridView";
+            songsDataGridView.Location = new Point(8, 8);
+            songsDataGridView.Size = new Size(500, 250);
+            songsDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            songsDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            songsDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            songsDataGridView.GridColor = Color.Black;
+            songsDataGridView.RowHeadersVisible = false;
+
+            songsDataGridView.Columns[0].Name = "Release Date";
+            songsDataGridView.Columns[1].Name = "Track";
+            songsDataGridView.Columns[2].Name = "Title";
+            songsDataGridView.Columns[3].Name = "Artist";
+            songsDataGridView.Columns[4].Name = "Album";
+            songsDataGridView.Columns[4].DefaultCellStyle.Font = new Font(songsDataGridView.DefaultCellStyle.Font, FontStyle.Italic);
+
+            songsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            songsDataGridView.MultiSelect = false;
+            songsDataGridView.Dock = DockStyle.Fill;
+
+        }
 
         private System.Windows.Forms.Label lblBuscador;
         private System.Windows.Forms.TextBox tboxSearch;
@@ -182,9 +243,12 @@
         private System.Windows.Forms.Button l;
         private System.Windows.Forms.Button x;
         private System.Windows.Forms.Panel panel_search;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabPageNAC;
+        private System.Windows.Forms.TabPage tabPageMAT;
+        private System.Windows.Forms.TabPage tabPageDEF;
+        private System.Windows.Forms.TabPage tabPageUSER;
+        private System.Windows.Forms.DataGridView songsDataGridView;
     }
 }
 
