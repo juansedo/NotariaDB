@@ -21,5 +21,10 @@ namespace NotariaDB
         {
 
         }
+
+        private void songsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -40,13 +40,15 @@ namespace NotariaDB
             this.panel_search = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageNAC = new System.Windows.Forms.TabPage();
+            this.songsDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPageMAT = new System.Windows.Forms.TabPage();
             this.tabPageDEF = new System.Windows.Forms.TabPage();
             this.tabPageUSER = new System.Windows.Forms.TabPage();
-            this.songsDataGridView = new System.Windows.Forms.DataGridView();
             this.panel_buttons.SuspendLayout();
             this.panel_search.SuspendLayout();
             this.tabControl.SuspendLayout();
+            this.tabPageNAC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBuscador
@@ -144,7 +146,6 @@ namespace NotariaDB
             // 
             // tabPageNAC
             // 
-            SetupDataGridView();
             this.tabPageNAC.Controls.Add(this.songsDataGridView);
             this.tabPageNAC.Location = new System.Drawing.Point(4, 24);
             this.tabPageNAC.Name = "tabPageNAC";
@@ -153,6 +154,14 @@ namespace NotariaDB
             this.tabPageNAC.TabIndex = 0;
             this.tabPageNAC.Text = "NACIMIENTOS";
             this.tabPageNAC.UseVisualStyleBackColor = true;
+            // 
+            // songsDataGridView
+            // 
+            this.songsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.songsDataGridView.Name = "songsDataGridView";
+            this.songsDataGridView.Size = new System.Drawing.Size(240, 150);
+            this.songsDataGridView.TabIndex = 0;
+            this.songsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.songsDataGridView_CellContentClick);
             // 
             // tabPageMAT
             // 
@@ -198,6 +207,8 @@ namespace NotariaDB
             this.panel_search.ResumeLayout(false);
             this.panel_search.PerformLayout();
             this.tabControl.ResumeLayout(false);
+            this.tabPageNAC.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
