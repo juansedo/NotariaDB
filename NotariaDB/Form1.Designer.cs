@@ -43,10 +43,6 @@ namespace NotariaDB
             this.tabPageMAT = new System.Windows.Forms.TabPage();
             this.tabPageDEF = new System.Windows.Forms.TabPage();
             this.tabPageUSER = new System.Windows.Forms.TabPage();
-            this.nacSheetGridView = new SheetGridView(SheetType.NAC, "nacSheetGridView");
-            this.matSheetGridView = new SheetGridView(SheetType.MAT, "matSheetGridView");
-            this.defSheetGridView = new SheetGridView(SheetType.DEF, "defSheetGridView");
-            this.userSheetGridView = new SheetGridView(SheetType.USER, "userSheetGridView");
             this.panel_buttons.SuspendLayout();
             this.panel_search.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -64,6 +60,7 @@ namespace NotariaDB
             // 
             // tboxSearch
             // 
+            this.tboxSearch.BackColor = System.Drawing.SystemColors.Window;
             this.tboxSearch.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tboxSearch.Location = new System.Drawing.Point(32, 55);
             this.tboxSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
@@ -150,8 +147,7 @@ namespace NotariaDB
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tabPageNAC
-            //
-            this.tabPageNAC.Controls.Add(this.nacSheetGridView);
+            // 
             this.tabPageNAC.Location = new System.Drawing.Point(4, 24);
             this.tabPageNAC.Name = "tabPageNAC";
             this.tabPageNAC.Padding = new System.Windows.Forms.Padding(3);
@@ -162,7 +158,6 @@ namespace NotariaDB
             // 
             // tabPageMAT
             // 
-            this.tabPageMAT.Controls.Add(this.matSheetGridView);
             this.tabPageMAT.Location = new System.Drawing.Point(4, 24);
             this.tabPageMAT.Name = "tabPageMAT";
             this.tabPageMAT.Padding = new System.Windows.Forms.Padding(3);
@@ -173,7 +168,6 @@ namespace NotariaDB
             // 
             // tabPageDEF
             // 
-            this.tabPageDEF.Controls.Add(this.defSheetGridView);
             this.tabPageDEF.Location = new System.Drawing.Point(4, 24);
             this.tabPageDEF.Name = "tabPageDEF";
             this.tabPageDEF.Padding = new System.Windows.Forms.Padding(3);
@@ -184,7 +178,6 @@ namespace NotariaDB
             // 
             // tabPageUSER
             // 
-            this.tabPageUSER.Controls.Add(this.userSheetGridView);
             this.tabPageUSER.Location = new System.Drawing.Point(4, 24);
             this.tabPageUSER.Name = "tabPageUSER";
             this.tabPageUSER.Padding = new System.Windows.Forms.Padding(3);
@@ -192,6 +185,7 @@ namespace NotariaDB
             this.tabPageUSER.TabIndex = 3;
             this.tabPageUSER.Text = "USUARIOS";
             this.tabPageUSER.UseVisualStyleBackColor = true;
+            includeDataSheets();
             // 
             // formMain
             // 
@@ -212,6 +206,14 @@ namespace NotariaDB
 
         }
 
+        void includeDataSheets()
+        {
+            this.tabPageNAC.Controls.Add(nacSheetGridView);
+            this.tabPageMAT.Controls.Add(matSheetGridView);
+            this.tabPageDEF.Controls.Add(defSheetGridView);
+            this.tabPageUSER.Controls.Add(userSheetGridView);
+        }
+
         #endregion
         
 
@@ -229,10 +231,10 @@ namespace NotariaDB
         private System.Windows.Forms.TabPage tabPageMAT;
         private System.Windows.Forms.TabPage tabPageDEF;
         private System.Windows.Forms.TabPage tabPageUSER;
-        private SheetGridView nacSheetGridView;
-        private SheetGridView matSheetGridView;
-        private SheetGridView defSheetGridView;
-        private SheetGridView userSheetGridView;
+        private SheetGridView nacSheetGridView = new SheetGridView(SheetType.NAC, "nacSheetGridView");
+        private SheetGridView matSheetGridView = new SheetGridView(SheetType.MAT, "matSheetGridView");
+        private SheetGridView defSheetGridView = new SheetGridView(SheetType.DEF, "defSheetGridView");
+        private SheetGridView userSheetGridView = new SheetGridView(SheetType.USER, "userSheetGridView");
     }
 }
 

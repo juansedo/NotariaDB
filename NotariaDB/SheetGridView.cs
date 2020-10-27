@@ -14,26 +14,23 @@ namespace NotariaDB
             Name = name;
             AllowUserToAddRows = false;
             AllowUserToDeleteRows = false;
-            AllowUserToResizeRows = false;
-            BackgroundColor = SystemColors.ButtonHighlight;
-
-            ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            ColumnHeadersDefaultCellStyle.Font = new Font(Font, FontStyle.Bold);
+            
+            BackgroundColor = SystemColors.Highlight;
 
             Location = new Point(0, 0);
             Size = new Size(500, 250);
             Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left;
+            
             AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            GridColor = Color.Black;
             RowHeadersVisible = false;
+            GridColor = Color.LightGray;
+            DefaultCellStyle.Font = new Font("Century Gothic", 10.25F, FontStyle.Regular, GraphicsUnit.Point);
 
-            DefaultCellStyle.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
+            applyInitRowStyle();
 
-            ColumnHeadersDefaultCellStyle.Font = new Font(DefaultCellStyle.Font, FontStyle.Bold);
+            applyInitHeaderStyle();
 
             switch (s_type)
             {
@@ -70,7 +67,7 @@ namespace NotariaDB
                     Columns[7].Name = "DEPARTAMENTO";
                     break;
                 case SheetType.USER:
-                    ColumnCount = 8;
+                    ColumnCount = 4;
                     Columns[0].Name = "NRO. DOCUMENTO";
                     Columns[1].Name = "NOMBRES";
                     Columns[2].Name = "TIPO DE DOCUMENTO";
@@ -78,11 +75,54 @@ namespace NotariaDB
                     break;
             }
 
+            Rows.Add("1", "PRUEBA DE TEXTO");
+            Rows.Add("2", "PRUEBA DE TEXTO");
+
             SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             MultiSelect = false;
             Dock = DockStyle.Fill;
             TabIndex = 0;
         }
+
+        public void applyInitRowStyle()
+        {
+            AllowUserToResizeRows = false;
+            RowTemplate.DefaultCellStyle.BackColor = Color.White;
+            RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            RowTemplate.DefaultCellStyle.SelectionBackColor = SystemColors.GradientActiveCaption;
+            RowTemplate.DefaultCellStyle.SelectionForeColor = Color.Black;
+            RowTemplate.Height = 15;
+        }
+        public void applyInitHeaderStyle()
+        {
+            EnableHeadersVisualStyles = true;
+            ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            ColumnHeadersDefaultCellStyle.SelectionBackColor = SystemColors.GradientActiveCaption;
+            ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+            ColumnHeadersDefaultCellStyle.Font = new Font(DefaultCellStyle.Font, FontStyle.Bold);
+            ColumnHeadersHeight = 30;
+            ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            ColumnHeadersHeight = 35;
+            ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            CellMouseEnter += new DataGridViewCellEventHandler(SheetGridView_CellMouseEnter);
+            CellMouseLeave += new DataGridViewCellEventHandler(SheetGridView_CellMouseLeave);
+        }
+
+        public void SheetGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.GradientInactiveCaption;
+        }
+
+        public void SheetGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+        }
+
     }
 
     enum SheetType
