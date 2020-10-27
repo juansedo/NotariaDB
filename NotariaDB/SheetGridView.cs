@@ -8,14 +8,13 @@ namespace NotariaDB
 {
     class SheetGridView : DataGridView
     {
-
         public SheetGridView(SheetType s_type, string name = "SGV1")
         {
             Name = name;
             AllowUserToAddRows = false;
             AllowUserToDeleteRows = false;
-            
-            BackgroundColor = SystemColors.Highlight;
+            ReadOnly = true;
+            BackgroundColor = Color.Gray;
 
             Location = new Point(0, 0);
             Size = new Size(500, 250);
@@ -67,11 +66,14 @@ namespace NotariaDB
                     Columns[7].Name = "DEPARTAMENTO";
                     break;
                 case SheetType.USER:
-                    ColumnCount = 4;
+                    ColumnCount = 7;
                     Columns[0].Name = "NRO. DOCUMENTO";
-                    Columns[1].Name = "NOMBRES";
-                    Columns[2].Name = "TIPO DE DOCUMENTO";
-                    Columns[3].Name = "LUGAR DE EXPEDICIÓN";
+                    Columns[1].Name = "TIPO DE DOCUMENTO";
+                    Columns[2].Name = "NOMBRE";
+                    Columns[3].Name = "APELLIDO";
+                    Columns[4].Name = "LUGAR DE EXPEDICIÓN";
+                    Columns[5].Name = "FECHA DE EXPEDICIÓN";
+                    Columns[6].Name = "FECHA DE NACIMIENTO";
                     break;
             }
 
@@ -93,9 +95,11 @@ namespace NotariaDB
             RowTemplate.DefaultCellStyle.SelectionForeColor = Color.Black;
             RowTemplate.Height = 15;
         }
+
         public void applyInitHeaderStyle()
         {
-            EnableHeadersVisualStyles = true;
+            AllowUserToResizeColumns = true;
+            EnableHeadersVisualStyles = false;
             ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             ColumnHeadersDefaultCellStyle.SelectionBackColor = SystemColors.GradientActiveCaption;
