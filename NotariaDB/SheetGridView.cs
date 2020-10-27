@@ -31,9 +31,9 @@ namespace NotariaDB
             GridColor = Color.Black;
             RowHeadersVisible = false;
 
-            Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            DefaultCellStyle.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
 
-            ColumnHeadersDefaultCellStyle.Font = new Font(Font, FontStyle.Bold);
+            ColumnHeadersDefaultCellStyle.Font = new Font(DefaultCellStyle.Font, FontStyle.Bold);
 
             switch (s_type)
             {
@@ -51,13 +51,30 @@ namespace NotariaDB
                     Columns[9].Name = "DEPARTAMENTO";
                     break;
                 case SheetType.MAT:
-
+                    ColumnCount = 5;
+                    Columns[0].Name = "SERIAL";
+                    Columns[1].Name = "ESPOSO";
+                    Columns[2].Name = "ESPOSA";
+                    Columns[3].Name = "FECHA BODA";
+                    Columns[4].Name = "FECHA REGISTRO";
                     break;
                 case SheetType.DEF:
-
+                    ColumnCount = 8;
+                    Columns[0].Name = "CÉDULA";
+                    Columns[1].Name = "SERIAL";
+                    Columns[2].Name = "DIFUNTO";
+                    Columns[3].Name = "SEXO";
+                    Columns[4].Name = "FECHA MUERTE";
+                    Columns[5].Name = "MÉDICO";
+                    Columns[6].Name = "CIUDAD";
+                    Columns[7].Name = "DEPARTAMENTO";
                     break;
                 case SheetType.USER:
-
+                    ColumnCount = 8;
+                    Columns[0].Name = "NRO. DOCUMENTO";
+                    Columns[1].Name = "NOMBRES";
+                    Columns[2].Name = "TIPO DE DOCUMENTO";
+                    Columns[3].Name = "LUGAR DE EXPEDICIÓN";
                     break;
             }
 
