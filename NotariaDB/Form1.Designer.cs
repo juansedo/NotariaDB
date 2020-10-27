@@ -40,15 +40,12 @@ namespace NotariaDB
             this.panel_search = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageNAC = new System.Windows.Forms.TabPage();
-            this.songsDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPageMAT = new System.Windows.Forms.TabPage();
             this.tabPageDEF = new System.Windows.Forms.TabPage();
             this.tabPageUSER = new System.Windows.Forms.TabPage();
             this.panel_buttons.SuspendLayout();
             this.panel_search.SuspendLayout();
             this.tabControl.SuspendLayout();
-            this.tabPageNAC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBuscador
@@ -124,6 +121,7 @@ namespace NotariaDB
             // 
             // panel_search
             // 
+            this.panel_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_search.Controls.Add(this.lblBuscador);
             this.panel_search.Controls.Add(this.tboxSearch);
             this.panel_search.Location = new System.Drawing.Point(685, 12);
@@ -133,6 +131,9 @@ namespace NotariaDB
             // 
             // tabControl
             // 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabPageNAC);
             this.tabControl.Controls.Add(this.tabPageMAT);
             this.tabControl.Controls.Add(this.tabPageDEF);
@@ -146,7 +147,6 @@ namespace NotariaDB
             // 
             // tabPageNAC
             // 
-            this.tabPageNAC.Controls.Add(this.songsDataGridView);
             this.tabPageNAC.Location = new System.Drawing.Point(4, 24);
             this.tabPageNAC.Name = "tabPageNAC";
             this.tabPageNAC.Padding = new System.Windows.Forms.Padding(3);
@@ -154,14 +154,6 @@ namespace NotariaDB
             this.tabPageNAC.TabIndex = 0;
             this.tabPageNAC.Text = "NACIMIENTOS";
             this.tabPageNAC.UseVisualStyleBackColor = true;
-            // 
-            // songsDataGridView
-            // 
-            this.songsDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.songsDataGridView.Name = "songsDataGridView";
-            this.songsDataGridView.Size = new System.Drawing.Size(240, 150);
-            this.songsDataGridView.TabIndex = 0;
-            this.songsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.songsDataGridView_CellContentClick);
             // 
             // tabPageMAT
             // 
@@ -201,49 +193,19 @@ namespace NotariaDB
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel_search);
             this.Controls.Add(this.panel_buttons);
+            this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "formMain";
             this.Text = "NOTARIA DB";
             this.panel_buttons.ResumeLayout(false);
             this.panel_search.ResumeLayout(false);
             this.panel_search.PerformLayout();
             this.tabControl.ResumeLayout(false);
-            this.tabPageNAC.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private void SetupDataGridView()
-        {
-            songsDataGridView.ColumnCount = 5;
-
-            songsDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            songsDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            songsDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font(songsDataGridView.Font, FontStyle.Bold);
-
-            songsDataGridView.Name = "songsDataGridView";
-            songsDataGridView.Location = new Point(8, 8);
-            songsDataGridView.Size = new Size(500, 250);
-            songsDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            songsDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            songsDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            songsDataGridView.GridColor = Color.Black;
-            songsDataGridView.RowHeadersVisible = false;
-
-            songsDataGridView.Columns[0].Name = "Release Date";
-            songsDataGridView.Columns[1].Name = "Track";
-            songsDataGridView.Columns[2].Name = "Title";
-            songsDataGridView.Columns[3].Name = "Artist";
-            songsDataGridView.Columns[4].Name = "Album";
-            songsDataGridView.Columns[4].DefaultCellStyle.Font = new Font(songsDataGridView.DefaultCellStyle.Font, FontStyle.Italic);
-
-            songsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            songsDataGridView.MultiSelect = false;
-            songsDataGridView.Dock = DockStyle.Fill;
-
-        }
+        
 
         private System.Windows.Forms.Label lblBuscador;
         private System.Windows.Forms.TextBox tboxSearch;
@@ -259,7 +221,7 @@ namespace NotariaDB
         private System.Windows.Forms.TabPage tabPageMAT;
         private System.Windows.Forms.TabPage tabPageDEF;
         private System.Windows.Forms.TabPage tabPageUSER;
-        private System.Windows.Forms.DataGridView songsDataGridView;
+        private SheetGridView nacSheetGridView;
     }
 }
 
