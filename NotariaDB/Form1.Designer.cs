@@ -43,6 +43,7 @@ namespace NotariaDB
             this.tabPageMAT = new System.Windows.Forms.TabPage();
             this.tabPageDEF = new System.Windows.Forms.TabPage();
             this.tabPageUSER = new System.Windows.Forms.TabPage();
+            this.nacSheetGridView = new SheetGridView(SheetType.NAC, "nacSheetGridView");
             this.panel_buttons.SuspendLayout();
             this.panel_search.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -146,7 +147,8 @@ namespace NotariaDB
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tabPageNAC
-            // 
+            //
+            this.tabPageNAC.Controls.Add(this.nacSheetGridView);
             this.tabPageNAC.Location = new System.Drawing.Point(4, 24);
             this.tabPageNAC.Name = "tabPageNAC";
             this.tabPageNAC.Padding = new System.Windows.Forms.Padding(3);
