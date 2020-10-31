@@ -231,10 +231,10 @@ namespace NotariaDB
         private System.Windows.Forms.TabPage tabPageMAT;
         private System.Windows.Forms.TabPage tabPageDEF;
         private System.Windows.Forms.TabPage tabPageUSER;
-        private SheetGridView nacSheetGridView = new SheetGridView(SheetType.NAC, "nacSheetGridView");
-        private SheetGridView matSheetGridView = new SheetGridView(SheetType.MAT, "matSheetGridView");
-        private SheetGridView defSheetGridView = new SheetGridView(SheetType.DEF, "defSheetGridView");
-        private SheetGridView userSheetGridView = new SheetGridView(SheetType.USER, "userSheetGridView");
+        private NacSheet nacSheetGridView = new NacSheet("nacSheetGridView");
+        private MatSheet matSheetGridView = new MatSheet("matSheetGridView");
+        private DefSheet defSheetGridView = new DefSheet("defSheetGridView");
+        private UserSheet userSheetGridView = new UserSheet("userSheetGridView");
     }
 }
 

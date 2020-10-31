@@ -9,28 +9,52 @@ namespace NotariaDB
 
     class DatabaseModel
     {
-        protected static string connection = @"Server=localhost,3306;User=root;Password=;Database=testing";
+        public string Connection { get; private set; }
 
-        public static void Initialize()
+        public DatabaseModel(string db_name, string server = "localhost", string port = "3306", string user = "root", string password = "")
         {
-            using(var db = new MySqlConnection(connection))
-            {
-                var sql = "SELECT * FROM first_table";
-                var result = db.Query<Person>(sql);
+            Connection = $"Server={server},{port};";
+            Connection += $"User={user};";
+            Connection += $"Password={password};";
+            Connection += $"Database={db_name}";
+        }
 
-                System.Diagnostics.Debug.WriteLine("Reading data! Beep, boop, beep");
-                foreach(var i in result)
-                {
-                    System.Diagnostics.Debug.WriteLine(i.name);
-                }
+        public void Initialize()
+        {
+            using var DBConnection = new MySqlConnection(Connection);
+
+            var sql = "SELECT id, d.description AS doctype, name, surname, expedition_place, expedition_date, birth_date FROM usuarios u JOIN doctypes d USING (doctype_id)";
+            var result = DBConnection.Query<User>(sql);
+
+            foreach (var i in result)
+            {
+                System.Diagnostics.Debug.WriteLine(i.Name + " tiene " + i.Doctype + " con número " + i.Id);
             }
         }
+
+        public void UpdateSheets(/*NacSheet ns, MatSheet ms, DefSheet df,*/ UserSheet us)
+        {
+            using var DBConnection = new MySqlConnection(Connection);
+            
+            var sql_user = "SELECT id, d.description AS doctype, name, surname, expedition_place, expedition_date, birth_date FROM usuarios u JOIN doctypes d USING (doctype_id)";
+            var result_users = DBConnection.Query<User>(sql_user);
+
+            us.Rows.Clear();
+            foreach (var user in result_users)
+                us.AddRow(user);
+        }
+
     }
 
-    public class Person
+
+    public class User
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
+        public int Id { get; set; }
+        public string Doctype { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Expedition_place { get; set; }
+        public string Expedition_date { get; set; }
+        public string Birth_date { get; set; }
     }
 }

@@ -6,9 +6,24 @@ using System.Windows.Forms;
 
 namespace NotariaDB
 {
-    class SheetGridView : DataGridView
+    abstract class SheetGridView : DataGridView
     {
-        public SheetGridView(SheetType s_type, string name = "SGV1")
+        public SheetGridView(string name)
+        {
+            defineProperties(name);
+
+            applyInitRowStyle();
+
+            applyInitHeaderStyle();
+
+            defineColumns();
+
+            Rows.Add("1", "PRUEBA DE TEXTO");
+            Rows.Add("2", "PRUEBA DE TEXTO");
+        }
+
+
+        private void defineProperties(string name)
         {
             Name = name;
             AllowUserToAddRows = false;
@@ -19,66 +34,13 @@ namespace NotariaDB
             Location = new Point(0, 0);
             Size = new Size(500, 250);
             Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left;
-            
-            AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+
+            AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             CellBorderStyle = DataGridViewCellBorderStyle.Single;
             RowHeadersVisible = false;
             GridColor = Color.LightGray;
             DefaultCellStyle.Font = new Font("Century Gothic", 10.25F, FontStyle.Regular, GraphicsUnit.Point);
-
-            applyInitRowStyle();
-
-            applyInitHeaderStyle();
-
-            switch (s_type)
-            {
-                case SheetType.NAC:
-                    ColumnCount = 10;
-                    Columns[0].Name = "NUIP";
-                    Columns[1].Name = "SERIAL";
-                    Columns[2].Name = "APELLIDOS";
-                    Columns[3].Name = "NOMBRE";
-                    Columns[4].Name = "SEXO";
-                    Columns[5].Name = "FECHA NACIMIENTO";
-                    Columns[6].Name = "FECHA REGISTRO";
-                    Columns[7].Name = "PADRES";
-                    Columns[8].Name = "CIUDAD";
-                    Columns[9].Name = "DEPARTAMENTO";
-                    break;
-                case SheetType.MAT:
-                    ColumnCount = 5;
-                    Columns[0].Name = "SERIAL";
-                    Columns[1].Name = "ESPOSO";
-                    Columns[2].Name = "ESPOSA";
-                    Columns[3].Name = "FECHA BODA";
-                    Columns[4].Name = "FECHA REGISTRO";
-                    break;
-                case SheetType.DEF:
-                    ColumnCount = 8;
-                    Columns[0].Name = "CÉDULA";
-                    Columns[1].Name = "SERIAL";
-                    Columns[2].Name = "DIFUNTO";
-                    Columns[3].Name = "SEXO";
-                    Columns[4].Name = "FECHA MUERTE";
-                    Columns[5].Name = "MÉDICO";
-                    Columns[6].Name = "CIUDAD";
-                    Columns[7].Name = "DEPARTAMENTO";
-                    break;
-                case SheetType.USER:
-                    ColumnCount = 7;
-                    Columns[0].Name = "NRO. DOCUMENTO";
-                    Columns[1].Name = "TIPO DE DOCUMENTO";
-                    Columns[2].Name = "NOMBRE";
-                    Columns[3].Name = "APELLIDO";
-                    Columns[4].Name = "LUGAR DE EXPEDICIÓN";
-                    Columns[5].Name = "FECHA DE EXPEDICIÓN";
-                    Columns[6].Name = "FECHA DE NACIMIENTO";
-                    break;
-            }
-
-            Rows.Add("1", "PRUEBA DE TEXTO");
-            Rows.Add("2", "PRUEBA DE TEXTO");
 
             SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             MultiSelect = false;
@@ -86,7 +48,7 @@ namespace NotariaDB
             TabIndex = 0;
         }
 
-        public void applyInitRowStyle()
+        private void applyInitRowStyle()
         {
             AllowUserToResizeRows = false;
             RowTemplate.DefaultCellStyle.BackColor = Color.White;
@@ -96,10 +58,10 @@ namespace NotariaDB
             RowTemplate.Height = 15;
         }
 
-        public void applyInitHeaderStyle()
+        private void applyInitHeaderStyle()
         {
             AllowUserToResizeColumns = true;
-            EnableHeadersVisualStyles = false;
+            EnableHeadersVisualStyles = true;
             ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             ColumnHeadersDefaultCellStyle.SelectionBackColor = SystemColors.GradientActiveCaption;
@@ -115,25 +77,114 @@ namespace NotariaDB
             CellMouseLeave += new DataGridViewCellEventHandler(SheetGridView_CellMouseLeave);
         }
 
-        public void SheetGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        private void SheetGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
             Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.GradientInactiveCaption;
         }
 
-        public void SheetGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        private void SheetGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
             Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
         }
 
+        protected abstract void defineColumns();
     }
 
-    enum SheetType
+    class NacSheet : SheetGridView
     {
-        NAC,
-        MAT,
-        DEF,
-        USER
+        public NacSheet(string name = "nacSheet") : base(name)
+        {
+
+        }
+
+        protected override void defineColumns()
+        {
+            ColumnCount = 18;
+            Columns[0].Name = "NUIP";
+            Columns[1].Name = "SERIAL";
+            Columns[2].Name = "NOMBRE";
+            Columns[3].Name = "PRIMER APELLIDO";
+            Columns[4].Name = "SEGUNDO APELLIDO";
+            Columns[5].Name = "SEXO";
+            Columns[6].Name = "LUGAR";
+            Columns[7].Name = "TIPO DE SANGRE";
+            Columns[8].Name = "ANEXO";
+            Columns[9].Name = "DESCRIPCIÓN DE ANEXO";
+            Columns[10].Name = "FECHA DE NACIMIENTO";
+            Columns[11].Name = "FECHA DE REGISTRO";
+            Columns[12].Name = "DOCUMENTO DEL PADRE";
+            Columns[13].Name = "DOCUMENTO DEL MADRE";
+            Columns[14].Name = "DOCUMENTO DEL TESTIGO 1";
+            Columns[15].Name = "DOCUMENTO DEL TESTIGO 2";
+            Columns[16].Name = "DOCUMENTO USUARIO REL.";
+            Columns[17].Name = "NOTARIO";
+        }
     }
+
+    class MatSheet : SheetGridView
+    {
+        public MatSheet(string name = "matSheet") : base(name)
+        {
+
+        }
+
+        protected override void defineColumns()
+        {
+            ColumnCount = 5;
+            Columns[0].Name = "SERIAL";
+            Columns[1].Name = "ESPOSO";
+            Columns[2].Name = "ESPOSA";
+            Columns[3].Name = "FECHA BODA";
+            Columns[4].Name = "FECHA REGISTRO";
+        }
+    }
+
+    class DefSheet : SheetGridView
+    {
+        public DefSheet(string name = "defSheet") : base(name)
+        {
+
+        }
+
+        protected override void defineColumns()
+        {
+            ColumnCount = 8;
+            Columns[0].Name = "CÉDULA";
+            Columns[1].Name = "SERIAL";
+            Columns[2].Name = "DIFUNTO";
+            Columns[3].Name = "SEXO";
+            Columns[4].Name = "FECHA MUERTE";
+            Columns[5].Name = "MÉDICO";
+            Columns[6].Name = "CIUDAD";
+            Columns[7].Name = "DEPARTAMENTO";
+        }
+    }
+
+    class UserSheet : SheetGridView
+    {
+        public UserSheet(string name = "userSheet") : base(name)
+        {
+
+        }
+
+        protected override void defineColumns()
+        {
+            ColumnCount = 7;
+            Columns[0].Name = "NRO. DOCUMENTO";
+            Columns[1].Name = "TIPO DE DOCUMENTO";
+            Columns[2].Name = "NOMBRE";
+            Columns[3].Name = "APELLIDO";
+            Columns[4].Name = "LUGAR DE EXPEDICIÓN";
+            Columns[5].Name = "FECHA DE EXPEDICIÓN";
+            Columns[6].Name = "FECHA DE NACIMIENTO";
+        }
+
+        public void AddRow(User user)
+        {
+            Rows.Add(user.Id, user.Doctype, user.Name, user.Surname, user.Expedition_place, user.Expedition_date, user.Birth_date);
+        }
+    }
+
 }

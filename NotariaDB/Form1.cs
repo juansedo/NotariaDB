@@ -15,14 +15,12 @@ namespace NotariaDB
         public formMain()
         {
             InitializeComponent();
+            DatabaseModel test = new DatabaseModel("notariadb");
+
+            test.UpdateSheets(userSheetGridView);
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void songsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

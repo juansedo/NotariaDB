@@ -19,7 +19,6 @@ namespace NotariaDB
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new formMain());
             //System.Diagnostics.Debug.WriteLine("I'm here!");
-            //DatabaseModel.Initialize();
         }
     }
 }
