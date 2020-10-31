@@ -22,19 +22,12 @@ namespace NotariaDB
             InitializeComponent();
             includeDataSheets();
 
-            btnNewRegister.BackColor = SystemColors.Control;
-            btnEditRegister.BackColor = SystemColors.Control;
-            btnDeleteRegister.BackColor = SystemColors.Control;
-            btnUserInfo.BackColor = SystemColors.Control;
-            btnPDF.BackColor = SystemColors.Control;
-            btnExcel.BackColor = SystemColors.Control;
-
-            btnNewRegister.Image = Properties.Resources.NewRegIcon;
-            btnEditRegister.Image = Properties.Resources.EditRegIcon;
-            btnDeleteRegister.Image = Properties.Resources.DeleteRegIcon;
-            btnUserInfo.Image = Properties.Resources.UserIcon;
-            btnPDF.Image = Properties.Resources.PDFIcon;
-            btnExcel.Image = Properties.Resources.ExcelIcon;
+            FormStylist.SetBgColorAndImage(btnNewRegister,      SystemColors.Control, Properties.Resources.NewRegIcon);
+            FormStylist.SetBgColorAndImage(btnEditRegister,     SystemColors.Control, Properties.Resources.EditRegIcon);
+            FormStylist.SetBgColorAndImage(btnDeleteRegister,   SystemColors.Control, Properties.Resources.DeleteRegIcon);
+            FormStylist.SetBgColorAndImage(btnUserInfo,         SystemColors.Control, Properties.Resources.UserIcon);
+            FormStylist.SetBgColorAndImage(btnPDF,              SystemColors.Control, Properties.Resources.PDFIcon);
+            FormStylist.SetBgColorAndImage(btnExcel,            SystemColors.Control, Properties.Resources.ExcelIcon);
 
             toolTip.SetToolTip(btnNewRegister, "Agregar registro");
             toolTip.SetToolTip(btnEditRegister, "Editar registro");
