@@ -12,19 +12,36 @@ namespace NotariaDB
 {
     public partial class formMain : Form
     {
+        private NacSheet nacSheetGridView = new NacSheet("nacSheetGridView");
+        private MatSheet matSheetGridView = new MatSheet("matSheetGridView");
+        private DefSheet defSheetGridView = new DefSheet("defSheetGridView");
+        private UserSheet userSheetGridView = new UserSheet("userSheetGridView");
+
         public formMain()
         {
             InitializeComponent();
             includeDataSheets();
 
-            btnNewRegister.Image = NotariaDB.Properties.Resources.NewRegIcon;
-            btnEditRegister.Image = NotariaDB.Properties.Resources.EditRegIcon;
-            btnDeleteRegister.Image = NotariaDB.Properties.Resources.DeleteRegIcon;
-            btnUserInfo.Image = NotariaDB.Properties.Resources.UserIcon;
-            btnPDF.Image = NotariaDB.Properties.Resources.PDFIcon;
-            btnExcel.Image = NotariaDB.Properties.Resources.ExcelIcon;
+            btnNewRegister.BackColor = SystemColors.Control;
+            btnEditRegister.BackColor = SystemColors.Control;
+            btnDeleteRegister.BackColor = SystemColors.Control;
+            btnUserInfo.BackColor = SystemColors.Control;
+            btnPDF.BackColor = SystemColors.Control;
+            btnExcel.BackColor = SystemColors.Control;
+
+            btnNewRegister.Image = Properties.Resources.NewRegIcon;
+            btnEditRegister.Image = Properties.Resources.EditRegIcon;
+            btnDeleteRegister.Image = Properties.Resources.DeleteRegIcon;
+            btnUserInfo.Image = Properties.Resources.UserIcon;
+            btnPDF.Image = Properties.Resources.PDFIcon;
+            btnExcel.Image = Properties.Resources.ExcelIcon;
 
             toolTip.SetToolTip(btnNewRegister, "Agregar registro");
+            toolTip.SetToolTip(btnEditRegister, "Editar registro");
+            toolTip.SetToolTip(btnDeleteRegister, "Eliminar registro");
+            toolTip.SetToolTip(btnUserInfo, "Información del usuario");
+            toolTip.SetToolTip(btnPDF, "Abrir PDF");
+            toolTip.SetToolTip(btnExcel, "Exportar a Excel");
 
             SheetController test = new SheetController();
             test.UpdateSheets(nacSheetGridView, matSheetGridView, userSheetGridView);

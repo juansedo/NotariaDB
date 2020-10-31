@@ -34,10 +34,6 @@ namespace NotariaDB
             this.components = new System.ComponentModel.Container();
             this.lblBuscador = new System.Windows.Forms.Label();
             this.tboxSearch = new System.Windows.Forms.TextBox();
-            this.addButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.excelButton = new System.Windows.Forms.Button();
-            this.panel_buttons = new System.Windows.Forms.Panel();
             this.panel_search = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageNAC = new System.Windows.Forms.TabPage();
@@ -51,7 +47,6 @@ namespace NotariaDB
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.btnPDF = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.panel_buttons.SuspendLayout();
             this.panel_search.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.SuspendLayout();
@@ -77,57 +72,6 @@ namespace NotariaDB
             this.tboxSearch.Size = new System.Drawing.Size(249, 26);
             this.tboxSearch.TabIndex = 1;
             // 
-            // addButton
-            // 
-            this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addButton.Location = new System.Drawing.Point(47, 50);
-            this.addButton.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(218, 40);
-            this.addButton.TabIndex = 2;
-            this.addButton.Text = "Agregar registro";
-            this.addButton.UseVisualStyleBackColor = true;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deleteButton.Location = new System.Drawing.Point(47, 110);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(218, 40);
-            this.deleteButton.TabIndex = 2;
-            this.deleteButton.Text = "Eliminar registro";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            // 
-            // excelButton
-            // 
-            this.excelButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.excelButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.excelButton.Location = new System.Drawing.Point(47, 170);
-            this.excelButton.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.excelButton.Name = "excelButton";
-            this.excelButton.Size = new System.Drawing.Size(218, 40);
-            this.excelButton.TabIndex = 2;
-            this.excelButton.Text = "Exportar a Excel";
-            this.excelButton.UseVisualStyleBackColor = true;
-            // 
-            // panel_buttons
-            // 
-            this.panel_buttons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_buttons.Controls.Add(this.addButton);
-            this.panel_buttons.Controls.Add(this.excelButton);
-            this.panel_buttons.Controls.Add(this.deleteButton);
-            this.panel_buttons.Location = new System.Drawing.Point(685, 267);
-            this.panel_buttons.Margin = new System.Windows.Forms.Padding(1);
-            this.panel_buttons.Name = "panel_buttons";
-            this.panel_buttons.Size = new System.Drawing.Size(313, 260);
-            this.panel_buttons.TabIndex = 3;
-            // 
             // panel_search
             // 
             this.panel_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -135,7 +79,7 @@ namespace NotariaDB
             this.panel_search.Controls.Add(this.tboxSearch);
             this.panel_search.Location = new System.Drawing.Point(685, 12);
             this.panel_search.Name = "panel_search";
-            this.panel_search.Size = new System.Drawing.Size(313, 251);
+            this.panel_search.Size = new System.Drawing.Size(313, 511);
             this.panel_search.TabIndex = 4;
             // 
             // tabControl
@@ -196,6 +140,7 @@ namespace NotariaDB
             // 
             // btnNewRegister
             // 
+            this.btnNewRegister.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnNewRegister.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnNewRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewRegister.FlatAppearance.BorderSize = 0;
@@ -205,10 +150,11 @@ namespace NotariaDB
             this.btnNewRegister.Size = new System.Drawing.Size(50, 50);
             this.btnNewRegister.TabIndex = 6;
             this.btnNewRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNewRegister.UseVisualStyleBackColor = true;
+            this.btnNewRegister.UseVisualStyleBackColor = false;
             // 
             // btnEditRegister
             // 
+            this.btnEditRegister.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEditRegister.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnEditRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditRegister.FlatAppearance.BorderSize = 0;
@@ -218,10 +164,11 @@ namespace NotariaDB
             this.btnEditRegister.Size = new System.Drawing.Size(50, 50);
             this.btnEditRegister.TabIndex = 6;
             this.btnEditRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEditRegister.UseVisualStyleBackColor = true;
+            this.btnEditRegister.UseVisualStyleBackColor = false;
             // 
             // btnDeleteRegister
             // 
+            this.btnDeleteRegister.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDeleteRegister.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDeleteRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteRegister.FlatAppearance.BorderSize = 0;
@@ -231,46 +178,51 @@ namespace NotariaDB
             this.btnDeleteRegister.Size = new System.Drawing.Size(50, 50);
             this.btnDeleteRegister.TabIndex = 6;
             this.btnDeleteRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDeleteRegister.UseVisualStyleBackColor = true;
+            this.btnDeleteRegister.UseVisualStyleBackColor = false;
             // 
             // btnUserInfo
             // 
+            this.btnUserInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnUserInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnUserInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUserInfo.FlatAppearance.BorderSize = 0;
             this.btnUserInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserInfo.Location = new System.Drawing.Point(184, 11);
+            this.btnUserInfo.Location = new System.Drawing.Point(196, 11);
+            this.btnUserInfo.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.btnUserInfo.Name = "btnUserInfo";
             this.btnUserInfo.Size = new System.Drawing.Size(50, 50);
             this.btnUserInfo.TabIndex = 6;
             this.btnUserInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnUserInfo.UseVisualStyleBackColor = true;
+            this.btnUserInfo.UseVisualStyleBackColor = false;
             // 
             // btnPDF
             // 
+            this.btnPDF.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPDF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPDF.FlatAppearance.BorderSize = 0;
             this.btnPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPDF.Location = new System.Drawing.Point(240, 11);
+            this.btnPDF.Location = new System.Drawing.Point(252, 11);
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(50, 50);
             this.btnPDF.TabIndex = 6;
             this.btnPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.UseVisualStyleBackColor = false;
             // 
             // btnExcel
             // 
+            this.btnExcel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcel.FlatAppearance.BorderSize = 0;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Location = new System.Drawing.Point(296, 11);
+            this.btnExcel.Location = new System.Drawing.Point(320, 11);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(50, 50);
             this.btnExcel.TabIndex = 6;
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.UseVisualStyleBackColor = false;
             // 
             // formMain
             // 
@@ -285,11 +237,9 @@ namespace NotariaDB
             this.Controls.Add(this.btnNewRegister);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel_search);
-            this.Controls.Add(this.panel_buttons);
             this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "formMain";
             this.Text = "NOTARIA DB";
-            this.panel_buttons.ResumeLayout(false);
             this.panel_search.ResumeLayout(false);
             this.panel_search.PerformLayout();
             this.tabControl.ResumeLayout(false);
@@ -302,10 +252,6 @@ namespace NotariaDB
 
         private System.Windows.Forms.Label lblBuscador;
         private System.Windows.Forms.TextBox tboxSearch;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.Button excelButton;
-        private System.Windows.Forms.Panel panel_buttons;
         private System.Windows.Forms.Button l;
         private System.Windows.Forms.Button x;
         private System.Windows.Forms.Panel panel_search;
@@ -314,10 +260,6 @@ namespace NotariaDB
         private System.Windows.Forms.TabPage tabPageMAT;
         private System.Windows.Forms.TabPage tabPageDEF;
         private System.Windows.Forms.TabPage tabPageUSER;
-        private NacSheet nacSheetGridView = new NacSheet("nacSheetGridView");
-        private MatSheet matSheetGridView = new MatSheet("matSheetGridView");
-        private DefSheet defSheetGridView = new DefSheet("defSheetGridView");
-        private UserSheet userSheetGridView = new UserSheet("userSheetGridView");
         private Button btnNewRegister;
         private Button btnEditRegister;
         private Button btnDeleteRegister;
