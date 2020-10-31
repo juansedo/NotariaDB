@@ -17,7 +17,7 @@ namespace NotariaDB
             InitializeComponent();
             SheetController test = new SheetController();
 
-            test.UpdateSheets(nacSheetGridView, userSheetGridView);
+            test.UpdateSheets(nacSheetGridView, matSheetGridView, userSheetGridView);
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)

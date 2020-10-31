@@ -7,11 +7,12 @@ namespace NotariaDB
 {
     class SheetController
     {
-        public void UpdateSheets(NacSheet ns, /*MatSheet ms, DefSheet df,*/ UserSheet us)
+        public void UpdateSheets(NacSheet ns, MatSheet ms, /*DefSheet df,*/ UserSheet us)
         {
             var test = new DatabaseModel();
             
             ns.DataSource = getDataFromScript(test, ns, "../../../Scripts/get-all-nacimientos.sql");
+            ms.DataSource = getDataFromScript(test, ms, "../../../Scripts/get-all-matrimonios.sql");
             us.DataSource = getDataFromText(test, us, "SELECT id, d.description AS doctype, name, surname, expedition_place, expedition_date, birth_date FROM usuarios u JOIN doctypes d USING (doctype_id)");
         }
 

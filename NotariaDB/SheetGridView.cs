@@ -140,12 +140,17 @@ namespace NotariaDB
 
         protected override void defineColumns()
         {
-            ColumnCount = 5;
+            ColumnCount = 10;
             Columns[0].Name = "SERIAL";
-            Columns[1].Name = "ESPOSO";
-            Columns[2].Name = "ESPOSA";
-            Columns[3].Name = "FECHA BODA";
-            Columns[4].Name = "FECHA REGISTRO";
+            Columns[1].Name = "NOMBRE ESPOSO";
+            Columns[2].Name = "APELLIDO ESPOSO";
+            Columns[3].Name = "DOCUMENTO ESPOSO";
+            Columns[4].Name = "NOMBRE ESPOSA";
+            Columns[5].Name = "APELLIDO ESPOSA";
+            Columns[6].Name = "DOCUMENTO ESPOSA";
+            Columns[7].Name = "LUGAR DE BODA";
+            Columns[8].Name = "FECHA BODA";
+            Columns[9].Name = "FECHA REGISTRO";
         }
     }
 
