@@ -163,15 +163,17 @@ namespace NotariaDB
 
         protected override void defineColumns()
         {
-            ColumnCount = 8;
-            Columns[0].Name = "CÉDULA";
-            Columns[1].Name = "SERIAL";
-            Columns[2].Name = "DIFUNTO";
-            Columns[3].Name = "SEXO";
-            Columns[4].Name = "FECHA MUERTE";
-            Columns[5].Name = "MÉDICO";
-            Columns[6].Name = "CIUDAD";
-            Columns[7].Name = "DEPARTAMENTO";
+            ColumnCount = 10;
+            Columns[0].Name = "SERIAL";
+            Columns[1].Name = "CÉDULA";
+            Columns[2].Name = "NOMBRE DEL DIFUNTO";
+            Columns[3].Name = "APELLIDO DEL DIFUNTO";
+            Columns[4].Name = "SEXO";
+            Columns[5].Name = "FECHA DE MUERTE";
+            Columns[6].Name = "FECHA DE REGISTRO";
+            Columns[7].Name = "MÉDICO";
+            Columns[8].Name = "CIUDAD";
+            Columns[9].Name = "DEPARTAMENTO";
         }
     }
 
