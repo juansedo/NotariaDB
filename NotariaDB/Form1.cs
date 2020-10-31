@@ -15,9 +15,9 @@ namespace NotariaDB
         public formMain()
         {
             InitializeComponent();
-            DatabaseModel test = new DatabaseModel("notariadb");
+            SheetController test = new SheetController();
 
-            test.UpdateSheets(userSheetGridView);
+            test.UpdateSheets(nacSheetGridView, userSheetGridView);
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)

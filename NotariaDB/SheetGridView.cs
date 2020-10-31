@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using NotariaDB.Entities;
 
 namespace NotariaDB
 {
@@ -101,25 +102,32 @@ namespace NotariaDB
 
         protected override void defineColumns()
         {
-            ColumnCount = 18;
+            ColumnCount = 17;
             Columns[0].Name = "NUIP";
             Columns[1].Name = "SERIAL";
             Columns[2].Name = "NOMBRE";
-            Columns[3].Name = "PRIMER APELLIDO";
-            Columns[4].Name = "SEGUNDO APELLIDO";
-            Columns[5].Name = "SEXO";
-            Columns[6].Name = "LUGAR";
-            Columns[7].Name = "TIPO DE SANGRE";
-            Columns[8].Name = "ANEXO";
-            Columns[9].Name = "DESCRIPCIÓN DE ANEXO";
-            Columns[10].Name = "FECHA DE NACIMIENTO";
-            Columns[11].Name = "FECHA DE REGISTRO";
-            Columns[12].Name = "DOCUMENTO DEL PADRE";
-            Columns[13].Name = "DOCUMENTO DEL MADRE";
-            Columns[14].Name = "DOCUMENTO DEL TESTIGO 1";
-            Columns[15].Name = "DOCUMENTO DEL TESTIGO 2";
-            Columns[16].Name = "DOCUMENTO USUARIO REL.";
-            Columns[17].Name = "NOTARIO";
+            Columns[3].Name = "APELLIDO";
+            Columns[4].Name = "SEXO";
+            Columns[5].Name = "TIPO DE SANGRE";
+            Columns[6].Name = "LUGAR DE NACIMIENTO";
+            Columns[7].Name = "FECHA DE NACIMIENTO";
+            Columns[8].Name = "FECHA DE REGISTRO";
+            Columns[9].Name = "ANEXO";
+            Columns[10].Name = "DESCRIPCIÓN DE ANEXO";
+            Columns[11].Name = "DOCUMENTO DEL PADRE";
+            Columns[12].Name = "DOCUMENTO DEL MADRE";
+            Columns[13].Name = "DOCUMENTO DEL TESTIGO 1";
+            Columns[14].Name = "DOCUMENTO DEL TESTIGO 2";
+            Columns[15].Name = "DOCUMENTO USUARIO REL.";
+            Columns[16].Name = "NOTARIO";
+        }
+
+        public void AddRow(NacRegister reg)
+        {
+            Rows.Add(reg.Nuip, reg.Serial, reg.Name, reg.Surname,
+                reg.Sex, reg.Bloodtype, reg.Place, reg.Birth_date, reg.Reg_date,
+                reg.Attachtype, reg.Attach_description, reg.Mom_id, reg.Dad_id,
+                reg.Witness1_id, reg.Relateduser_id, reg.Notary, reg.Fileroute);
         }
     }
 
