@@ -61,17 +61,33 @@ namespace NotariaDB
 
         private void btnNewRegister_Click(object sender, EventArgs e)
         {
-            using (var form = new FormNacRegister())
+            if (tabControl.SelectedTab == tabPageNAC)
             {
-                var result = form.ShowDialog();
-                if (result == DialogResult.OK)
+                using (var form = new FormNacRegister())
                 {
-                    Entities.NacRegister reg = form.Register;
-                    
-                    //DatabaseModel.insert(reg);
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        Entities.NacRegister reg = form.Register;
+
+                        //DatabaseModel.insert(reg);
+                    }
                 }
             }
-            
+
+            if (tabControl.SelectedTab == tabPageMAT)
+            {
+                using (var form = new FormMatRegister())
+                {
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        Entities.MatRegister reg = form.Register;
+
+                        //DatabaseModel.insert(reg);
+                    }
+                }
+            }
         }
     }
 }
