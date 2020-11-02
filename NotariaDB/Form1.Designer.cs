@@ -223,6 +223,7 @@ namespace NotariaDB
             this.btnExcel.TabIndex = 6;
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // formMain
             // 
