@@ -67,7 +67,7 @@ namespace NotariaDB
                 if (result == DialogResult.OK)
                 {
                     Entities.NacRegister reg = form.Register;
-
+                    
                     //DatabaseModel.insert(reg);
                 }
             }
