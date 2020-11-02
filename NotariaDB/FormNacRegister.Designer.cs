@@ -121,7 +121,6 @@
             this.gbBasics.TabIndex = 1;
             this.gbBasics.TabStop = false;
             this.gbBasics.Text = "Datos básicos";
-            this.gbBasics.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label7
             // 
@@ -132,7 +131,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "MM:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -332,7 +330,6 @@
             this.gbAttach.TabIndex = 2;
             this.gbAttach.TabStop = false;
             this.gbAttach.Text = "Antecedente";
-            this.gbAttach.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tAttachtype
             // 
@@ -386,7 +383,6 @@
             this.gbMom.TabIndex = 4;
             this.gbMom.TabStop = false;
             this.gbMom.Text = "Datos de la madre";
-            this.gbMom.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnMomBlank
             // 
@@ -496,7 +492,6 @@
             this.gbDad.TabIndex = 5;
             this.gbDad.TabStop = false;
             this.gbDad.Text = "Datos del padre";
-            this.gbDad.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnWitBlank
             // 
@@ -574,7 +569,6 @@
             this.gbWitness.TabIndex = 6;
             this.gbWitness.TabStop = false;
             this.gbWitness.Text = "Datos del testigo";
-            this.gbWitness.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label22
             // 
@@ -603,8 +597,9 @@
             this.btnAccept.TabIndex = 7;
             this.btnAccept.Text = "Aceptar";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
-            // FormNewNacRegister
+            // FormNacRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -618,9 +613,9 @@
             this.Controls.Add(this.gbAttach);
             this.Controls.Add(this.gbBasics);
             this.Controls.Add(this.lblTitle);
-            this.Name = "FormNewNacRegister";
+            this.Name = "FormNacRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo registro de nacimiento";
-            this.Load += new System.EventHandler(this.FormNewNacRegister_Load);
             this.gbBasics.ResumeLayout(false);
             this.gbBasics.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBirthMinutes)).EndInit();

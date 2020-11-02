@@ -151,6 +151,7 @@ namespace NotariaDB
             this.btnNewRegister.TabIndex = 6;
             this.btnNewRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNewRegister.UseVisualStyleBackColor = false;
+            this.btnNewRegister.Click += new System.EventHandler(this.btnNewRegister_Click);
             // 
             // btnEditRegister
             // 
@@ -240,6 +241,7 @@ namespace NotariaDB
             this.Controls.Add(this.panel_search);
             this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "formMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NOTARIA DB";
             this.panel_search.ResumeLayout(false);
             this.panel_search.PerformLayout();

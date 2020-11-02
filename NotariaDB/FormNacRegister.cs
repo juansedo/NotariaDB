@@ -10,24 +10,18 @@ namespace NotariaDB
 {
     public partial class FormNacRegister : Form
     {
+        public Entities.NacRegister Register;
+
         public FormNacRegister()
         {
             InitializeComponent();
         }
 
-        private void FormNewNacRegister_Load(object sender, EventArgs e)
+        private void btnAccept_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
+            this.Register.Nuip = tNuip.Text;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace NotariaDB
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormNacRegister());
+            Application.Run(new formMain());
         }
     }
 }
