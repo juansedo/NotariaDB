@@ -96,9 +96,14 @@ namespace NotariaDB
                     var result = form.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        //Models.Nacimientos reg = form.Register;
+                        Models.Nacimientos reg = form.Register;
+                        using(Models.notariadbContext db = new Models.notariadbContext())
+                        {
+                            db.Add(reg);
 
-                        //DatabaseModel.insert(reg);
+                            db.SaveChanges();
+                        }
+
                     }
                 }
             }

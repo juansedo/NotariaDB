@@ -475,6 +475,18 @@ namespace NotariaDB.Models
                     .HasColumnName("witness_id")
                     .HasMaxLength(15);
 
+                entity.Property(e => e.BirthHour)
+                    .HasColumnName("birth_hour")
+                    .HasColumnType("time");
+
+                entity.Property(e => e.BirthDate)
+                    .HasColumnName("birth_date")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.RegDate)
+                    .HasColumnName("reg_date")
+                    .HasColumnType("date");
+
                 entity.HasOne(d => d.Attach)
                     .WithMany(p => p.Nacimientos)
                     .HasForeignKey(d => d.AttachId)

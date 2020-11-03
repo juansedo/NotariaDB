@@ -83,6 +83,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cCity = new System.Windows.Forms.ComboBox();
+            this.cSex = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.gbBasics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBirthMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBirthHour)).BeginInit();
@@ -105,6 +107,8 @@
             // 
             // gbBasics
             // 
+            this.gbBasics.Controls.Add(this.label25);
+            this.gbBasics.Controls.Add(this.cSex);
             this.gbBasics.Controls.Add(this.tSerial);
             this.gbBasics.Controls.Add(this.label1);
             this.gbBasics.Controls.Add(this.label7);
@@ -127,7 +131,7 @@
             this.gbBasics.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gbBasics.Location = new System.Drawing.Point(12, 45);
             this.gbBasics.Name = "gbBasics";
-            this.gbBasics.Size = new System.Drawing.Size(470, 305);
+            this.gbBasics.Size = new System.Drawing.Size(470, 323);
             this.gbBasics.TabIndex = 1;
             this.gbBasics.TabStop = false;
             this.gbBasics.Text = "Datos básicos";
@@ -154,7 +158,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(329, 218);
+            this.label7.Location = new System.Drawing.Point(329, 252);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 23);
             this.label7.TabIndex = 0;
@@ -164,7 +168,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(200, 218);
+            this.label6.Location = new System.Drawing.Point(200, 252);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 23);
             this.label6.TabIndex = 0;
@@ -175,33 +179,33 @@
             // 
             this.tBirthMinutes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tBirthMinutes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tBirthMinutes.Location = new System.Drawing.Point(379, 217);
+            this.tBirthMinutes.Location = new System.Drawing.Point(379, 251);
             this.tBirthMinutes.Name = "tBirthMinutes";
             this.tBirthMinutes.Size = new System.Drawing.Size(58, 26);
-            this.tBirthMinutes.TabIndex = 8;
+            this.tBirthMinutes.TabIndex = 9;
             // 
             // tBirthHour
             // 
             this.tBirthHour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tBirthHour.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tBirthHour.Location = new System.Drawing.Point(250, 217);
+            this.tBirthHour.Location = new System.Drawing.Point(250, 251);
             this.tBirthHour.Name = "tBirthHour";
             this.tBirthHour.Size = new System.Drawing.Size(58, 26);
-            this.tBirthHour.TabIndex = 7;
+            this.tBirthHour.TabIndex = 8;
             // 
             // cBloodtype
             // 
             this.cBloodtype.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cBloodtype.FormattingEnabled = true;
-            this.cBloodtype.Location = new System.Drawing.Point(191, 251);
+            this.cBloodtype.Location = new System.Drawing.Point(191, 285);
             this.cBloodtype.Name = "cBloodtype";
             this.cBloodtype.Size = new System.Drawing.Size(265, 28);
-            this.cBloodtype.TabIndex = 9;
+            this.cBloodtype.TabIndex = 10;
             // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(6, 250);
+            this.label12.Location = new System.Drawing.Point(6, 284);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(172, 23);
             this.label12.TabIndex = 0;
@@ -211,7 +215,7 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(6, 218);
+            this.label11.Location = new System.Drawing.Point(6, 252);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(172, 23);
             this.label11.TabIndex = 0;
@@ -226,16 +230,16 @@
             this.dtBirthDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtBirthDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtBirthDate.Location = new System.Drawing.Point(191, 184);
+            this.dtBirthDate.Location = new System.Drawing.Point(191, 218);
             this.dtBirthDate.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.dtBirthDate.Name = "dtBirthDate";
             this.dtBirthDate.Size = new System.Drawing.Size(265, 26);
-            this.dtBirthDate.TabIndex = 6;
+            this.dtBirthDate.TabIndex = 7;
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(6, 184);
+            this.label10.Location = new System.Drawing.Point(6, 218);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(172, 23);
             this.label10.TabIndex = 0;
@@ -245,7 +249,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 152);
+            this.label5.Location = new System.Drawing.Point(6, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 23);
             this.label5.TabIndex = 0;
@@ -256,15 +260,15 @@
             // 
             this.tSurname2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tSurname2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tSurname2.Location = new System.Drawing.Point(191, 150);
+            this.tSurname2.Location = new System.Drawing.Point(191, 184);
             this.tSurname2.Name = "tSurname2";
             this.tSurname2.Size = new System.Drawing.Size(265, 26);
-            this.tSurname2.TabIndex = 5;
+            this.tSurname2.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(6, 120);
+            this.label4.Location = new System.Drawing.Point(6, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(172, 23);
             this.label4.TabIndex = 0;
@@ -275,24 +279,24 @@
             // 
             this.tSurname1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tSurname1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tSurname1.Location = new System.Drawing.Point(191, 118);
+            this.tSurname1.Location = new System.Drawing.Point(191, 152);
             this.tSurname1.Name = "tSurname1";
             this.tSurname1.Size = new System.Drawing.Size(265, 26);
-            this.tSurname1.TabIndex = 4;
+            this.tSurname1.TabIndex = 5;
             // 
             // tName
             // 
             this.tName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tName.Location = new System.Drawing.Point(191, 86);
+            this.tName.Location = new System.Drawing.Point(191, 120);
             this.tName.Name = "tName";
             this.tName.Size = new System.Drawing.Size(265, 26);
-            this.tName.TabIndex = 3;
+            this.tName.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(6, 88);
+            this.label3.Location = new System.Drawing.Point(6, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(172, 23);
             this.label3.TabIndex = 0;
@@ -354,7 +358,7 @@
             this.gbAttach.Controls.Add(this.label8);
             this.gbAttach.Controls.Add(this.label9);
             this.gbAttach.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.gbAttach.Location = new System.Drawing.Point(12, 456);
+            this.gbAttach.Location = new System.Drawing.Point(12, 474);
             this.gbAttach.Name = "gbAttach";
             this.gbAttach.Size = new System.Drawing.Size(470, 94);
             this.gbAttach.TabIndex = 3;
@@ -627,7 +631,7 @@
             // btnAccept
             // 
             this.btnAccept.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAccept.Location = new System.Drawing.Point(358, 566);
+            this.btnAccept.Location = new System.Drawing.Point(364, 574);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(215, 32);
             this.btnAccept.TabIndex = 8;
@@ -674,7 +678,7 @@
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(12, 356);
+            this.groupBox1.Location = new System.Drawing.Point(12, 374);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(470, 94);
             this.groupBox1.TabIndex = 2;
@@ -692,11 +696,30 @@
             this.cCity.Size = new System.Drawing.Size(265, 28);
             this.cCity.TabIndex = 2;
             // 
+            // cSex
+            // 
+            this.cSex.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cSex.FormattingEnabled = true;
+            this.cSex.Location = new System.Drawing.Point(191, 86);
+            this.cSex.Name = "cSex";
+            this.cSex.Size = new System.Drawing.Size(265, 28);
+            this.cSex.TabIndex = 3;
+            // 
+            // label25
+            // 
+            this.label25.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label25.Location = new System.Drawing.Point(6, 91);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(172, 23);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Sexo:";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FormNacRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 610);
+            this.ClientSize = new System.Drawing.Size(927, 618);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.cNotary);
@@ -786,5 +809,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cCity;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox cSex;
     }
 }

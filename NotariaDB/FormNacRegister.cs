@@ -23,6 +23,10 @@ namespace NotariaDB
         {
             using (Models.notariadbContext db = new Models.notariadbContext())
             {
+                cSex.Items.Clear();
+                cSex.Items.Add("MASCULINO");
+                cSex.Items.Add("FEMENINO");
+
                 initializeComboBox(cBloodtype, "Name", "BloodtypeId");
                 cBloodtype.DataSource = (from s in db.Bloodtypes select new { s.BloodtypeId, s.Name }).ToList();
                 cBloodtype.SelectedItem = null;
@@ -54,12 +58,20 @@ namespace NotariaDB
         {
             this.Register.Nuip = tNuip.Text;
             this.Register.Serial = tSerial.Text;
+            this.Register.Sex = cSex.SelectedItem.ToString().Substring(0, 1);
             this.Register.Name = tName.Text;
             this.Register.Surname1 = tSurname1.Text;
+            this.Register.Surname2 = tSurname2.Text;
+            this.Register.RegDate = DateTime.Now;
             this.Register.BirthDate = dtBirthDate.Value;
             this.Register.BirthHour = new TimeSpan(decimal.ToInt32(tBirthHour.Value), decimal.ToInt32(tBirthMinutes.Value), 0);
+            this.Register.MomId = tMomDocument.Text;
+            this.Register.DadId = tDadDocument.Text;
+            this.Register.WitnessId = tWitDocument.Text;
+            
             try
             {
+                /*
                 using Models.notariadbContext db = new Models.notariadbContext();
                 int btype_id = Int32.Parse(cBloodtype.SelectedValue.ToString());
                 int department_id = Int32.Parse(cDepartment.SelectedValue.ToString());
@@ -71,6 +83,13 @@ namespace NotariaDB
                 this.Register.Place = db.Places.Single(c => c.DepartmentId == department_id && c.CityId == city_id);
                 this.Register.Attach = db.NacAttaches.Single(c => c.AttachId == attach_id);
                 this.Register.Notary = db.Notarios.Single(c => c.UserId == notary_id);
+                */
+                this.Register.BloodtypeId = Int32.Parse(cBloodtype.SelectedValue.ToString());
+                this.Register.PlaceId = Int32.Parse(cDepartment.SelectedValue.ToString());
+                this.Register.AttachId = Int32.Parse(cAttachtype.SelectedValue.ToString());
+                this.Register.AttachDescription = tAttachDescription.Text;
+                this.Register.NotaryId = cNotary.SelectedValue.ToString();
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -95,7 +114,7 @@ namespace NotariaDB
                                       join c in db.Cities
                                       on p.CityId equals c.Id
                                       where p.DepartmentId == selection
-                                      select new { Id = c.Id, Name = c.Name }).ToList();
+                                      select new { Id = p.PlaceId, Name = c.Name }).ToList();
                 cCity.SelectedItem = null;
             }
         }
