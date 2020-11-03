@@ -185,6 +185,8 @@ namespace NotariaDB
         {
             try
             {
+                this.Columns["Doctype"].Visible = false;
+                this.Columns["Notarios"].Visible = false;
                 this.Columns["DefuncionesRelateduser"].Visible = false;
                 this.Columns["DefuncionesWitness"].Visible = false;
                 this.Columns["MatrimoniosRelateduser1"].Visible = false;

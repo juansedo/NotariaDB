@@ -32,15 +32,6 @@ namespace NotariaDB.Controllers
         {
             using Models.notariadbContext db = new Models.notariadbContext();
             var result = db.Usuarios.ToList();
-                          /*{
-                              Documento = user.Id,
-                              TipoDeDocumento = user.DoctypeId,
-                              Nombre = user.Name,
-                              Apellido = user.Surname,
-                              LugarExpedición = user.ExpeditionPlace,
-                              FechaExpedición = user.ExpeditionDate,
-                              FechaNacimiento = user.BirthDate
-                          }).ToList();*/
             return result;
         }
     }

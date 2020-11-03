@@ -18,13 +18,25 @@ namespace NotariaDB.Models
             NacimientosWitness = new HashSet<Nacimientos>();
         }
 
-        [System.ComponentModel.DisplayName("CÉDULA")]
+        [System.ComponentModel.DisplayName("DOCUMENTO")]
         public string Id { get; set; }
+
+        [System.ComponentModel.DisplayName("TIPO DE DOCUMENTO")]
         public int DoctypeId { get; set; }
+        
+        [System.ComponentModel.DisplayName("NOMBRES")]
         public string Name { get; set; }
+        
+        [System.ComponentModel.DisplayName("APELLIDOS")]
         public string Surname { get; set; }
+        
+        [System.ComponentModel.DisplayName("LUGAR DE EXPEDICIÓN")]
         public string ExpeditionPlace { get; set; }
+        
+        [System.ComponentModel.DisplayName("FECHA DE EXPEDICIÓN")]
         public DateTime? ExpeditionDate { get; set; }
+        
+        [System.ComponentModel.DisplayName("FECHA DE NACIMIENTO")]
         public DateTime BirthDate { get; set; }
 
         public virtual Doctypes Doctype { get; set; }
