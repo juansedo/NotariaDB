@@ -12,11 +12,16 @@ namespace NotariaDB.Controllers
             using (Models.notariadbContext db = new Models.notariadbContext())
             {
                 ns.DataSource = QueryController.getNacSheetData();
-                ms.DataSource = QueryController.getMatSheetData();
-                ds.DataSource = QueryController.getDefSheetData();
-                us.DataSource = QueryController.getUserSheetData();
-
+                ns.eraseExtraColumns();
                 
+                ms.DataSource = QueryController.getMatSheetData();
+                ms.eraseExtraColumns();
+
+                ds.DataSource = QueryController.getDefSheetData();
+                ds.eraseExtraColumns();
+
+                us.DataSource = QueryController.getUserSheetData();
+                us.eraseExtraColumns();
             }
         }
     }

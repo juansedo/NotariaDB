@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace NotariaDB
 {
@@ -83,6 +84,8 @@ namespace NotariaDB
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
             Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
         }
+
+        public abstract void eraseExtraColumns();
     }
 
     class NacSheet : SheetGridView
@@ -90,6 +93,26 @@ namespace NotariaDB
         public NacSheet(string name = "nacSheet") : base(name)
         {
 
+        }
+
+        public override void eraseExtraColumns()
+        {
+            try {
+                this.Columns.Remove("DefuncionesRelateduser");
+                this.Columns.Remove("DefuncionesWitness");
+                this.Columns.Remove("MatrimoniosRelateduser1");
+                this.Columns.Remove("MatrimoniosRelateduser2");
+                this.Columns.Remove("MatrimoniosWitness");
+                this.Columns.Remove("NacimientosDad");
+                this.Columns.Remove("NacimientosMom");
+                this.Columns.Remove("NacimientosRelateduser");
+                this.Columns.Remove("NacimientosWitness");
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
         }
     }
 
@@ -99,12 +122,54 @@ namespace NotariaDB
         {
 
         }
+
+        public override void eraseExtraColumns()
+        {
+            try
+            {
+                this.Columns.Remove("DefuncionesRelateduser");
+                this.Columns.Remove("DefuncionesWitness");
+                this.Columns.Remove("MatrimoniosRelateduser1");
+                this.Columns.Remove("MatrimoniosRelateduser2");
+                this.Columns.Remove("MatrimoniosWitness");
+                this.Columns.Remove("NacimientosDad");
+                this.Columns.Remove("NacimientosMom");
+                this.Columns.Remove("NacimientosRelateduser");
+                this.Columns.Remove("NacimientosWitness");
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
     }
 
     class DefSheet : SheetGridView
     {
         public DefSheet(string name = "defSheet") : base(name)
         {
+
+        }
+
+        public override void eraseExtraColumns()
+        {
+            try
+            {
+                this.Columns.Remove("DefuncionesRelateduser");
+                this.Columns.Remove("DefuncionesWitness");
+                this.Columns.Remove("MatrimoniosRelateduser1");
+                this.Columns.Remove("MatrimoniosRelateduser2");
+                this.Columns.Remove("MatrimoniosWitness");
+                this.Columns.Remove("NacimientosDad");
+                this.Columns.Remove("NacimientosMom");
+                this.Columns.Remove("NacimientosRelateduser");
+                this.Columns.Remove("NacimientosWitness");
+            }
+            catch (Exception ex)
+            {
+
+            }
 
         }
     }
@@ -116,6 +181,26 @@ namespace NotariaDB
 
         }
 
+        public override void eraseExtraColumns()
+        {
+            try
+            {
+                this.Columns["DefuncionesRelateduser"].Visible = false;
+                this.Columns["DefuncionesWitness"].Visible = false;
+                this.Columns["MatrimoniosRelateduser1"].Visible = false;
+                this.Columns["MatrimoniosRelateduser2"].Visible = false;
+                this.Columns["MatrimoniosWitness"].Visible = false;
+                this.Columns["NacimientosDad"].Visible = false;
+                this.Columns["NacimientosMom"].Visible = false;
+                this.Columns["NacimientosRelateduser"].Visible = false;
+                this.Columns["NacimientosWitness"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
     }
 
 }
