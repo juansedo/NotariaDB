@@ -15,7 +15,6 @@ namespace NotariaDB
     
     public partial class formMain : Form
     {
-        private DataGridViewSelectedRowCollection pressed;
         private NacSheet nacSheetGridView = new NacSheet("nacSheetGridView");
         private MatSheet matSheetGridView = new MatSheet("matSheetGridView");
         private DefSheet defSheetGridView = new DefSheet("defSheetGridView");

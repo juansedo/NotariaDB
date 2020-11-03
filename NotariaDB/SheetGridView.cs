@@ -15,8 +15,6 @@ namespace NotariaDB
             applyInitRowStyle();
 
             applyInitHeaderStyle();
-
-            defineColumns();
         }
 
 
@@ -70,8 +68,8 @@ namespace NotariaDB
             ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             ColumnHeadersHeight = 35;
             ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            CellMouseEnter += new DataGridViewCellEventHandler(SheetGridView_CellMouseEnter);
-            CellMouseLeave += new DataGridViewCellEventHandler(SheetGridView_CellMouseLeave);
+            //CellMouseEnter += new DataGridViewCellEventHandler(SheetGridView_CellMouseEnter);
+            //CellMouseLeave += new DataGridViewCellEventHandler(SheetGridView_CellMouseLeave);
         }
 
         private void SheetGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -85,8 +83,6 @@ namespace NotariaDB
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
             Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
         }
-
-        protected abstract void defineColumns();
     }
 
     class NacSheet : SheetGridView
@@ -94,28 +90,6 @@ namespace NotariaDB
         public NacSheet(string name = "nacSheet") : base(name)
         {
 
-        }
-
-        protected override void defineColumns()
-        {
-            //ColumnCount = 17;
-            //Columns[0].Name = "NUIP";
-            //Columns[1].Name = "SERIAL";
-            //Columns[2].Name = "NOMBRE";
-            //Columns[3].Name = "APELLIDO";
-            //Columns[4].Name = "SEXO";
-            //Columns[5].Name = "TIPO DE SANGRE";
-            //Columns[6].Name = "LUGAR DE NACIMIENTO";
-            //Columns[7].Name = "FECHA DE NACIMIENTO";
-            //Columns[8].Name = "FECHA DE REGISTRO";
-            //Columns[9].Name = "ANEXO";
-            //Columns[10].Name = "DESCRIPCIÓN DE ANEXO";
-            //Columns[11].Name = "DOCUMENTO DEL PADRE";
-            //Columns[12].Name = "DOCUMENTO DEL MADRE";
-            //Columns[13].Name = "DOCUMENTO DEL TESTIGO 1";
-            //Columns[14].Name = "DOCUMENTO DEL TESTIGO 2";
-            //Columns[15].Name = "DOCUMENTO USUARIO REL.";
-            //Columns[16].Name = "NOTARIO";
         }
     }
 
@@ -148,21 +122,6 @@ namespace NotariaDB
         {
 
         }
-
-        protected override void defineColumns()
-        {
-            //ColumnCount = 10;
-            //Columns[0].Name = "SERIAL";
-            //Columns[1].Name = "CÉDULA";
-            //Columns[2].Name = "NOMBRE DEL DIFUNTO";
-            //Columns[3].Name = "APELLIDO DEL DIFUNTO";
-            //Columns[4].Name = "SEXO";
-            //Columns[5].Name = "FECHA DE MUERTE";
-            //Columns[6].Name = "FECHA DE REGISTRO";
-            //Columns[7].Name = "MÉDICO";
-            //Columns[8].Name = "CIUDAD";
-            //Columns[9].Name = "DEPARTAMENTO";
-        }
     }
 
     class UserSheet : SheetGridView
@@ -170,18 +129,6 @@ namespace NotariaDB
         public UserSheet(string name = "userSheet") : base(name)
         {
 
-        }
-
-        protected override void defineColumns()
-        {
-            //ColumnCount = 7;
-            //Columns[0].Name = "NRO. DOCUMENTO";
-            //Columns[1].Name = "TIPO DE DOCUMENTO";
-            //Columns[2].Name = "NOMBRE";
-            //Columns[3].Name = "APELLIDO";
-            //Columns[4].Name = "LUGAR DE EXPEDICIÓN";
-            //Columns[5].Name = "FECHA DE EXPEDICIÓN";
-            //Columns[6].Name = "FECHA DE NACIMIENTO";
         }
 
     }
