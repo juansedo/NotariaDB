@@ -56,8 +56,8 @@ namespace NotariaDB
             this.Register.Serial = tSerial.Text;
             this.Register.Name = tName.Text;
             this.Register.Surname1 = tSurname1.Text;
-            //this.Register.Birthdate
-
+            this.Register.BirthDate = dtBirthDate.Value;
+            this.Register.BirthHour = new TimeSpan(decimal.ToInt32(tBirthHour.Value), decimal.ToInt32(tBirthMinutes.Value), 0);
             try
             {
                 using Models.notariadbContext db = new Models.notariadbContext();
@@ -80,8 +80,8 @@ namespace NotariaDB
             {
                 MessageBox.Show("Error desconocido", "Error 00? - " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //this.DialogResult = DialogResult.OK;
-            //this.Close();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void cDepartment_SelectedIndexChanged(object sender, EventArgs e)

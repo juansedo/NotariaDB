@@ -32,20 +32,5 @@ namespace NotariaDB
                 System.Diagnostics.Debug.WriteLine(i.Name + " tiene " + i.Doctype + " con número " + i.Id);
             }
         }
-
-        //public System.Data.DataTable query<T>(string sql_string)
-        //{
-        //    using var DBConnection = new MySqlConnection(Connection);
-
-        //    MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
-        //    dataAdapter.SelectCommand = new MySqlCommand(sql_string, DBConnection);
-        //    System.Data.DataTable dt = new System.Data.DataTable();
-        //    dataAdapter.Fill(dt);
-        //    return dt;
-        //}
-
     }
-
-
-    
 }

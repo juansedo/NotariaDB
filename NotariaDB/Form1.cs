@@ -63,16 +63,16 @@ namespace NotariaDB
         {
             if (tabControl.SelectedTab == tabPageNAC)
             {
-                using (var form = new FormNacRegister())
+                /*using (var form = new FormNacRegister())
                 {
                     var result = form.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        Models.Nacimientos reg = form.Register;
+                        //Models.Nacimientos reg = form.Register;
 
                         //DatabaseModel.insert(reg);
                     }
-                }
+                }*/
             }
 
             if (tabControl.SelectedTab == tabPageMAT)
