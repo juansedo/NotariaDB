@@ -102,24 +102,24 @@ namespace NotariaDB
 
         protected override void defineColumns()
         {
-            ColumnCount = 17;
-            Columns[0].Name = "NUIP";
-            Columns[1].Name = "SERIAL";
-            Columns[2].Name = "NOMBRE";
-            Columns[3].Name = "APELLIDO";
-            Columns[4].Name = "SEXO";
-            Columns[5].Name = "TIPO DE SANGRE";
-            Columns[6].Name = "LUGAR DE NACIMIENTO";
-            Columns[7].Name = "FECHA DE NACIMIENTO";
-            Columns[8].Name = "FECHA DE REGISTRO";
-            Columns[9].Name = "ANEXO";
-            Columns[10].Name = "DESCRIPCIÓN DE ANEXO";
-            Columns[11].Name = "DOCUMENTO DEL PADRE";
-            Columns[12].Name = "DOCUMENTO DEL MADRE";
-            Columns[13].Name = "DOCUMENTO DEL TESTIGO 1";
-            Columns[14].Name = "DOCUMENTO DEL TESTIGO 2";
-            Columns[15].Name = "DOCUMENTO USUARIO REL.";
-            Columns[16].Name = "NOTARIO";
+            //ColumnCount = 17;
+            //Columns[0].Name = "NUIP";
+            //Columns[1].Name = "SERIAL";
+            //Columns[2].Name = "NOMBRE";
+            //Columns[3].Name = "APELLIDO";
+            //Columns[4].Name = "SEXO";
+            //Columns[5].Name = "TIPO DE SANGRE";
+            //Columns[6].Name = "LUGAR DE NACIMIENTO";
+            //Columns[7].Name = "FECHA DE NACIMIENTO";
+            //Columns[8].Name = "FECHA DE REGISTRO";
+            //Columns[9].Name = "ANEXO";
+            //Columns[10].Name = "DESCRIPCIÓN DE ANEXO";
+            //Columns[11].Name = "DOCUMENTO DEL PADRE";
+            //Columns[12].Name = "DOCUMENTO DEL MADRE";
+            //Columns[13].Name = "DOCUMENTO DEL TESTIGO 1";
+            //Columns[14].Name = "DOCUMENTO DEL TESTIGO 2";
+            //Columns[15].Name = "DOCUMENTO USUARIO REL.";
+            //Columns[16].Name = "NOTARIO";
         }
 
         public void AddRow(NacRegister reg)
@@ -140,17 +140,17 @@ namespace NotariaDB
 
         protected override void defineColumns()
         {
-            ColumnCount = 10;
-            Columns[0].Name = "SERIAL";
-            Columns[1].Name = "NOMBRE ESPOSO";
-            Columns[2].Name = "APELLIDO ESPOSO";
-            Columns[3].Name = "DOCUMENTO ESPOSO";
-            Columns[4].Name = "NOMBRE ESPOSA";
-            Columns[5].Name = "APELLIDO ESPOSA";
-            Columns[6].Name = "DOCUMENTO ESPOSA";
-            Columns[7].Name = "LUGAR DE BODA";
-            Columns[8].Name = "FECHA BODA";
-            Columns[9].Name = "FECHA REGISTRO";
+            //ColumnCount = 10;
+            //Columns[0].Name = "SERIAL";
+            //Columns[1].Name = "NOMBRE ESPOSO";
+            //Columns[2].Name = "APELLIDO ESPOSO";
+            //Columns[3].Name = "DOCUMENTO ESPOSO";
+            //Columns[4].Name = "NOMBRE ESPOSA";
+            //Columns[5].Name = "APELLIDO ESPOSA";
+            //Columns[6].Name = "DOCUMENTO ESPOSA";
+            //Columns[7].Name = "LUGAR DE BODA";
+            //Columns[8].Name = "FECHA BODA";
+            //Columns[9].Name = "FECHA REGISTRO";
         }
     }
 
@@ -163,17 +163,17 @@ namespace NotariaDB
 
         protected override void defineColumns()
         {
-            ColumnCount = 10;
-            Columns[0].Name = "SERIAL";
-            Columns[1].Name = "CÉDULA";
-            Columns[2].Name = "NOMBRE DEL DIFUNTO";
-            Columns[3].Name = "APELLIDO DEL DIFUNTO";
-            Columns[4].Name = "SEXO";
-            Columns[5].Name = "FECHA DE MUERTE";
-            Columns[6].Name = "FECHA DE REGISTRO";
-            Columns[7].Name = "MÉDICO";
-            Columns[8].Name = "CIUDAD";
-            Columns[9].Name = "DEPARTAMENTO";
+            //ColumnCount = 10;
+            //Columns[0].Name = "SERIAL";
+            //Columns[1].Name = "CÉDULA";
+            //Columns[2].Name = "NOMBRE DEL DIFUNTO";
+            //Columns[3].Name = "APELLIDO DEL DIFUNTO";
+            //Columns[4].Name = "SEXO";
+            //Columns[5].Name = "FECHA DE MUERTE";
+            //Columns[6].Name = "FECHA DE REGISTRO";
+            //Columns[7].Name = "MÉDICO";
+            //Columns[8].Name = "CIUDAD";
+            //Columns[9].Name = "DEPARTAMENTO";
         }
     }
 
@@ -186,14 +186,14 @@ namespace NotariaDB
 
         protected override void defineColumns()
         {
-            ColumnCount = 7;
-            Columns[0].Name = "NRO. DOCUMENTO";
-            Columns[1].Name = "TIPO DE DOCUMENTO";
-            Columns[2].Name = "NOMBRE";
-            Columns[3].Name = "APELLIDO";
-            Columns[4].Name = "LUGAR DE EXPEDICIÓN";
-            Columns[5].Name = "FECHA DE EXPEDICIÓN";
-            Columns[6].Name = "FECHA DE NACIMIENTO";
+            //ColumnCount = 7;
+            //Columns[0].Name = "NRO. DOCUMENTO";
+            //Columns[1].Name = "TIPO DE DOCUMENTO";
+            //Columns[2].Name = "NOMBRE";
+            //Columns[3].Name = "APELLIDO";
+            //Columns[4].Name = "LUGAR DE EXPEDICIÓN";
+            //Columns[5].Name = "FECHA DE EXPEDICIÓN";
+            //Columns[6].Name = "FECHA DE NACIMIENTO";
         }
 
         public void AddRow(User user)

@@ -55,9 +55,10 @@ namespace NotariaDB
             // 
             this.lblBuscador.AutoSize = true;
             this.lblBuscador.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblBuscador.Location = new System.Drawing.Point(100, 20);
+            this.lblBuscador.Location = new System.Drawing.Point(214, 49);
+            this.lblBuscador.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblBuscador.Name = "lblBuscador";
-            this.lblBuscador.Size = new System.Drawing.Size(113, 23);
+            this.lblBuscador.Size = new System.Drawing.Size(254, 49);
             this.lblBuscador.TabIndex = 0;
             this.lblBuscador.Text = "BUSCADOR";
             // 
@@ -65,11 +66,11 @@ namespace NotariaDB
             // 
             this.tboxSearch.BackColor = System.Drawing.SystemColors.Window;
             this.tboxSearch.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tboxSearch.Location = new System.Drawing.Point(32, 55);
-            this.tboxSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.tboxSearch.Location = new System.Drawing.Point(69, 136);
+            this.tboxSearch.Margin = new System.Windows.Forms.Padding(6, 12, 6, 7);
             this.tboxSearch.Name = "tboxSearch";
             this.tboxSearch.PlaceholderText = "Buscar...";
-            this.tboxSearch.Size = new System.Drawing.Size(249, 26);
+            this.tboxSearch.Size = new System.Drawing.Size(529, 49);
             this.tboxSearch.TabIndex = 1;
             // 
             // panel_search
@@ -77,9 +78,10 @@ namespace NotariaDB
             this.panel_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_search.Controls.Add(this.lblBuscador);
             this.panel_search.Controls.Add(this.tboxSearch);
-            this.panel_search.Location = new System.Drawing.Point(685, 12);
+            this.panel_search.Location = new System.Drawing.Point(1468, 30);
+            this.panel_search.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.panel_search.Name = "panel_search";
-            this.panel_search.Size = new System.Drawing.Size(313, 511);
+            this.panel_search.Size = new System.Drawing.Size(671, 1260);
             this.panel_search.TabIndex = 4;
             // 
             // tabControl
@@ -91,49 +93,54 @@ namespace NotariaDB
             this.tabControl.Controls.Add(this.tabPageMAT);
             this.tabControl.Controls.Add(this.tabPageDEF);
             this.tabControl.Controls.Add(this.tabPageUSER);
-            this.tabControl.Location = new System.Drawing.Point(12, 67);
+            this.tabControl.Location = new System.Drawing.Point(26, 165);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(667, 460);
+            this.tabControl.Size = new System.Drawing.Size(1429, 1135);
             this.tabControl.TabIndex = 5;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tabPageNAC
             // 
-            this.tabPageNAC.Location = new System.Drawing.Point(4, 24);
+            this.tabPageNAC.Location = new System.Drawing.Point(10, 55);
+            this.tabPageNAC.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.tabPageNAC.Name = "tabPageNAC";
-            this.tabPageNAC.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNAC.Size = new System.Drawing.Size(659, 432);
+            this.tabPageNAC.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.tabPageNAC.Size = new System.Drawing.Size(1409, 1070);
             this.tabPageNAC.TabIndex = 0;
             this.tabPageNAC.Text = "NACIMIENTOS";
             this.tabPageNAC.UseVisualStyleBackColor = true;
             // 
             // tabPageMAT
             // 
-            this.tabPageMAT.Location = new System.Drawing.Point(4, 24);
+            this.tabPageMAT.Location = new System.Drawing.Point(10, 55);
+            this.tabPageMAT.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.tabPageMAT.Name = "tabPageMAT";
-            this.tabPageMAT.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMAT.Size = new System.Drawing.Size(659, 432);
+            this.tabPageMAT.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.tabPageMAT.Size = new System.Drawing.Size(1409, 1070);
             this.tabPageMAT.TabIndex = 1;
             this.tabPageMAT.Text = "MATRIMONIOS";
             this.tabPageMAT.UseVisualStyleBackColor = true;
             // 
             // tabPageDEF
             // 
-            this.tabPageDEF.Location = new System.Drawing.Point(4, 24);
+            this.tabPageDEF.Location = new System.Drawing.Point(10, 55);
+            this.tabPageDEF.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.tabPageDEF.Name = "tabPageDEF";
-            this.tabPageDEF.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDEF.Size = new System.Drawing.Size(659, 432);
+            this.tabPageDEF.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.tabPageDEF.Size = new System.Drawing.Size(1409, 1070);
             this.tabPageDEF.TabIndex = 2;
             this.tabPageDEF.Text = "DEFUNCIONES";
             this.tabPageDEF.UseVisualStyleBackColor = true;
             // 
             // tabPageUSER
             // 
-            this.tabPageUSER.Location = new System.Drawing.Point(4, 24);
+            this.tabPageUSER.Location = new System.Drawing.Point(10, 55);
+            this.tabPageUSER.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.tabPageUSER.Name = "tabPageUSER";
-            this.tabPageUSER.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUSER.Size = new System.Drawing.Size(659, 432);
+            this.tabPageUSER.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.tabPageUSER.Size = new System.Drawing.Size(1409, 1070);
             this.tabPageUSER.TabIndex = 3;
             this.tabPageUSER.Text = "USUARIOS";
             this.tabPageUSER.UseVisualStyleBackColor = true;
@@ -145,9 +152,10 @@ namespace NotariaDB
             this.btnNewRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewRegister.FlatAppearance.BorderSize = 0;
             this.btnNewRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewRegister.Location = new System.Drawing.Point(16, 11);
+            this.btnNewRegister.Location = new System.Drawing.Point(34, 27);
+            this.btnNewRegister.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnNewRegister.Name = "btnNewRegister";
-            this.btnNewRegister.Size = new System.Drawing.Size(50, 50);
+            this.btnNewRegister.Size = new System.Drawing.Size(107, 123);
             this.btnNewRegister.TabIndex = 6;
             this.btnNewRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNewRegister.UseVisualStyleBackColor = false;
@@ -160,9 +168,10 @@ namespace NotariaDB
             this.btnEditRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditRegister.FlatAppearance.BorderSize = 0;
             this.btnEditRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditRegister.Location = new System.Drawing.Point(72, 11);
+            this.btnEditRegister.Location = new System.Drawing.Point(154, 27);
+            this.btnEditRegister.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnEditRegister.Name = "btnEditRegister";
-            this.btnEditRegister.Size = new System.Drawing.Size(50, 50);
+            this.btnEditRegister.Size = new System.Drawing.Size(107, 123);
             this.btnEditRegister.TabIndex = 6;
             this.btnEditRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEditRegister.UseVisualStyleBackColor = false;
@@ -174,9 +183,10 @@ namespace NotariaDB
             this.btnDeleteRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteRegister.FlatAppearance.BorderSize = 0;
             this.btnDeleteRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteRegister.Location = new System.Drawing.Point(128, 11);
+            this.btnDeleteRegister.Location = new System.Drawing.Point(274, 27);
+            this.btnDeleteRegister.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnDeleteRegister.Name = "btnDeleteRegister";
-            this.btnDeleteRegister.Size = new System.Drawing.Size(50, 50);
+            this.btnDeleteRegister.Size = new System.Drawing.Size(107, 123);
             this.btnDeleteRegister.TabIndex = 6;
             this.btnDeleteRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDeleteRegister.UseVisualStyleBackColor = false;
@@ -188,10 +198,10 @@ namespace NotariaDB
             this.btnUserInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUserInfo.FlatAppearance.BorderSize = 0;
             this.btnUserInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserInfo.Location = new System.Drawing.Point(196, 11);
-            this.btnUserInfo.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
+            this.btnUserInfo.Location = new System.Drawing.Point(420, 27);
+            this.btnUserInfo.Margin = new System.Windows.Forms.Padding(32, 7, 6, 7);
             this.btnUserInfo.Name = "btnUserInfo";
-            this.btnUserInfo.Size = new System.Drawing.Size(50, 50);
+            this.btnUserInfo.Size = new System.Drawing.Size(107, 123);
             this.btnUserInfo.TabIndex = 6;
             this.btnUserInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUserInfo.UseVisualStyleBackColor = false;
@@ -203,9 +213,10 @@ namespace NotariaDB
             this.btnPDF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPDF.FlatAppearance.BorderSize = 0;
             this.btnPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPDF.Location = new System.Drawing.Point(252, 11);
+            this.btnPDF.Location = new System.Drawing.Point(540, 27);
+            this.btnPDF.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(50, 50);
+            this.btnPDF.Size = new System.Drawing.Size(107, 123);
             this.btnPDF.TabIndex = 6;
             this.btnPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPDF.UseVisualStyleBackColor = false;
@@ -217,10 +228,10 @@ namespace NotariaDB
             this.btnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcel.FlatAppearance.BorderSize = 0;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Location = new System.Drawing.Point(320, 11);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
+            this.btnExcel.Location = new System.Drawing.Point(686, 27);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(32, 7, 6, 7);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(50, 50);
+            this.btnExcel.Size = new System.Drawing.Size(107, 123);
             this.btnExcel.TabIndex = 6;
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnExcel.UseVisualStyleBackColor = false;
@@ -228,9 +239,9 @@ namespace NotariaDB
             // 
             // formMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 537);
+            this.ClientSize = new System.Drawing.Size(2160, 1325);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.btnUserInfo);
@@ -239,7 +250,8 @@ namespace NotariaDB
             this.Controls.Add(this.btnNewRegister);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel_search);
-            this.MinimumSize = new System.Drawing.Size(800, 550);
+            this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.MinimumSize = new System.Drawing.Size(1682, 1241);
             this.Name = "formMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NOTARIA DB";

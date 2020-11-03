@@ -12,7 +12,7 @@ namespace NotariaDB
     {
         public string Connection { get; private set; }
 
-        public DatabaseModel(string db_name = "notariadb", string server = "localhost", string port = "3306", string user = "root", string password = "")
+        public DatabaseModel(string db_name = "notariadb", string server = "localhost", string port = "3306", string user = "root", string password = "wako1000")
         {
             Connection = $"Server={server},{port};";
             Connection += $"User={user};";
