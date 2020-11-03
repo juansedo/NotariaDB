@@ -23,14 +23,29 @@ namespace NotariaDB
         public formMain()
         {
             InitializeComponent();
-            includeDataSheets();
+            includeDataSheetsToView();
+            applyStyles();
+            
+            SheetController test = new SheetController();
+            test.UpdateSheets(nacSheetGridView, matSheetGridView, defSheetGridView, userSheetGridView);
+        }
 
-            FormStylist.SetBgColorAndImage(btnNewRegister,      SystemColors.Control, Properties.Resources.NewRegIcon);
-            FormStylist.SetBgColorAndImage(btnEditRegister,     SystemColors.Control, Properties.Resources.EditRegIcon);
-            FormStylist.SetBgColorAndImage(btnDeleteRegister,   SystemColors.Control, Properties.Resources.DeleteRegIcon);
-            FormStylist.SetBgColorAndImage(btnUserInfo,         SystemColors.Control, Properties.Resources.UserIcon);
-            FormStylist.SetBgColorAndImage(btnPDF,              SystemColors.Control, Properties.Resources.PDFIcon);
-            FormStylist.SetBgColorAndImage(btnExcel,            SystemColors.Control, Properties.Resources.ExcelIcon);
+        void includeDataSheetsToView()
+        {
+            this.tabPageNAC.Controls.Add(nacSheetGridView);
+            this.tabPageMAT.Controls.Add(matSheetGridView);
+            this.tabPageDEF.Controls.Add(defSheetGridView);
+            this.tabPageUSER.Controls.Add(userSheetGridView);
+        }
+
+        void applyStyles()
+        {
+            FormStylist.SetBgColorAndImage(btnNewRegister, SystemColors.Control, Properties.Resources.NewRegIcon);
+            FormStylist.SetBgColorAndImage(btnEditRegister, SystemColors.Control, Properties.Resources.EditRegIcon);
+            FormStylist.SetBgColorAndImage(btnDeleteRegister, SystemColors.Control, Properties.Resources.DeleteRegIcon);
+            FormStylist.SetBgColorAndImage(btnUserInfo, SystemColors.Control, Properties.Resources.UserIcon);
+            FormStylist.SetBgColorAndImage(btnPDF, SystemColors.Control, Properties.Resources.PDFIcon);
+            FormStylist.SetBgColorAndImage(btnExcel, SystemColors.Control, Properties.Resources.ExcelIcon);
 
             toolTip.SetToolTip(btnNewRegister, "Agregar registro");
             toolTip.SetToolTip(btnEditRegister, "Editar registro");
@@ -38,17 +53,6 @@ namespace NotariaDB
             toolTip.SetToolTip(btnUserInfo, "Información del usuario");
             toolTip.SetToolTip(btnPDF, "Abrir PDF");
             toolTip.SetToolTip(btnExcel, "Exportar a Excel");
-
-            SheetController test = new SheetController();
-            test.UpdateSheets(nacSheetGridView, matSheetGridView, defSheetGridView, userSheetGridView);
-        }
-
-        void includeDataSheets()
-        {
-            this.tabPageNAC.Controls.Add(nacSheetGridView);
-            this.tabPageMAT.Controls.Add(matSheetGridView);
-            this.tabPageDEF.Controls.Add(defSheetGridView);
-            this.tabPageUSER.Controls.Add(userSheetGridView);
         }
 
         private void btnDeleteRegister_Click(object sender, EventArgs e)
