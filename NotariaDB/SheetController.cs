@@ -15,9 +15,9 @@ namespace NotariaDB
             
             using (Models.notariadbContext db = new Models.notariadbContext()) {
 
-                ns.DataSource = (from nac in db.Nacimientos select nac).ToList(); //getDataFromScript(test, ns, "../../../Scripts/get-all-nacimientos.sql");
-                ms.DataSource = (from mat in db.Matrimonios select mat).ToList(); //getDataFromScript(test, ms, "../../../Scripts/get-all-matrimonios.sql");
-                ds.DataSource = (from def in db.Defunciones select def).ToList(); //getDataFromScript(test, ds, "../../../Scripts/get-all-defunciones.sql");
+                //ns.DataSource = (from nac in db.Nacimientos select nac).ToList(); //getDataFromScript(test, ns, "../../../Scripts/get-all-nacimientos.sql");
+                //ms.DataSource = (from mat in db.Matrimonios select mat).ToList(); //getDataFromScript(test, ms, "../../../Scripts/get-all-matrimonios.sql");
+                //ds.DataSource = (from def in db.Defunciones select def).ToList(); //getDataFromScript(test, ds, "../../../Scripts/get-all-defunciones.sql");
                 us.DataSource = (from user in db.Usuarios
                                  select new 
                                  {

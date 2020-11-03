@@ -76,9 +76,9 @@ namespace NotariaDB
 
             if (tabControl.SelectedTab == tabPageUSER)
             {
-                userSheetGridView.SelectedRows[0].ReadOnly = true;
-                userSheetGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.Gray;
-                userSheetGridView.SelectedRows[0].DefaultCellStyle.ForeColor = Color.White;
+                int position = userSheetGridView.SelectedRows[0].Index;
+                userSheetGridView.CurrentCell = null;
+                userSheetGridView.Rows[position].Visible = false;
             }
         }
 
