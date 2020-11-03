@@ -30,14 +30,16 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbBasics = new System.Windows.Forms.GroupBox();
+            this.tSerial = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tBirthMinutes = new System.Windows.Forms.NumericUpDown();
             this.tBirthHour = new System.Windows.Forms.NumericUpDown();
-            this.tBloodtype = new System.Windows.Forms.ComboBox();
+            this.cBloodtype = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.tBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.dtBirthDate = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tSurname2 = new System.Windows.Forms.TextBox();
@@ -51,7 +53,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.gbAttach = new System.Windows.Forms.GroupBox();
-            this.tAttachtype = new System.Windows.Forms.ComboBox();
+            this.cAttachtype = new System.Windows.Forms.ComboBox();
             this.tMomDocument = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -74,8 +76,13 @@
             this.label21 = new System.Windows.Forms.Label();
             this.gbWitness = new System.Windows.Forms.GroupBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.tNotary = new System.Windows.Forms.ComboBox();
+            this.cNotary = new System.Windows.Forms.ComboBox();
             this.btnAccept = new System.Windows.Forms.Button();
+            this.cDepartment = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cCity = new System.Windows.Forms.ComboBox();
             this.gbBasics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBirthMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBirthHour)).BeginInit();
@@ -83,6 +90,7 @@
             this.gbMom.SuspendLayout();
             this.gbDad.SuspendLayout();
             this.gbWitness.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -97,14 +105,16 @@
             // 
             // gbBasics
             // 
+            this.gbBasics.Controls.Add(this.tSerial);
+            this.gbBasics.Controls.Add(this.label1);
             this.gbBasics.Controls.Add(this.label7);
             this.gbBasics.Controls.Add(this.label6);
             this.gbBasics.Controls.Add(this.tBirthMinutes);
             this.gbBasics.Controls.Add(this.tBirthHour);
-            this.gbBasics.Controls.Add(this.tBloodtype);
+            this.gbBasics.Controls.Add(this.cBloodtype);
             this.gbBasics.Controls.Add(this.label12);
             this.gbBasics.Controls.Add(this.label11);
-            this.gbBasics.Controls.Add(this.tBirthDate);
+            this.gbBasics.Controls.Add(this.dtBirthDate);
             this.gbBasics.Controls.Add(this.label10);
             this.gbBasics.Controls.Add(this.label5);
             this.gbBasics.Controls.Add(this.tSurname2);
@@ -117,15 +127,34 @@
             this.gbBasics.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gbBasics.Location = new System.Drawing.Point(12, 45);
             this.gbBasics.Name = "gbBasics";
-            this.gbBasics.Size = new System.Drawing.Size(470, 268);
+            this.gbBasics.Size = new System.Drawing.Size(470, 305);
             this.gbBasics.TabIndex = 1;
             this.gbBasics.TabStop = false;
             this.gbBasics.Text = "Datos básicos";
             // 
+            // tSerial
+            // 
+            this.tSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tSerial.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tSerial.Location = new System.Drawing.Point(191, 54);
+            this.tSerial.Name = "tSerial";
+            this.tSerial.Size = new System.Drawing.Size(265, 26);
+            this.tSerial.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(6, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Serial:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(329, 186);
+            this.label7.Location = new System.Drawing.Point(329, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 23);
             this.label7.TabIndex = 0;
@@ -135,7 +164,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(200, 186);
+            this.label6.Location = new System.Drawing.Point(200, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 23);
             this.label6.TabIndex = 0;
@@ -146,32 +175,33 @@
             // 
             this.tBirthMinutes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tBirthMinutes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tBirthMinutes.Location = new System.Drawing.Point(379, 185);
+            this.tBirthMinutes.Location = new System.Drawing.Point(379, 217);
             this.tBirthMinutes.Name = "tBirthMinutes";
             this.tBirthMinutes.Size = new System.Drawing.Size(58, 26);
-            this.tBirthMinutes.TabIndex = 7;
+            this.tBirthMinutes.TabIndex = 8;
             // 
             // tBirthHour
             // 
             this.tBirthHour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tBirthHour.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tBirthHour.Location = new System.Drawing.Point(250, 185);
+            this.tBirthHour.Location = new System.Drawing.Point(250, 217);
             this.tBirthHour.Name = "tBirthHour";
             this.tBirthHour.Size = new System.Drawing.Size(58, 26);
-            this.tBirthHour.TabIndex = 6;
+            this.tBirthHour.TabIndex = 7;
             // 
-            // tBloodtype
+            // cBloodtype
             // 
-            this.tBloodtype.FormattingEnabled = true;
-            this.tBloodtype.Location = new System.Drawing.Point(191, 219);
-            this.tBloodtype.Name = "tBloodtype";
-            this.tBloodtype.Size = new System.Drawing.Size(265, 25);
-            this.tBloodtype.TabIndex = 8;
+            this.cBloodtype.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cBloodtype.FormattingEnabled = true;
+            this.cBloodtype.Location = new System.Drawing.Point(191, 251);
+            this.cBloodtype.Name = "cBloodtype";
+            this.cBloodtype.Size = new System.Drawing.Size(265, 28);
+            this.cBloodtype.TabIndex = 9;
             // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(6, 218);
+            this.label12.Location = new System.Drawing.Point(6, 250);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(172, 23);
             this.label12.TabIndex = 0;
@@ -181,31 +211,31 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(6, 186);
+            this.label11.Location = new System.Drawing.Point(6, 218);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(172, 23);
             this.label11.TabIndex = 0;
             this.label11.Text = "Hora de nacimiento:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tBirthDate
+            // dtBirthDate
             // 
-            this.tBirthDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tBirthDate.CalendarFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tBirthDate.CustomFormat = " dd / MMM / yyyy";
-            this.tBirthDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.tBirthDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tBirthDate.Location = new System.Drawing.Point(191, 152);
-            this.tBirthDate.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
-            this.tBirthDate.Name = "tBirthDate";
-            this.tBirthDate.Size = new System.Drawing.Size(265, 26);
-            this.tBirthDate.TabIndex = 5;
+            this.dtBirthDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtBirthDate.CalendarFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtBirthDate.CustomFormat = " dd / MMM / yyyy";
+            this.dtBirthDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtBirthDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtBirthDate.Location = new System.Drawing.Point(191, 184);
+            this.dtBirthDate.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.dtBirthDate.Name = "dtBirthDate";
+            this.dtBirthDate.Size = new System.Drawing.Size(265, 26);
+            this.dtBirthDate.TabIndex = 6;
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(6, 152);
+            this.label10.Location = new System.Drawing.Point(6, 184);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(172, 23);
             this.label10.TabIndex = 0;
@@ -215,7 +245,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 120);
+            this.label5.Location = new System.Drawing.Point(6, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 23);
             this.label5.TabIndex = 0;
@@ -226,15 +256,15 @@
             // 
             this.tSurname2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tSurname2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tSurname2.Location = new System.Drawing.Point(191, 118);
+            this.tSurname2.Location = new System.Drawing.Point(191, 150);
             this.tSurname2.Name = "tSurname2";
             this.tSurname2.Size = new System.Drawing.Size(265, 26);
-            this.tSurname2.TabIndex = 4;
+            this.tSurname2.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(6, 88);
+            this.label4.Location = new System.Drawing.Point(6, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(172, 23);
             this.label4.TabIndex = 0;
@@ -245,24 +275,24 @@
             // 
             this.tSurname1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tSurname1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tSurname1.Location = new System.Drawing.Point(191, 86);
+            this.tSurname1.Location = new System.Drawing.Point(191, 118);
             this.tSurname1.Name = "tSurname1";
             this.tSurname1.Size = new System.Drawing.Size(265, 26);
-            this.tSurname1.TabIndex = 3;
+            this.tSurname1.TabIndex = 4;
             // 
             // tName
             // 
             this.tName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tName.Location = new System.Drawing.Point(191, 54);
+            this.tName.Location = new System.Drawing.Point(191, 86);
             this.tName.Name = "tName";
             this.tName.Size = new System.Drawing.Size(265, 26);
-            this.tName.TabIndex = 2;
+            this.tName.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(6, 56);
+            this.label3.Location = new System.Drawing.Point(6, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(172, 23);
             this.label3.TabIndex = 0;
@@ -319,25 +349,28 @@
             // 
             // gbAttach
             // 
-            this.gbAttach.Controls.Add(this.tAttachtype);
+            this.gbAttach.Controls.Add(this.cAttachtype);
             this.gbAttach.Controls.Add(this.tAttachDescription);
             this.gbAttach.Controls.Add(this.label8);
             this.gbAttach.Controls.Add(this.label9);
             this.gbAttach.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.gbAttach.Location = new System.Drawing.Point(12, 319);
+            this.gbAttach.Location = new System.Drawing.Point(12, 456);
             this.gbAttach.Name = "gbAttach";
             this.gbAttach.Size = new System.Drawing.Size(470, 94);
-            this.gbAttach.TabIndex = 2;
+            this.gbAttach.TabIndex = 3;
             this.gbAttach.TabStop = false;
             this.gbAttach.Text = "Antecedente";
             // 
-            // tAttachtype
+            // cAttachtype
             // 
-            this.tAttachtype.FormattingEnabled = true;
-            this.tAttachtype.Location = new System.Drawing.Point(191, 21);
-            this.tAttachtype.Name = "tAttachtype";
-            this.tAttachtype.Size = new System.Drawing.Size(265, 25);
-            this.tAttachtype.TabIndex = 1;
+            this.cAttachtype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cAttachtype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cAttachtype.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cAttachtype.FormattingEnabled = true;
+            this.cAttachtype.Location = new System.Drawing.Point(191, 20);
+            this.cAttachtype.Name = "cAttachtype";
+            this.cAttachtype.Size = new System.Drawing.Size(265, 28);
+            this.cAttachtype.TabIndex = 1;
             // 
             // tMomDocument
             // 
@@ -573,39 +606,100 @@
             // label22
             // 
             this.label22.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(18, 419);
+            this.label22.Location = new System.Drawing.Point(502, 494);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(172, 23);
+            this.label22.Size = new System.Drawing.Size(113, 23);
             this.label22.TabIndex = 0;
             this.label22.Text = "Notario:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tNotary
+            // cNotary
             // 
-            this.tNotary.FormattingEnabled = true;
-            this.tNotary.Location = new System.Drawing.Point(203, 419);
-            this.tNotary.Name = "tNotary";
-            this.tNotary.Size = new System.Drawing.Size(265, 23);
-            this.tNotary.TabIndex = 3;
+            this.cNotary.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cNotary.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cNotary.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cNotary.FormattingEnabled = true;
+            this.cNotary.Location = new System.Drawing.Point(620, 494);
+            this.cNotary.Name = "cNotary";
+            this.cNotary.Size = new System.Drawing.Size(266, 28);
+            this.cNotary.TabIndex = 7;
             // 
             // btnAccept
             // 
             this.btnAccept.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAccept.Location = new System.Drawing.Point(365, 466);
+            this.btnAccept.Location = new System.Drawing.Point(358, 566);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(215, 32);
-            this.btnAccept.TabIndex = 7;
+            this.btnAccept.TabIndex = 8;
             this.btnAccept.Text = "Aceptar";
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            // 
+            // cDepartment
+            // 
+            this.cDepartment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cDepartment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cDepartment.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cDepartment.FormattingEnabled = true;
+            this.cDepartment.Location = new System.Drawing.Point(191, 20);
+            this.cDepartment.Name = "cDepartment";
+            this.cDepartment.Size = new System.Drawing.Size(265, 28);
+            this.cDepartment.TabIndex = 1;
+            this.cDepartment.SelectedIndexChanged += new System.EventHandler(this.cDepartment_SelectedIndexChanged);
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label23.Location = new System.Drawing.Point(6, 56);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(172, 23);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Ciudad:";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label24
+            // 
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label24.Location = new System.Drawing.Point(6, 24);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(172, 23);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Departamento:";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cCity);
+            this.groupBox1.Controls.Add(this.cDepartment);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(12, 356);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(470, 94);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lugar de nacimiento";
+            // 
+            // cCity
+            // 
+            this.cCity.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cCity.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cCity.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cCity.FormattingEnabled = true;
+            this.cCity.Location = new System.Drawing.Point(191, 56);
+            this.cCity.Name = "cCity";
+            this.cCity.Size = new System.Drawing.Size(265, 28);
+            this.cCity.TabIndex = 2;
             // 
             // FormNacRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 517);
+            this.ClientSize = new System.Drawing.Size(927, 610);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAccept);
-            this.Controls.Add(this.tNotary);
+            this.Controls.Add(this.cNotary);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.gbWitness);
             this.Controls.Add(this.gbDad);
@@ -616,6 +710,7 @@
             this.Name = "FormNacRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo registro de nacimiento";
+            this.Load += new System.EventHandler(this.FormNacRegister_Load);
             this.gbBasics.ResumeLayout(false);
             this.gbBasics.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBirthMinutes)).EndInit();
@@ -628,6 +723,7 @@
             this.gbDad.PerformLayout();
             this.gbWitness.ResumeLayout(false);
             this.gbWitness.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -649,16 +745,16 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox gbAttach;
-        private System.Windows.Forms.DateTimePicker tBirthDate;
+        private System.Windows.Forms.DateTimePicker dtBirthDate;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox tBloodtype;
+        private System.Windows.Forms.ComboBox cBloodtype;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown tBirthMinutes;
         private System.Windows.Forms.NumericUpDown tBirthHour;
-        private System.Windows.Forms.ComboBox tAttachtype;
+        private System.Windows.Forms.ComboBox cAttachtype;
         private System.Windows.Forms.TextBox tMomDocument;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -681,7 +777,14 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.GroupBox gbWitness;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox tNotary;
+        private System.Windows.Forms.ComboBox cNotary;
         private System.Windows.Forms.Button btnAccept;
+        private System.Windows.Forms.TextBox tSerial;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cDepartment;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cCity;
     }
 }

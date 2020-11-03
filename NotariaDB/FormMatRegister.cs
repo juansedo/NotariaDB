@@ -10,8 +10,6 @@ namespace NotariaDB
 {
     public partial class FormMatRegister : Form
     {
-        public Entities.MatRegister Register;
-
         public FormMatRegister()
         {
             InitializeComponent();

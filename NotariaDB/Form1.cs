@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NotariaDB.Controllers;
 
 namespace NotariaDB
 {
@@ -37,7 +38,7 @@ namespace NotariaDB
             toolTip.SetToolTip(btnUserInfo, "Información del usuario");
             toolTip.SetToolTip(btnPDF, "Abrir PDF");
             toolTip.SetToolTip(btnExcel, "Exportar a Excel");
-            
+
             SheetController test = new SheetController();
             test.UpdateSheets(nacSheetGridView, matSheetGridView, defSheetGridView, userSheetGridView);
         }
@@ -90,7 +91,7 @@ namespace NotariaDB
                     var result = form.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        Entities.NacRegister reg = form.Register;
+                        //Models.Nacimientos reg = form.Register;
 
                         //DatabaseModel.insert(reg);
                     }
@@ -104,8 +105,7 @@ namespace NotariaDB
                     var result = form.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        Entities.MatRegister reg = form.Register;
-
+                        
                         //DatabaseModel.insert(reg);
                     }
                 }

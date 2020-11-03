@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using NotariaDB.Entities;
 using NotariaDB.Models;
 
 
