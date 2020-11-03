@@ -57,30 +57,46 @@ namespace NotariaDB
             this.Register.Name = tName.Text;
             this.Register.Surname1 = tSurname1.Text;
             //this.Register.Birthdate
-            using (Models.notariadbContext db = new Models.notariadbContext()) {
-                this.Register.Bloodtype = db.Bloodtypes
-                                            .Single(c => c.Name == cBloodtype.Text);
-                //this.Register.Place = db.Places
-                //                            .Where(c => c. == cBloodtype.Text &&)
-                //                            .First();
-            }
 
+            try
+            {
+                using Models.notariadbContext db = new Models.notariadbContext();
+                int btype_id = Int32.Parse(cBloodtype.SelectedValue.ToString());
+                int department_id = Int32.Parse(cDepartment.SelectedValue.ToString());
+                int city_id = Int32.Parse(cCity.SelectedValue.ToString());
+                int attach_id = Int32.Parse(cAttachtype.SelectedValue.ToString());
+                string notary_id = cNotary.SelectedValue.ToString();
+
+                this.Register.Bloodtype = db.Bloodtypes.Single(c => c.BloodtypeId == btype_id);
+                this.Register.Place = db.Places.Single(c => c.DepartmentId == department_id && c.CityId == city_id);
+                this.Register.Attach = db.NacAttaches.Single(c => c.AttachId == attach_id);
+                this.Register.Notary = db.Notarios.Single(c => c.UserId == notary_id);
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Faltan campos por llenar", "Error 001 - " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error desconocido", "Error 00? - " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             //this.DialogResult = DialogResult.OK;
             //this.Close();
         }
 
         private void cDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cCity.Items.Clear();
-            cCity.Text = "";
             int selection = Int32.Parse(cDepartment.SelectedValue.ToString());
             using (Models.notariadbContext db = new Models.notariadbContext())
             {
-                cCity.Items.AddRange((from p in db.Places
+                cCity.DisplayMember = "Name";
+                cCity.ValueMember = "Id";
+                cCity.DataSource = (from p in db.Places
                                       join c in db.Cities
                                       on p.CityId equals c.Id
                                       where p.DepartmentId == selection
-                                      select c.Name).ToArray());
+                                      select new { Id = c.Id, Name = c.Name }).ToList();
+                cCity.SelectedItem = null;
             }
         }
     }
