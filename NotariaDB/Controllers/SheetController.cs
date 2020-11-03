@@ -12,13 +12,16 @@ namespace NotariaDB.Controllers
             using (Models.notariadbContext db = new Models.notariadbContext())
             {
                 ns.DataSource = QueryController.getNacSheetData();
-                ns.eraseExtraColumns();
-                
+                FormStylist.HideColumns(ns, "BloodtypeId", "BirthHour", "NotaryId",
+                    "WitnessId", "AttachId", "AttachDescription",
+                    "Fileroute", "Attach", "Bloodtype", "Dad", "Mom",
+                    "Notary", "Place", "Relateduser", "Witness");
+
                 ms.DataSource = QueryController.getMatSheetData();
-                ms.eraseExtraColumns();
+                //FormStylist.HideColumns(ms, );
 
                 ds.DataSource = QueryController.getDefSheetData();
-                ds.eraseExtraColumns();
+                //FormStylist.HideColumns(ds, );
 
                 us.DataSource = QueryController.getUserSheetData();
                 FormStylist.HideColumns(us, "Doctype", "Notarios", "DefuncionesRelateduser", "DefuncionesWitness",

@@ -84,8 +84,6 @@ namespace NotariaDB
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
             Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
         }
-
-        public abstract void eraseExtraColumns();
     }
 
     class NacSheet : SheetGridView
@@ -94,53 +92,12 @@ namespace NotariaDB
         {
 
         }
-
-        public override void eraseExtraColumns()
-        {
-            try {
-                this.Columns.Remove("DefuncionesRelateduser");
-                this.Columns.Remove("DefuncionesWitness");
-                this.Columns.Remove("MatrimoniosRelateduser1");
-                this.Columns.Remove("MatrimoniosRelateduser2");
-                this.Columns.Remove("MatrimoniosWitness");
-                this.Columns.Remove("NacimientosDad");
-                this.Columns.Remove("NacimientosMom");
-                this.Columns.Remove("NacimientosRelateduser");
-                this.Columns.Remove("NacimientosWitness");
-            }
-            catch (Exception ex)
-            {
-
-            }
-            
-        }
     }
 
     class MatSheet : SheetGridView
     {
         public MatSheet(string name = "matSheet") : base(name)
         {
-
-        }
-
-        public override void eraseExtraColumns()
-        {
-            try
-            {
-                this.Columns.Remove("DefuncionesRelateduser");
-                this.Columns.Remove("DefuncionesWitness");
-                this.Columns.Remove("MatrimoniosRelateduser1");
-                this.Columns.Remove("MatrimoniosRelateduser2");
-                this.Columns.Remove("MatrimoniosWitness");
-                this.Columns.Remove("NacimientosDad");
-                this.Columns.Remove("NacimientosMom");
-                this.Columns.Remove("NacimientosRelateduser");
-                this.Columns.Remove("NacimientosWitness");
-            }
-            catch (Exception ex)
-            {
-
-            }
 
         }
     }
@@ -151,39 +108,12 @@ namespace NotariaDB
         {
 
         }
-
-        public override void eraseExtraColumns()
-        {
-            try
-            {
-                this.Columns.Remove("DefuncionesRelateduser");
-                this.Columns.Remove("DefuncionesWitness");
-                this.Columns.Remove("MatrimoniosRelateduser1");
-                this.Columns.Remove("MatrimoniosRelateduser2");
-                this.Columns.Remove("MatrimoniosWitness");
-                this.Columns.Remove("NacimientosDad");
-                this.Columns.Remove("NacimientosMom");
-                this.Columns.Remove("NacimientosRelateduser");
-                this.Columns.Remove("NacimientosWitness");
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-        }
     }
 
     class UserSheet : SheetGridView
     {
         public UserSheet(string name = "userSheet") : base(name)
         {
-
-        }
-
-        public override void eraseExtraColumns()
-        {
-            
 
         }
     }
