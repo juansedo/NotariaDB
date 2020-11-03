@@ -24,10 +24,12 @@ namespace NotariaDB
         {
             InitializeComponent();
             includeDataSheetsToView();
-            applyStyles();
+            
             
             SheetController test = new SheetController();
             test.UpdateSheets(nacSheetGridView, matSheetGridView, defSheetGridView, userSheetGridView);
+
+            applyStyles();
         }
 
         void includeDataSheetsToView()

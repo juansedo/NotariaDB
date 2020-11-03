@@ -183,24 +183,7 @@ namespace NotariaDB
 
         public override void eraseExtraColumns()
         {
-            try
-            {
-                this.Columns["Doctype"].Visible = false;
-                this.Columns["Notarios"].Visible = false;
-                this.Columns["DefuncionesRelateduser"].Visible = false;
-                this.Columns["DefuncionesWitness"].Visible = false;
-                this.Columns["MatrimoniosRelateduser1"].Visible = false;
-                this.Columns["MatrimoniosRelateduser2"].Visible = false;
-                this.Columns["MatrimoniosWitness"].Visible = false;
-                this.Columns["NacimientosDad"].Visible = false;
-                this.Columns["NacimientosMom"].Visible = false;
-                this.Columns["NacimientosRelateduser"].Visible = false;
-                this.Columns["NacimientosWitness"].Visible = false;
-            }
-            catch (Exception ex)
-            {
-
-            }
+            
 
         }
     }

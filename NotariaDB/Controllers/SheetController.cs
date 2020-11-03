@@ -21,7 +21,9 @@ namespace NotariaDB.Controllers
                 ds.eraseExtraColumns();
 
                 us.DataSource = QueryController.getUserSheetData();
-                us.eraseExtraColumns();
+                FormStylist.HideColumns(us, "Doctype", "Notarios", "DefuncionesRelateduser", "DefuncionesWitness",
+                    "MatrimoniosRelateduser1", "MatrimoniosRelateduser2", "MatrimoniosWitness", "NacimientosDad",
+                    "NacimientosMom", "NacimientosRelateduser", "NacimientosWitness");
             }
         }
     }
