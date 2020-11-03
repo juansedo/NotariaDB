@@ -56,34 +56,20 @@ namespace NotariaDB
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            this.Register.Nuip = tNuip.Text;
-            this.Register.Serial = tSerial.Text;
-            this.Register.Sex = cSex.SelectedItem.ToString().Substring(0, 1);
-            this.Register.Name = tName.Text;
-            this.Register.Surname1 = tSurname1.Text;
-            this.Register.Surname2 = tSurname2.Text;
-            this.Register.RegDate = DateTime.Now;
-            this.Register.BirthDate = dtBirthDate.Value;
-            this.Register.BirthHour = new TimeSpan(decimal.ToInt32(tBirthHour.Value), decimal.ToInt32(tBirthMinutes.Value), 0);
-            this.Register.MomId = tMomDocument.Text;
-            this.Register.DadId = tDadDocument.Text;
-            this.Register.WitnessId = tWitDocument.Text;
-            
             try
             {
-                /*
-                using Models.notariadbContext db = new Models.notariadbContext();
-                int btype_id = Int32.Parse(cBloodtype.SelectedValue.ToString());
-                int department_id = Int32.Parse(cDepartment.SelectedValue.ToString());
-                int city_id = Int32.Parse(cCity.SelectedValue.ToString());
-                int attach_id = Int32.Parse(cAttachtype.SelectedValue.ToString());
-                string notary_id = cNotary.SelectedValue.ToString();
-
-                this.Register.Bloodtype = db.Bloodtypes.Single(c => c.BloodtypeId == btype_id);
-                this.Register.Place = db.Places.Single(c => c.DepartmentId == department_id && c.CityId == city_id);
-                this.Register.Attach = db.NacAttaches.Single(c => c.AttachId == attach_id);
-                this.Register.Notary = db.Notarios.Single(c => c.UserId == notary_id);
-                */
+                this.Register.Nuip = tNuip.Text;
+                this.Register.Serial = tSerial.Text;
+                this.Register.Sex = cSex.SelectedItem.ToString().Substring(0, 1);
+                this.Register.Name = tName.Text;
+                this.Register.Surname1 = tSurname1.Text;
+                this.Register.Surname2 = tSurname2.Text;
+                this.Register.RegDate = DateTime.Now;
+                this.Register.BirthDate = dtBirthDate.Value;
+                this.Register.BirthHour = new TimeSpan(decimal.ToInt32(tBirthHour.Value), decimal.ToInt32(tBirthMinutes.Value), 0);
+                this.Register.MomId = tMomDocument.Text;
+                this.Register.DadId = tDadDocument.Text;
+                this.Register.WitnessId = tWitDocument.Text;
                 this.Register.BloodtypeId = Int32.Parse(cBloodtype.SelectedValue.ToString());
                 this.Register.PlaceId = Int32.Parse(cDepartment.SelectedValue.ToString());
                 this.Register.AttachId = Int32.Parse(cAttachtype.SelectedValue.ToString());

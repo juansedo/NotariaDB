@@ -102,6 +102,8 @@ namespace NotariaDB
                             db.Add(reg);
 
                             db.SaveChanges();
+                            SheetController test = new SheetController();
+                            test.UpdateSheets(nacSheetGridView, matSheetGridView, defSheetGridView, userSheetGridView);
                         }
 
                     }
