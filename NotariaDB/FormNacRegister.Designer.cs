@@ -191,10 +191,11 @@
             // 
             // cBloodtype
             // 
+            this.cBloodtype.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cBloodtype.FormattingEnabled = true;
             this.cBloodtype.Location = new System.Drawing.Point(191, 251);
             this.cBloodtype.Name = "cBloodtype";
-            this.cBloodtype.Size = new System.Drawing.Size(265, 25);
+            this.cBloodtype.Size = new System.Drawing.Size(265, 28);
             this.cBloodtype.TabIndex = 9;
             // 
             // label12
@@ -362,10 +363,11 @@
             // 
             // cAttachtype
             // 
+            this.cAttachtype.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cAttachtype.FormattingEnabled = true;
-            this.cAttachtype.Location = new System.Drawing.Point(191, 21);
+            this.cAttachtype.Location = new System.Drawing.Point(191, 20);
             this.cAttachtype.Name = "cAttachtype";
-            this.cAttachtype.Size = new System.Drawing.Size(265, 25);
+            this.cAttachtype.Size = new System.Drawing.Size(265, 28);
             this.cAttachtype.TabIndex = 1;
             // 
             // tMomDocument
@@ -611,10 +613,11 @@
             // 
             // cNotary
             // 
+            this.cNotary.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cNotary.FormattingEnabled = true;
-            this.cNotary.Location = new System.Drawing.Point(620, 496);
+            this.cNotary.Location = new System.Drawing.Point(620, 494);
             this.cNotary.Name = "cNotary";
-            this.cNotary.Size = new System.Drawing.Size(266, 23);
+            this.cNotary.Size = new System.Drawing.Size(266, 28);
             this.cNotary.TabIndex = 7;
             // 
             // btnAccept
@@ -630,10 +633,11 @@
             // 
             // cDepartment
             // 
+            this.cDepartment.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cDepartment.FormattingEnabled = true;
-            this.cDepartment.Location = new System.Drawing.Point(191, 21);
+            this.cDepartment.Location = new System.Drawing.Point(191, 20);
             this.cDepartment.Name = "cDepartment";
-            this.cDepartment.Size = new System.Drawing.Size(265, 25);
+            this.cDepartment.Size = new System.Drawing.Size(265, 28);
             this.cDepartment.TabIndex = 1;
             // 
             // label23
@@ -672,10 +676,11 @@
             // 
             // cCity
             // 
+            this.cCity.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cCity.FormattingEnabled = true;
-            this.cCity.Location = new System.Drawing.Point(191, 57);
+            this.cCity.Location = new System.Drawing.Point(191, 56);
             this.cCity.Name = "cCity";
-            this.cCity.Size = new System.Drawing.Size(265, 25);
+            this.cCity.Size = new System.Drawing.Size(265, 28);
             this.cCity.TabIndex = 2;
             // 
             // FormNacRegister
