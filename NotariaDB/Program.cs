@@ -20,13 +20,14 @@ namespace NotariaDB
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new formMain());
 
-            //using(Models.notariadbContext db = new Models.notariadbContext())
+            //using (Models.notariadbContext db = new Models.notariadbContext())
             //{
-            //    List<Models.Nacimientos> lst = (from d in db.Nacimientos select d).ToList();
+            //    List<Models.Usuarios> lst = (from d in db.Usuarios select d).ToList();
 
-            //    foreach (Models.Nacimientos i in lst)
+            //    foreach (Models.Usuarios i in lst)
             //    {
-            //        System.Diagnostics.Debug.WriteLine(i.Name);
+            //        i.Doctype = (from d in db.Doctypes where d.DoctypeId == i.DoctypeId select d).First();
+            //        System.Diagnostics.Debug.WriteLine(i.Doctype.Description);
             //    }
             //}
         }
