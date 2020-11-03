@@ -71,6 +71,8 @@ namespace NotariaDB
                 this.Register.Place = db.Places.Single(c => c.DepartmentId == department_id && c.CityId == city_id);
                 this.Register.Attach = db.NacAttaches.Single(c => c.AttachId == attach_id);
                 this.Register.Notary = db.Notarios.Single(c => c.UserId == notary_id);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (NullReferenceException ex)
             {
@@ -80,8 +82,6 @@ namespace NotariaDB
             {
                 MessageBox.Show("Error desconocido", "Error 00? - " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
 
         private void cDepartment_SelectedIndexChanged(object sender, EventArgs e)

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
-using NotariaDB.Entities;
 
 namespace NotariaDB
 {
@@ -121,14 +120,6 @@ namespace NotariaDB
             Columns[15].Name = "DOCUMENTO USUARIO REL.";
             Columns[16].Name = "NOTARIO";
         }
-
-        public void AddRow(NacRegister reg)
-        {
-            Rows.Add(reg.Nuip, reg.Serial, reg.Name, reg.Surname,
-                reg.Sex, reg.Bloodtype, reg.Place, reg.Birth_date, reg.Reg_date,
-                reg.Attachtype, reg.Attach_description, reg.Mom_id, reg.Dad_id,
-                reg.Witness1_id, reg.Relateduser_id, reg.Notary, reg.Fileroute);
-        }
     }
 
     class MatSheet : SheetGridView
@@ -196,10 +187,6 @@ namespace NotariaDB
             Columns[6].Name = "FECHA DE NACIMIENTO";
         }
 
-        public void AddRow(User user)
-        {
-            Rows.Add(user.Id, user.Doctype, user.Name, user.Surname, user.Expedition_place, user.Expedition_date, user.Birth_date);
-        }
     }
 
 }

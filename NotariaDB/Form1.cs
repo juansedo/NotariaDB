@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NotariaDB.Controllers;
 
 namespace NotariaDB
 {
@@ -63,7 +64,7 @@ namespace NotariaDB
         {
             if (tabControl.SelectedTab == tabPageNAC)
             {
-                /*using (var form = new FormNacRegister())
+                using (var form = new FormNacRegister())
                 {
                     var result = form.ShowDialog();
                     if (result == DialogResult.OK)
@@ -72,7 +73,7 @@ namespace NotariaDB
 
                         //DatabaseModel.insert(reg);
                     }
-                }*/
+                }
             }
 
             if (tabControl.SelectedTab == tabPageMAT)
@@ -82,8 +83,7 @@ namespace NotariaDB
                     var result = form.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        Entities.MatRegister reg = form.Register;
-
+                        
                         //DatabaseModel.insert(reg);
                     }
                 }
