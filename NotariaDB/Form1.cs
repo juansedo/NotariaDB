@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,30 +56,35 @@ namespace NotariaDB
         {
             if (tabControl.SelectedTab == tabPageNAC)
             {
-                nacSheetGridView.SelectedRows[0].ReadOnly = true;
-                nacSheetGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.Gray;
-                nacSheetGridView.SelectedRows[0].DefaultCellStyle.ForeColor = Color.White;
+                int position = userSheetGridView.SelectedRows[0].Index;
+                userSheetGridView.CurrentCell = null;
+                userSheetGridView.Rows[position].Visible = false;
             }
 
             if (tabControl.SelectedTab == tabPageMAT)
             {
-                matSheetGridView.SelectedRows[0].ReadOnly = true;
-                matSheetGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.Gray;
-                matSheetGridView.SelectedRows[0].DefaultCellStyle.ForeColor = Color.White;
+                int position = userSheetGridView.SelectedRows[0].Index;
+                userSheetGridView.CurrentCell = null;
+                userSheetGridView.Rows[position].Visible = false;
             }
 
             if (tabControl.SelectedTab == tabPageDEF)
             {
-                defSheetGridView.SelectedRows[0].ReadOnly = true;
-                defSheetGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.Gray;
-                defSheetGridView.SelectedRows[0].DefaultCellStyle.ForeColor = Color.White;
+                int position = userSheetGridView.SelectedRows[0].Index;
+                userSheetGridView.CurrentCell = null;
+                userSheetGridView.Rows[position].Visible = false;
             }
 
             if (tabControl.SelectedTab == tabPageUSER)
             {
-                int position = userSheetGridView.SelectedRows[0].Index;
-                userSheetGridView.CurrentCell = null;
-                userSheetGridView.Rows[position].Visible = false;
+                DialogResult answer = MessageBox.Show("¿Esta seguro que desea eliminar el registro de " + userSheetGridView.SelectedRows[0].Cells[2].Value + "?", "Eliminar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (answer == DialogResult.Yes)
+                {
+                    int position = userSheetGridView.SelectedRows[0].Index;
+                    userSheetGridView.CurrentCell = null;
+                    userSheetGridView.Rows[position].Visible = false;
+                }
+                
             }
         }
 
