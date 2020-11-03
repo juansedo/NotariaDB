@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Linq;
+using NotariaDB.Models;
 
 namespace NotariaDB
 {
@@ -47,6 +48,20 @@ namespace NotariaDB
             this.Close();
         }
 
-        
+        private void cDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cCity.Items.Clear();
+            cCity.Text = "";
+            string selection = cDepartment.SelectedItem.ToString();
+            using (Models.notariadbContext db = new Models.notariadbContext())
+            {
+                int box_id = db.Departments.Where(c => c.Name == selection).Select(c => c.Id).First(); 
+                cCity.Items.AddRange((from p in db.Places
+                                      join c in db.Cities
+                                      on p.CityId equals c.Id
+                                      where p.DepartmentId == box_id
+                                      select c.Name).ToArray());
+            }
+        }
     }
 }

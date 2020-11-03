@@ -363,6 +363,8 @@
             // 
             // cAttachtype
             // 
+            this.cAttachtype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cAttachtype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cAttachtype.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cAttachtype.FormattingEnabled = true;
             this.cAttachtype.Location = new System.Drawing.Point(191, 20);
@@ -613,6 +615,8 @@
             // 
             // cNotary
             // 
+            this.cNotary.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cNotary.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cNotary.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cNotary.FormattingEnabled = true;
             this.cNotary.Location = new System.Drawing.Point(620, 494);
@@ -633,12 +637,15 @@
             // 
             // cDepartment
             // 
+            this.cDepartment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cDepartment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cDepartment.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cDepartment.FormattingEnabled = true;
             this.cDepartment.Location = new System.Drawing.Point(191, 20);
             this.cDepartment.Name = "cDepartment";
             this.cDepartment.Size = new System.Drawing.Size(265, 28);
             this.cDepartment.TabIndex = 1;
+            this.cDepartment.SelectedIndexChanged += new System.EventHandler(this.cDepartment_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -676,6 +683,8 @@
             // 
             // cCity
             // 
+            this.cCity.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cCity.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cCity.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cCity.FormattingEnabled = true;
             this.cCity.Location = new System.Drawing.Point(191, 56);
