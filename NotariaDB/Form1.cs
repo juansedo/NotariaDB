@@ -35,7 +35,7 @@ namespace NotariaDB
             toolTip.SetToolTip(btnUserInfo, "Información del usuario");
             toolTip.SetToolTip(btnPDF, "Abrir PDF");
             toolTip.SetToolTip(btnExcel, "Exportar a Excel");
-            
+
             SheetController test = new SheetController();
             test.UpdateSheets(nacSheetGridView, matSheetGridView, defSheetGridView, userSheetGridView);
         }
