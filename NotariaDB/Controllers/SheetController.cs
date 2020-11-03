@@ -18,10 +18,13 @@ namespace NotariaDB.Controllers
                     "Notary", "Place", "Relateduser", "Witness");
 
                 ms.DataSource = QueryController.getMatSheetData();
-                //FormStylist.HideColumns(ms, );
+                FormStylist.HideColumns(ms, "NotaryId", "WitnessId", "AttachId", "AttachDescription",
+                    "Fileroute", "Attach", "Notary", "Place",
+                    "Relateduser1", "Relateduser2", "Witness");
 
                 ds.DataSource = QueryController.getDefSheetData();
-                //FormStylist.HideColumns(ds, );
+                FormStylist.HideColumns(ds, "MedicId", "WitnessId", "NotaryId", "AttachDescription", "Fileroute",
+                    "Medic", "Notary", "Place", "Relateduser", "Witness");
 
                 us.DataSource = QueryController.getUserSheetData();
                 FormStylist.HideColumns(us, "Doctype", "Notarios", "DefuncionesRelateduser", "DefuncionesWitness",
