@@ -18,9 +18,6 @@ namespace NotariaDB
             applyInitHeaderStyle();
 
             defineColumns();
-
-            Rows.Add("1", "PRUEBA DE TEXTO");
-            Rows.Add("2", "PRUEBA DE TEXTO");
         }
 
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using NotariaDB.Entities;
+using NotariaDB.Models;
+
 
 namespace NotariaDB
 {
@@ -17,7 +19,17 @@ namespace NotariaDB
                 ns.DataSource = (from nac in db.Nacimientos select nac).ToList(); //getDataFromScript(test, ns, "../../../Scripts/get-all-nacimientos.sql");
                 ms.DataSource = (from mat in db.Matrimonios select mat).ToList(); //getDataFromScript(test, ms, "../../../Scripts/get-all-matrimonios.sql");
                 ds.DataSource = (from def in db.Defunciones select def).ToList(); //getDataFromScript(test, ds, "../../../Scripts/get-all-defunciones.sql");
-                us.DataSource = (from user in db.Usuarios select user).ToList(); //getDataFromText(test, us, "SELECT id, d.description AS doctype, name, surname, expedition_place, expedition_date, birth_date FROM usuarios u JOIN doctypes d USING (doctype_id)");
+                us.DataSource = (from user in db.Usuarios
+                                 select new 
+                                 {
+                                     id = user.Id,
+                                     TipoDeDocumento = user.DoctypeId,
+                                     Nombre = user.Name,
+                                     Apellido = user.Surname,
+                                     LugarExpedición = user.ExpeditionPlace,
+                                     FechaExpedición = user.ExpeditionDate,
+                                     FechaNacimiento = user.BirthDate
+                                 }).ToList(); //getDataFromText(test, us, "SELECT id, d.description AS doctype, name, surname, expedition_place, expedition_date, birth_date FROM usuarios u JOIN doctypes d USING (doctype_id)");
             }
         }
 

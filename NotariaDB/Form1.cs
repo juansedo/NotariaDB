@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace NotariaDB
 {
+    
     public partial class formMain : Form
     {
+        private DataGridViewSelectedRowCollection pressed;
         private NacSheet nacSheetGridView = new NacSheet("nacSheetGridView");
         private MatSheet matSheetGridView = new MatSheet("matSheetGridView");
         private DefSheet defSheetGridView = new DefSheet("defSheetGridView");
@@ -48,15 +50,35 @@ namespace NotariaDB
             this.tabPageUSER.Controls.Add(userSheetGridView);
         }
 
-
-        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnDeleteRegister_Click(object sender, EventArgs e)
         {
+            if (tabControl.SelectedTab == tabPageNAC)
+            {
+                nacSheetGridView.SelectedRows[0].ReadOnly = true;
+                nacSheetGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.Gray;
+                nacSheetGridView.SelectedRows[0].DefaultCellStyle.ForeColor = Color.White;
+            }
 
-        }
+            if (tabControl.SelectedTab == tabPageMAT)
+            {
+                matSheetGridView.SelectedRows[0].ReadOnly = true;
+                matSheetGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.Gray;
+                matSheetGridView.SelectedRows[0].DefaultCellStyle.ForeColor = Color.White;
+            }
 
-        private void btnExcel_Click(object sender, EventArgs e)
-        {
-            //tabControl.SelectedTab.Controls[0]
+            if (tabControl.SelectedTab == tabPageDEF)
+            {
+                defSheetGridView.SelectedRows[0].ReadOnly = true;
+                defSheetGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.Gray;
+                defSheetGridView.SelectedRows[0].DefaultCellStyle.ForeColor = Color.White;
+            }
+
+            if (tabControl.SelectedTab == tabPageUSER)
+            {
+                userSheetGridView.SelectedRows[0].ReadOnly = true;
+                userSheetGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.Gray;
+                userSheetGridView.SelectedRows[0].DefaultCellStyle.ForeColor = Color.White;
+            }
         }
 
         private void btnNewRegister_Click(object sender, EventArgs e)
