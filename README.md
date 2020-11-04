@@ -1,5 +1,6 @@
 # NotariaDB
-NotariaDB es un programa con el que se gestionan los registros de nacimiento, matrimonio y defunción creados por una notaría. Actualmente **no es funcional** y sigue en desarrollo.
+
+NotariaDB is a program that manages the birth, marriage and death records created by a notary's office. Currently ** not functional ** and still under development.
 
 ## Getting started
 
