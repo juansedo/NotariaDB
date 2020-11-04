@@ -24,12 +24,27 @@ namespace NotariaDB
         {
             InitializeComponent();
             includeDataSheetsToView();
-            
+            nacSheetGridView.SelectionChanged += new EventHandler(DataGridView1_SelectionChanged);
             
             SheetController test = new SheetController();
             test.UpdateSheets(nacSheetGridView, matSheetGridView, defSheetGridView, userSheetGridView);
 
             applyStyles();
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (((SheetGridView)sender).SelectedRows.Count != 0)
+            {
+                if (((SheetGridView)sender).SelectedRows[0].Cells["Fileroute"].FormattedValue.ToString() != "")
+                {
+                    btnPDF.Enabled = true;
+                }
+                else
+                {
+                    btnPDF.Enabled = false;
+                }
+            }
         }
 
         void includeDataSheetsToView()
