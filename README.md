@@ -32,6 +32,6 @@ Update-Database
 
 ## Authors ✒️
 
-* **David Calle González** - [fulanitodetal](https://github.com/dcalleg707)
+* **David Calle González** - [dcalleg707](https://github.com/dcalleg707)
 * **Juan Sebastián Díaz Osorio** - [juansedo](https://github.com/juansedo)
 * **Santiago Hidalgo Ocampo** - [sanhidalgoo](https://github.com/sanhidalgoo)
