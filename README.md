@@ -10,11 +10,11 @@ To run this project you need a database server running on the local machine. Ins
 
 From MySQL Workbench you must make the connection to the local server and execute [**init_db.sql**](init_db.sql) file.
 
-Otra aplicación necesaria es [**Visual Studio Community**](https://visualstudio.microsoft.com/es/vs/community/), desde la que se puede ejecutar el código y previsualizar las interfaces gráficas que se han creado.
+Another necessary application is [**Visual Studio Community**](https://visualstudio.microsoft.com/es/vs/community/), from which you can run the code and preview the graphical interfaces that have been created.
 
-Una vez instalado, se debe abrir el archivo [NotariaDB.sln](NotariaDB.sln) con Visual Studio Community y ejecutar el código. Siempre que el servidor esté encendido y en la base de datos exista el usuario **root** con la contraseña vacía, funcionará.
+Once installed, the file [NotariaDB.sln](NotariaDB.sln) must be opened with Visual Studio Community and the code run. As long as the server is on and there is a ** root ** user in the database with an empty password, it will work.
 
-Próximamente, se automatizará este proceso a través de comandos en la terminal de paquetes NuGet:
+Soon, this process will be automated through commands in the NuGet package terminal:
 ```bash
 # For generating models
 Scaffold-DBContext "<connectionString>" MySql.Data.EntityFrameworkCore -O <OutputDir>
