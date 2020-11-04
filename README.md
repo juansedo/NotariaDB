@@ -1,12 +1,12 @@
 # NotariaDB
 
-NotariaDB is a program that manages the birth, marriage and death records created by a notary's office. Currently ** not functional ** and still under development.
+NotariaDB is a program that manages the birth, marriage and death records created by a notary's office. Currently **not functional** and still under development.
 
 ## Getting started
 
-Primero, se deben descargar los archivos de este repositorio.
+First, the files from this repository must be downloaded.
 
-Para ejecutar este proyecto se necesita un servidor de bases de datos corriendo en la máquina local. Se recomienda la instalación de [**MySQL Workbench**](https://dev.mysql.com/downloads/workbench/) que incluye una interfaz gráfica para trabajar con las bases de datos y el servidor local.
+To run this project you need a database server running on the local machine. Installation of [**MySQL Workbench**](https://dev.mysql.com/downloads/workbench/) recommended. It includes a graphical interface to work with the databases and the local server.
 
 Desde MySQL Workbench se debe hacer la conexión al servidor local y ejecutar el archivo [**init_db.sql**](init_db.sql).
 
