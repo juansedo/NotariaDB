@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Linq;
 using NotariaDB.Models;
+using Org.BouncyCastle.Crypto.Agreement.Kdf;
 
 namespace NotariaDB
 {
@@ -23,35 +24,44 @@ namespace NotariaDB
         {
             using (Models.notariadbContext db = new Models.notariadbContext())
             {
+                // Sexo
                 cSex.Items.Clear();
                 cSex.Items.Add("MASCULINO");
                 cSex.Items.Add("FEMENINO");
 
-                initializeComboBox(cBloodtype, "Name", "BloodtypeId");
-                cBloodtype.DataSource = (from s in db.Bloodtypes select new { s.BloodtypeId, s.Name }).ToList();
+                // Tipo de sangre
+                cBloodtype.Items.Clear();
+                setComboBoxDisplay(cBloodtype, "BloodtypeId", "Name");
+                cBloodtype.DataSource = db.Bloodtypes.Select(s => new {s.BloodtypeId, s.Name}).ToList();
                 cBloodtype.SelectedItem = null;
 
-                initializeComboBox(cDepartment, "Name", "Id");
-                cDepartment.DataSource = (from s in db.Departments select new {s.Id, s.Name}).ToArray();
+                // Departamento
+                cDepartment.Items.Clear();
+                setComboBoxDisplay(cDepartment, "Id", "Name");
+                cDepartment.DataSource = db.Departments.Select(s => new { s.Id, s.Name }).ToList();
                 cDepartment.SelectedIndex = 1;
 
-                initializeComboBox(cAttachtype, "Name", "AttachId");
-                cAttachtype.DataSource = (from s in db.NacAttaches select new { s.AttachId, s.Name }).ToArray();
+                // Tipo de anexo
+                cAttachtype.Items.Clear();
+                setComboBoxDisplay(cAttachtype, "AttachId", "Name");
+                cAttachtype.DataSource = db.NacAttaches.Select(s => new {s.AttachId, s.Name}).ToList();
 
-                initializeComboBox(cNotary, "Name", "Id");
-                var result = (from n in db.Notarios
-                              join user in db.Usuarios
-                              on n.UserId equals user.Id
-                              select new {Id=n.UserId, Name=string.Concat(user.Name," ",user.Surname)}).ToList();
-                cNotary.DataSource = result;
+                // Notario
+                cNotary.Items.Clear();
+                setComboBoxDisplay(cNotary, "Id", "Name");
+                cNotary.DataSource = db.Notarios.Join(db.Usuarios,
+                                n => n.UserId, u => u.Id, (n, u) =>
+                                new {
+                                        Id = n.UserId,
+                                        Name = string.Concat(u.Name," ",u.Surname)
+                                }).ToList();
             }
         }
 
-        private void initializeComboBox(ComboBox cb, string display, string value)
+        private void setComboBoxDisplay(ComboBox cb, string hidden_value, string displayed_value)
         {
-            cb.Items.Clear();
-            cb.DisplayMember = display;
-            cb.ValueMember = value;
+            cb.DisplayMember = displayed_value;
+            cb.ValueMember = hidden_value;
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -70,9 +80,9 @@ namespace NotariaDB
                 this.Register.MomId = tMomDocument.Text;
                 this.Register.DadId = tDadDocument.Text;
                 this.Register.WitnessId = tWitDocument.Text;
-                this.Register.BloodtypeId = Int32.Parse(cBloodtype.SelectedValue.ToString());
-                this.Register.PlaceId = Int32.Parse(cDepartment.SelectedValue.ToString());
-                this.Register.AttachId = Int32.Parse(cAttachtype.SelectedValue.ToString());
+                this.Register.BloodtypeId = int.Parse(cBloodtype.SelectedValue.ToString());
+                this.Register.PlaceId = int.Parse(cDepartment.SelectedValue.ToString());
+                this.Register.AttachId = int.Parse(cAttachtype.SelectedValue.ToString());
                 this.Register.AttachDescription = tAttachDescription.Text;
                 this.Register.NotaryId = cNotary.SelectedValue.ToString();
 
@@ -91,7 +101,7 @@ namespace NotariaDB
 
         private void cDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selection = Int32.Parse(cDepartment.SelectedValue.ToString());
+            int selection = int.Parse(cDepartment.SelectedValue.ToString());
             using (Models.notariadbContext db = new Models.notariadbContext())
             {
                 cCity.DisplayMember = "Name";
