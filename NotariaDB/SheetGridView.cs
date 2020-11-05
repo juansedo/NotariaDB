@@ -38,7 +38,7 @@ namespace NotariaDB
             GridColor = Color.LightGray;
             DefaultCellStyle.Font = new Font("Century Gothic", 10.25F, FontStyle.Regular, GraphicsUnit.Point);
 
-            SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            SelectionMode = DataGridViewSelectionMode.CellSelect;
             MultiSelect = false;
             Dock = DockStyle.Fill;
             TabIndex = 0;

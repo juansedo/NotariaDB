@@ -24,25 +24,41 @@ namespace NotariaDB
         {
             InitializeComponent();
             includeDataSheetsToView();
-            nacSheetGridView.SelectionChanged += new EventHandler(DataGridView1_SelectionChanged);
-            
+            nacSheetGridView.SelectionChanged += new EventHandler(SheetGridView_SelectionChanged);
+            matSheetGridView.SelectionChanged += new EventHandler(SheetGridView_SelectionChanged);
+            defSheetGridView.SelectionChanged += new EventHandler(SheetGridView_SelectionChanged);
+            // Generates error because Fileroute is not exists userSheetGridView.SelectionChanged += new EventHandler(SheetGridView_SelectionChanged);
+
             SheetController test = new SheetController();
             test.UpdateSheets(nacSheetGridView, matSheetGridView, defSheetGridView, userSheetGridView);
 
             applyStyles();
         }
 
-        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void SheetGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (((SheetGridView)sender).SelectedRows.Count != 0)
+            if (((SheetGridView)sender).SelectedCells.Count > 0)
             {
-                if (((SheetGridView)sender).SelectedRows[0].Cells["Fileroute"].FormattedValue.ToString() != "")
+                int index = ((SheetGridView)sender).SelectedCells[0].RowIndex;
+
+                if (((SheetGridView)sender).Rows[index].Cells["Fileroute"].FormattedValue.ToString() != "")
                 {
                     btnPDF.Enabled = true;
                 }
                 else
                 {
                     btnPDF.Enabled = false;
+                }
+                
+                int row = ((SheetGridView)sender).SelectedCells[0].ColumnIndex;
+                string s = ((SheetGridView)sender).Columns[row].Name;
+                if (s == "Id" || s == "MomId" || s == "DadId" || s == "RelateduserId")
+                {
+                    btnUserInfo.Enabled = true;
+                }
+                else
+                {
+                    btnUserInfo.Enabled = false;
                 }
             }
         }
