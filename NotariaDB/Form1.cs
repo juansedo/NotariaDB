@@ -27,7 +27,7 @@ namespace NotariaDB
             nacSheetGridView.SelectionChanged += new EventHandler(SheetGridView_SelectionChanged);
             matSheetGridView.SelectionChanged += new EventHandler(SheetGridView_SelectionChanged);
             defSheetGridView.SelectionChanged += new EventHandler(SheetGridView_SelectionChanged);
-            // Generates error because Fileroute is not exists userSheetGridView.SelectionChanged += new EventHandler(SheetGridView_SelectionChanged);
+            userSheetGridView.SelectionChanged += new EventHandler(SheetGridView_SelectionChanged);
 
             SheetController test = new SheetController();
             test.UpdateSheets(nacSheetGridView, matSheetGridView, defSheetGridView, userSheetGridView);
@@ -37,29 +37,19 @@ namespace NotariaDB
 
         private void SheetGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (((SheetGridView)sender).SelectedCells.Count > 0)
-            {
-                int index = ((SheetGridView)sender).SelectedCells[0].RowIndex;
+            var sheet = ((SheetGridView)sender);
 
-                if (((SheetGridView)sender).Rows[index].Cells["Fileroute"].FormattedValue.ToString() != "")
-                {
-                    btnPDF.Enabled = true;
-                }
-                else
-                {
-                    btnPDF.Enabled = false;
-                }
-                
-                int row = ((SheetGridView)sender).SelectedCells[0].ColumnIndex;
-                string s = ((SheetGridView)sender).Columns[row].Name;
-                if (s == "Id" || s == "MomId" || s == "DadId" || s == "RelateduserId")
-                {
-                    btnUserInfo.Enabled = true;
-                }
-                else
-                {
-                    btnUserInfo.Enabled = false;
-                }
+            if (sheet.SelectedCells.Count > 0)
+            {
+                int row_index = sheet.SelectedCells[0].RowIndex;
+                int col_index = sheet.SelectedCells[0].ColumnIndex;
+                string col_name = sheet.Columns[col_index].Name;
+
+                btnPDF.Enabled = sheet.Columns.Contains("Fileroute") ?
+                                    sheet.Rows[row_index].Cells["Fileroute"].FormattedValue.ToString() != "" :
+                                    false;
+
+                btnUserInfo.Enabled = col_name.Contains("Id");
             }
         }
 
@@ -159,6 +149,11 @@ namespace NotariaDB
                     }
                 }
             }
+        }
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

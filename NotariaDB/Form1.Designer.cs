@@ -96,6 +96,7 @@ namespace NotariaDB
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(667, 460);
             this.tabControl.TabIndex = 5;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tabPageNAC
             // 
