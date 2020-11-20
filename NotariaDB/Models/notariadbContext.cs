@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NotariaDB.Models.Configuration;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -54,6 +55,8 @@ namespace NotariaDB.Models
                     .HasColumnName("name")
                     .HasMaxLength(5);
             });
+
+            modelBuilder.ApplyConfiguration(new BloodtypesConfiguration());
 
             modelBuilder.Entity<Cities>(entity =>
             {

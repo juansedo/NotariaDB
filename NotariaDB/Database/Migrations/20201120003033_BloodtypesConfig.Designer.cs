@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NotariaDB.Models;
 
-namespace NotariaDB.Migrations
+namespace NotariaDB.Database.Migrations
 {
     [DbContext(typeof(notariadbContext))]
-    partial class notariadbContextModelSnapshot : ModelSnapshot
+    [Migration("20201120003033_BloodtypesConfig")]
+    partial class BloodtypesConfig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,6 +36,48 @@ namespace NotariaDB.Migrations
                         .HasName("PRIMARY");
 
                     b.ToTable("bloodtypes");
+
+                    b.HasData(
+                        new
+                        {
+                            BloodtypeId = 1,
+                            Name = "A+"
+                        },
+                        new
+                        {
+                            BloodtypeId = 2,
+                            Name = "A-"
+                        },
+                        new
+                        {
+                            BloodtypeId = 3,
+                            Name = "B+"
+                        },
+                        new
+                        {
+                            BloodtypeId = 4,
+                            Name = "B-"
+                        },
+                        new
+                        {
+                            BloodtypeId = 5,
+                            Name = "O+"
+                        },
+                        new
+                        {
+                            BloodtypeId = 6,
+                            Name = "O-"
+                        },
+                        new
+                        {
+                            BloodtypeId = 7,
+                            Name = "AB+"
+                        },
+                        new
+                        {
+                            BloodtypeId = 8,
+                            Name = "AB-"
+                        });
                 });
 
             modelBuilder.Entity("NotariaDB.Models.Cities", b =>
