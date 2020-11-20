@@ -43,17 +43,7 @@ namespace NotariaDB.Models
         {
             modelBuilder.ApplyConfiguration(new BloodtypesConfiguration());
 
-            modelBuilder.Entity<Cities>(entity =>
-            {
-                entity.ToTable("cities");
-
-                entity.Property(e => e.Id).HasColumnName("id");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(45);
-            });
+            modelBuilder.ApplyConfiguration(new CitiesConfiguration());
 
             modelBuilder.Entity<Defunciones>(entity =>
             {
@@ -159,17 +149,7 @@ namespace NotariaDB.Models
                     .HasConstraintName("fk_defunciones_witness1_id");
             });
 
-            modelBuilder.Entity<Departments>(entity =>
-            {
-                entity.ToTable("departments");
-
-                entity.Property(e => e.Id).HasColumnName("id");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
-            });
+            modelBuilder.ApplyConfiguration(new DepartmentsConfiguration());
 
             modelBuilder.ApplyConfiguration(new DoctypesConfiguration());
 
@@ -507,37 +487,7 @@ namespace NotariaDB.Models
                     .HasConstraintName("fk_notarios_user_id");
             });
 
-            modelBuilder.Entity<Places>(entity =>
-            {
-                entity.HasKey(e => e.PlaceId)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("places");
-
-                entity.HasIndex(e => e.CityId)
-                    .HasName("fk_places_city_id_idx");
-
-                entity.HasIndex(e => e.DepartmentId)
-                    .HasName("fk_places_department_id_idx");
-
-                entity.Property(e => e.PlaceId).HasColumnName("place_id");
-
-                entity.Property(e => e.CityId).HasColumnName("city_id");
-
-                entity.Property(e => e.DepartmentId).HasColumnName("department_id");
-
-                entity.HasOne(d => d.City)
-                    .WithMany(p => p.Places)
-                    .HasForeignKey(d => d.CityId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_places_city_id");
-
-                entity.HasOne(d => d.Department)
-                    .WithMany(p => p.Places)
-                    .HasForeignKey(d => d.DepartmentId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_places_department_id");
-            });
+            modelBuilder.ApplyConfiguration(new PlacesConfiguration());
 
             modelBuilder.Entity<Usuarios>(entity =>
             {
