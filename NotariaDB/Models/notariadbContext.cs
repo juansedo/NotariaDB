@@ -44,7 +44,7 @@ namespace NotariaDB.Models
             modelBuilder.ApplyConfiguration(new BloodtypesConfiguration());
 
             modelBuilder.ApplyConfiguration(new CitiesConfiguration());
-
+            
             modelBuilder.Entity<Defunciones>(entity =>
             {
                 entity.HasKey(e => e.Serial)
@@ -489,47 +489,7 @@ namespace NotariaDB.Models
 
             modelBuilder.ApplyConfiguration(new PlacesConfiguration());
 
-            modelBuilder.Entity<Usuarios>(entity =>
-            {
-                entity.ToTable("usuarios");
-
-                entity.HasIndex(e => e.DoctypeId)
-                    .HasName("fk_doctypes_usuarios_idx");
-
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasMaxLength(15);
-
-                entity.Property(e => e.BirthDate)
-                    .HasColumnName("birth_date")
-                    .HasColumnType("date");
-
-                entity.Property(e => e.DoctypeId).HasColumnName("doctype_id");
-
-                entity.Property(e => e.ExpeditionDate)
-                    .HasColumnName("expedition_date")
-                    .HasColumnType("date");
-
-                entity.Property(e => e.ExpeditionPlace)
-                    .HasColumnName("expedition_place")
-                    .HasMaxLength(100);
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Surname)
-                    .IsRequired()
-                    .HasColumnName("surname")
-                    .HasMaxLength(50);
-
-                entity.HasOne(d => d.Doctype)
-                    .WithMany(p => p.Usuarios)
-                    .HasForeignKey(d => d.DoctypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_usuarios_doctype_id");
-            });
+            modelBuilder.ApplyConfiguration(new UsuariosConfiguration());
 
             OnModelCreatingPartial(modelBuilder);
         }
