@@ -12,9 +12,20 @@ namespace NotariaDB.Models.Configuration
         public void Configure(EntityTypeBuilder<Bloodtypes> builder)
         {
             BloodtypesSeeder seeder = new BloodtypesSeeder();
-            builder.HasData(
-                seeder.Run()
-            );
+
+            builder.HasKey(e => e.BloodtypeId)
+                    .HasName("PRIMARY");
+
+            builder.ToTable("bloodtypes");
+
+            builder.Property(e => e.BloodtypeId).HasColumnName("bloodtype_id");
+
+            builder.Property(e => e.Name)
+                .IsRequired()
+                .HasColumnName("name")
+                .HasMaxLength(5);
+
+            builder.HasData(seeder.Run());
         }
     }
 }

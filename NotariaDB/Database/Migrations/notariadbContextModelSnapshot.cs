@@ -34,48 +34,6 @@ namespace NotariaDB.Migrations
                         .HasName("PRIMARY");
 
                     b.ToTable("bloodtypes");
-
-                    b.HasData(
-                        new
-                        {
-                            BloodtypeId = 1,
-                            Name = "A+"
-                        },
-                        new
-                        {
-                            BloodtypeId = 2,
-                            Name = "A-"
-                        },
-                        new
-                        {
-                            BloodtypeId = 3,
-                            Name = "B+"
-                        },
-                        new
-                        {
-                            BloodtypeId = 4,
-                            Name = "B-"
-                        },
-                        new
-                        {
-                            BloodtypeId = 5,
-                            Name = "O+"
-                        },
-                        new
-                        {
-                            BloodtypeId = 6,
-                            Name = "O-"
-                        },
-                        new
-                        {
-                            BloodtypeId = 7,
-                            Name = "AB+"
-                        },
-                        new
-                        {
-                            BloodtypeId = 8,
-                            Name = "AB-"
-                        });
                 });
 
             modelBuilder.Entity("NotariaDB.Models.Cities", b =>

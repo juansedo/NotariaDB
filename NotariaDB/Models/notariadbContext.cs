@@ -41,21 +41,6 @@ namespace NotariaDB.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Bloodtypes>(entity =>
-            {
-                entity.HasKey(e => e.BloodtypeId)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("bloodtypes");
-
-                entity.Property(e => e.BloodtypeId).HasColumnName("bloodtype_id");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(5);
-            });
-
             modelBuilder.ApplyConfiguration(new BloodtypesConfiguration());
 
             modelBuilder.Entity<Cities>(entity =>
@@ -186,20 +171,7 @@ namespace NotariaDB.Models
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Doctypes>(entity =>
-            {
-                entity.HasKey(e => e.DoctypeId)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("doctypes");
-
-                entity.Property(e => e.DoctypeId).HasColumnName("doctype_id");
-
-                entity.Property(e => e.Description)
-                    .IsRequired()
-                    .HasColumnName("description")
-                    .HasMaxLength(50);
-            });
+            modelBuilder.ApplyConfiguration(new DoctypesConfiguration());
 
             modelBuilder.Entity<MatAttaches>(entity =>
             {
