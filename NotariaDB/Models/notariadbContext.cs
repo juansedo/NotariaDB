@@ -173,20 +173,7 @@ namespace NotariaDB.Models
 
             modelBuilder.ApplyConfiguration(new DoctypesConfiguration());
 
-            modelBuilder.Entity<MatAttaches>(entity =>
-            {
-                entity.HasKey(e => e.AttachId)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("mat_attaches");
-
-                entity.Property(e => e.AttachId).HasColumnName("attach_id");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
-            });
+            modelBuilder.ApplyConfiguration(new MatAttachesConfiguration());
 
             modelBuilder.Entity<Matrimonios>(entity =>
             {
@@ -335,20 +322,7 @@ namespace NotariaDB.Models
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<NacAttaches>(entity =>
-            {
-                entity.HasKey(e => e.AttachId)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("nac_attaches");
-
-                entity.Property(e => e.AttachId).HasColumnName("attach_id");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
-            });
+            modelBuilder.ApplyConfiguration(new NacAttachesConfiguration());
 
             modelBuilder.Entity<Nacimientos>(entity =>
             {

@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Database\Migrations\20201120003033_BloodtypesConfig.cs" />
+    <Compile Remove="Database\Migrations\20201120003033_BloodtypesConfig.Designer.cs" />
     <Compile Remove="Database\Migrations\20201120010737_BloodtypesConfig2.cs" />
     <Compile Remove="Database\Migrations\20201120010737_BloodtypesConfig2.Designer.cs" />
   </ItemGroup>
