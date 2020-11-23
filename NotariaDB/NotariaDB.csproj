@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +12,8 @@
     <Compile Remove="Database\Migrations\20201120003033_BloodtypesConfig.Designer.cs" />
     <Compile Remove="Database\Migrations\20201120010737_BloodtypesConfig2.cs" />
     <Compile Remove="Database\Migrations\20201120010737_BloodtypesConfig2.Designer.cs" />
+    <Compile Remove="Database\Migrations\20201123013917_test4.cs" />
+    <Compile Remove="Database\Migrations\20201123013917_test4.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NotariaDB.Models;
 
-namespace NotariaDB.Migrations
+namespace NotariaDB.Database.Migrations
 {
     [DbContext(typeof(notariadbContext))]
-    partial class notariadbContextModelSnapshot : ModelSnapshot
+    [Migration("20201123011136_test3")]
+    partial class test3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -12680,6 +12682,46 @@ namespace NotariaDB.Migrations
                             ExpeditionPlace = "SALGAR",
                             Name = "JUAN SEBASTIÁN",
                             Surname = "DÍAZ OSORIO"
+                        },
+                        new
+                        {
+                            Id = "1039760194",
+                            BirthDate = new DateTime(1992, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DoctypeId = 1,
+                            ExpeditionDate = new DateTime(2005, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ExpeditionPlace = "SALGAR",
+                            Name = "ANA CRISTINA",
+                            Surname = "DÍAZ OSORIO"
+                        },
+                        new
+                        {
+                            Id = "21979476",
+                            BirthDate = new DateTime(1970, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DoctypeId = 1,
+                            ExpeditionDate = new DateTime(1990, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ExpeditionPlace = "SALGAR",
+                            Name = "RUTH NELLY",
+                            Surname = "OSORIO GARCÍA"
+                        },
+                        new
+                        {
+                            Id = "719912",
+                            BirthDate = new DateTime(1942, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DoctypeId = 1,
+                            ExpeditionDate = new DateTime(1990, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ExpeditionPlace = "SALGAR",
+                            Name = "VILEY DE JESÚS",
+                            Surname = "DÍAZ GARCÍA"
+                        },
+                        new
+                        {
+                            Id = "98509595",
+                            BirthDate = new DateTime(1970, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DoctypeId = 1,
+                            ExpeditionDate = new DateTime(1990, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ExpeditionPlace = "SALGAR",
+                            Name = "JAVIER ALONSO",
+                            Surname = "DÍAZ GALLEGO"
                         });
                 });
 
