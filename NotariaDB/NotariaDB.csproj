@@ -11,6 +11,8 @@
     <Compile Remove="Database\Migrations\20201120003033_BloodtypesConfig.Designer.cs" />
     <Compile Remove="Database\Migrations\20201120010737_BloodtypesConfig2.cs" />
     <Compile Remove="Database\Migrations\20201120010737_BloodtypesConfig2.Designer.cs" />
+    <Compile Remove="Database\Migrations\20201120034952_Test2.cs" />
+    <Compile Remove="Database\Migrations\20201120034952_Test2.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
