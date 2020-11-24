@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NotariaDB.Models.Configuration;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -40,33 +41,10 @@ namespace NotariaDB.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Bloodtypes>(entity =>
-            {
-                entity.HasKey(e => e.BloodtypeId)
-                    .HasName("PRIMARY");
+            modelBuilder.ApplyConfiguration(new BloodtypesConfiguration());
 
-                entity.ToTable("bloodtypes");
-
-                entity.Property(e => e.BloodtypeId).HasColumnName("bloodtype_id");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(5);
-            });
-
-            modelBuilder.Entity<Cities>(entity =>
-            {
-                entity.ToTable("cities");
-
-                entity.Property(e => e.Id).HasColumnName("id");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(45);
-            });
-
+            modelBuilder.ApplyConfiguration(new CitiesConfiguration());
+            
             modelBuilder.Entity<Defunciones>(entity =>
             {
                 entity.HasKey(e => e.Serial)
@@ -171,47 +149,11 @@ namespace NotariaDB.Models
                     .HasConstraintName("fk_defunciones_witness1_id");
             });
 
-            modelBuilder.Entity<Departments>(entity =>
-            {
-                entity.ToTable("departments");
+            modelBuilder.ApplyConfiguration(new DepartmentsConfiguration());
 
-                entity.Property(e => e.Id).HasColumnName("id");
+            modelBuilder.ApplyConfiguration(new DoctypesConfiguration());
 
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<Doctypes>(entity =>
-            {
-                entity.HasKey(e => e.DoctypeId)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("doctypes");
-
-                entity.Property(e => e.DoctypeId).HasColumnName("doctype_id");
-
-                entity.Property(e => e.Description)
-                    .IsRequired()
-                    .HasColumnName("description")
-                    .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<MatAttaches>(entity =>
-            {
-                entity.HasKey(e => e.AttachId)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("mat_attaches");
-
-                entity.Property(e => e.AttachId).HasColumnName("attach_id");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
-            });
+            modelBuilder.ApplyConfiguration(new MatAttachesConfiguration());
 
             modelBuilder.Entity<Matrimonios>(entity =>
             {
@@ -360,20 +302,7 @@ namespace NotariaDB.Models
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<NacAttaches>(entity =>
-            {
-                entity.HasKey(e => e.AttachId)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("nac_attaches");
-
-                entity.Property(e => e.AttachId).HasColumnName("attach_id");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
-            });
+            modelBuilder.ApplyConfiguration(new NacAttachesConfiguration());
 
             modelBuilder.Entity<Nacimientos>(entity =>
             {
@@ -558,79 +487,9 @@ namespace NotariaDB.Models
                     .HasConstraintName("fk_notarios_user_id");
             });
 
-            modelBuilder.Entity<Places>(entity =>
-            {
-                entity.HasKey(e => e.PlaceId)
-                    .HasName("PRIMARY");
+            modelBuilder.ApplyConfiguration(new PlacesConfiguration());
 
-                entity.ToTable("places");
-
-                entity.HasIndex(e => e.CityId)
-                    .HasName("fk_places_city_id_idx");
-
-                entity.HasIndex(e => e.DepartmentId)
-                    .HasName("fk_places_department_id_idx");
-
-                entity.Property(e => e.PlaceId).HasColumnName("place_id");
-
-                entity.Property(e => e.CityId).HasColumnName("city_id");
-
-                entity.Property(e => e.DepartmentId).HasColumnName("department_id");
-
-                entity.HasOne(d => d.City)
-                    .WithMany(p => p.Places)
-                    .HasForeignKey(d => d.CityId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_places_city_id");
-
-                entity.HasOne(d => d.Department)
-                    .WithMany(p => p.Places)
-                    .HasForeignKey(d => d.DepartmentId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_places_department_id");
-            });
-
-            modelBuilder.Entity<Usuarios>(entity =>
-            {
-                entity.ToTable("usuarios");
-
-                entity.HasIndex(e => e.DoctypeId)
-                    .HasName("fk_doctypes_usuarios_idx");
-
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasMaxLength(15);
-
-                entity.Property(e => e.BirthDate)
-                    .HasColumnName("birth_date")
-                    .HasColumnType("date");
-
-                entity.Property(e => e.DoctypeId).HasColumnName("doctype_id");
-
-                entity.Property(e => e.ExpeditionDate)
-                    .HasColumnName("expedition_date")
-                    .HasColumnType("date");
-
-                entity.Property(e => e.ExpeditionPlace)
-                    .HasColumnName("expedition_place")
-                    .HasMaxLength(100);
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Surname)
-                    .IsRequired()
-                    .HasColumnName("surname")
-                    .HasMaxLength(50);
-
-                entity.HasOne(d => d.Doctype)
-                    .WithMany(p => p.Usuarios)
-                    .HasForeignKey(d => d.DoctypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_usuarios_doctype_id");
-            });
+            modelBuilder.ApplyConfiguration(new UsuariosConfiguration());
 
             OnModelCreatingPartial(modelBuilder);
         }
