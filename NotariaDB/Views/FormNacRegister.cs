@@ -9,7 +9,7 @@ using System.Linq;
 using NotariaDB.Models;
 using Org.BouncyCastle.Crypto.Agreement.Kdf;
 
-namespace NotariaDB
+namespace NotariaDB.Views
 {
     public partial class FormNacRegister : Form
     {

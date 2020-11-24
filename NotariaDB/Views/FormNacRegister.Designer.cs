@@ -1,4 +1,4 @@
-﻿namespace NotariaDB
+﻿namespace NotariaDB.Views
 {
     partial class FormNacRegister
     {

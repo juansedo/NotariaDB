@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace NotariaDB
+namespace NotariaDB.Views
 {
     partial class formMain
     {
