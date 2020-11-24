@@ -6,6 +6,6 @@ namespace NotariaDB.Commands
 {
     class command
     {
-        public void execute() { }
+        public virtual void execute(SheetGridView hoja) { }
     }
 }

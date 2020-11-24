@@ -9,6 +9,13 @@ namespace NotariaDB
 {
     abstract class SheetGridView : DataGridView
     {
+        public DialogResult Yes { get; internal set; }
+
+        internal DialogResult Show(string v1, string v2, MessageBoxButtons yesNo, MessageBoxIcon warning)
+        {
+            throw new NotImplementedException();
+        }
+
         public SheetGridView(string name)
         {
             defineProperties(name);

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NotariaDB.Controllers;
+using NotariaDB.Commands;
 
 namespace NotariaDB
 {
@@ -44,7 +45,6 @@ namespace NotariaDB
                 int row_index = sheet.SelectedCells[0].RowIndex;
                 int col_index = sheet.SelectedCells[0].ColumnIndex;
                 string col_name = sheet.Columns[col_index].Name;
-
                 btnPDF.Enabled = sheet.Columns.Contains("Fileroute") ?
                                     sheet.Rows[row_index].Cells["Fileroute"].FormattedValue.ToString() != "" :
                                     false;
@@ -65,7 +65,7 @@ namespace NotariaDB
         {
             FormStylist.SetBgColorAndImage(btnNewRegister, SystemColors.Control, Properties.Resources.NewRegIcon);
             FormStylist.SetBgColorAndImage(btnEditRegister, SystemColors.Control, Properties.Resources.EditRegIcon);
-            btnDeleteRegister.SetBgColorAndImage(SystemColors.Control, Properties.Resources.DeleteRegIcon);
+            btnDeleteRegister.SetBgColorAndImage( SystemColors.Control, Properties.Resources.DeleteRegIcon);
             FormStylist.SetBgColorAndImage(btnUserInfo, SystemColors.Control, Properties.Resources.UserIcon);
             FormStylist.SetBgColorAndImage(btnPDF, SystemColors.Control, Properties.Resources.PDFIcon);
             FormStylist.SetBgColorAndImage(btnExcel, SystemColors.Control, Properties.Resources.ExcelIcon);
@@ -78,39 +78,27 @@ namespace NotariaDB
             toolTip.SetToolTip(btnExcel, "Exportar a Excel");
         }
 
-        private void btnDeleteRegister_Click(object sender, EventArgs e)
+        private void btnDeleteRegister_Click(object sender, EventArgs e, command command)
         {
+
             if (tabControl.SelectedTab == tabPageNAC)
             {
-                int position = userSheetGridView.SelectedRows[0].Index;
-                userSheetGridView.CurrentCell = null;
-                userSheetGridView.Rows[position].Visible = false;
+                command.execute(nacSheetGridView);
             }
 
             if (tabControl.SelectedTab == tabPageMAT)
             {
-                int position = userSheetGridView.SelectedRows[0].Index;
-                userSheetGridView.CurrentCell = null;
-                userSheetGridView.Rows[position].Visible = false;
+                command.execute(matSheetGridView);
             }
 
             if (tabControl.SelectedTab == tabPageDEF)
             {
-                int position = userSheetGridView.SelectedRows[0].Index;
-                userSheetGridView.CurrentCell = null;
-                userSheetGridView.Rows[position].Visible = false;
+                command.execute(defSheetGridView);
             }
 
             if (tabControl.SelectedTab == tabPageUSER)
             {
-                DialogResult answer = MessageBox.Show("¿Esta seguro que desea eliminar el registro de " + userSheetGridView.SelectedRows[0].Cells[2].Value + "?", "Eliminar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (answer == DialogResult.Yes)
-                {
-                    int position = userSheetGridView.SelectedRows[0].Index;
-                    userSheetGridView.CurrentCell = null;
-                    userSheetGridView.Rows[position].Visible = false;
-                }
-                
+                command.execute(userSheetGridView);
             }
         }
 

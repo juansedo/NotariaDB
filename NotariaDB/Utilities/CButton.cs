@@ -11,9 +11,19 @@ namespace NotariaDB.Utilities
     {
         private command command;
 
+        public CButton(command command)
+        {
+            this.command = command;
+        }
+
         public void setCommand(command command)
         {
             this.command = command;
+        }
+
+        public command getCommand()
+        {
+            return this.command;
         }
 
         public void SetBgColorAndImage(Color color, System.Drawing.Bitmap image)

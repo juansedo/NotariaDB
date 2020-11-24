@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using NotariaDB.Commands;
 using NotariaDB.Utilities;
 
 namespace NotariaDB
@@ -43,7 +44,7 @@ namespace NotariaDB
             this.tabPageUSER = new System.Windows.Forms.TabPage();
             this.btnNewRegister = new System.Windows.Forms.Button();
             this.btnEditRegister = new System.Windows.Forms.Button();
-            this.btnDeleteRegister = new CButton();
+            this.btnDeleteRegister = new CButton(new deleteCommand());
             this.btnUserInfo = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.btnPDF = new System.Windows.Forms.Button();
@@ -180,7 +181,7 @@ namespace NotariaDB
             this.btnDeleteRegister.TabIndex = 6;
             this.btnDeleteRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDeleteRegister.UseVisualStyleBackColor = false;
-            this.btnDeleteRegister.Click += new System.EventHandler(this.btnDeleteRegister_Click);
+            this.btnDeleteRegister.Click += new System.EventHandler((s, e) => this.btnDeleteRegister_Click(s, e, this.btnDeleteRegister.getCommand()));
             // 
             // btnUserInfo
             // 
