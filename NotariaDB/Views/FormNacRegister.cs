@@ -16,6 +16,10 @@ namespace NotariaDB.Views
     {
         public Models.Nacimientos Register =new Models.Nacimientos();
 
+        ValidatorBox gbMom = new ValidatorBox(ValidatorBoxFactory.getValidator("madre"), 6, new Point(494, 45));
+        ValidatorBox gbDad = new ValidatorBox(ValidatorBoxFactory.getValidator("padre"), 6, new Point(494, 182));
+        ValidatorBox gbWitness = new ValidatorBox(ValidatorBoxFactory.getValidator("testigo"), 6, new Point(494, 319));
+
         public FormNacRegister()
         {
             InitializeComponent();
@@ -23,10 +27,6 @@ namespace NotariaDB.Views
 
         private void FormNacRegister_Load(object sender, EventArgs e)
         {
-            ValidatorBox gbMom = new ValidatorBox(ValidatorBoxFactory.getValidator("madre"), 6, new Point(494, 45));
-            ValidatorBox gbDad = new ValidatorBox(ValidatorBoxFactory.getValidator("padre"), 6, new Point(494, 182));
-            ValidatorBox gbWitness = new ValidatorBox(ValidatorBoxFactory.getValidator("testigo"), 6, new Point(494, 319));
-
             Controls.Add(gbMom.toGroupBox());
             Controls.Add(gbDad.toGroupBox());
             Controls.Add(gbWitness.toGroupBox());
@@ -86,9 +86,9 @@ namespace NotariaDB.Views
                 this.Register.RegDate = DateTime.Now;
                 this.Register.BirthDate = dtBirthDate.Value;
                 this.Register.BirthHour = new TimeSpan(decimal.ToInt32(tBirthHour.Value), decimal.ToInt32(tBirthMinutes.Value), 0);
-                //this.Register.MomId = tMomDocument.Text;
-                //this.Register.DadId = tDadDocument.Text;
-                //this.Register.WitnessId = tWitDocument.Text;
+                this.Register.MomId = gbMom.GetText();
+                this.Register.DadId = gbDad.GetText();
+                this.Register.WitnessId = gbWitness.GetText();
                 this.Register.BloodtypeId = int.Parse(cBloodtype.SelectedValue.ToString());
                 this.Register.PlaceId = int.Parse(cDepartment.SelectedValue.ToString());
                 this.Register.AttachId = int.Parse(cAttachtype.SelectedValue.ToString());

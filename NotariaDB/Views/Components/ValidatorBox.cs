@@ -27,6 +27,11 @@ namespace NotariaDB.Views.Components
             _vbf.SetLocation(location);
         }
 
+        public string GetText()
+        {
+            return _vbf.GetText();
+        }
+
         public GroupBox toGroupBox()
         {
             return _vbf;
