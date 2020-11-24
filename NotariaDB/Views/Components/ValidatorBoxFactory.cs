@@ -17,6 +17,8 @@ namespace NotariaDB.Views.Components
                 if (v.GetName() == name)
                 {
                     value = v;
+                    if (value.IsDisposed)
+                        value = new ValidatorBoxFlyweight(name);
                     break;
                 }
             }

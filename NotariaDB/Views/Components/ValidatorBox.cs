@@ -14,7 +14,7 @@ namespace NotariaDB.Views.Components
             _vbf = vb;
 
             _vbf.TabIndex = tabIndex;
-            _vbf.SetLocation(location); //new System.Drawing.Point(494, 45);
+            _vbf.SetLocation(location);
         }
 
         public void SetValidationName(string text)
@@ -30,6 +30,11 @@ namespace NotariaDB.Views.Components
         public bool GetValid()
         {
             return _vbf.GetValid();
+        }
+
+        public bool GetIfNull()
+        {
+            return _vbf.GetIfNull();
         }
 
         public string GetText()

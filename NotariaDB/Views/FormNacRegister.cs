@@ -89,9 +89,9 @@ namespace NotariaDB.Views
                 this.Register.RegDate = DateTime.Now;
                 this.Register.BirthDate = dtBirthDate.Value;
                 this.Register.BirthHour = new TimeSpan(decimal.ToInt32(tBirthHour.Value), decimal.ToInt32(tBirthMinutes.Value), 0);
-                this.Register.MomId = gbMom.GetText();
-                this.Register.DadId = gbDad.GetText();
-                this.Register.WitnessId = gbWitness.GetText();
+                this.Register.MomId = gbMom.GetIfNull()? null : gbMom.GetText();
+                this.Register.DadId = gbDad.GetIfNull()? null : gbDad.GetText();
+                this.Register.WitnessId = gbWitness.GetIfNull()? null : gbWitness.GetText();
                 this.Register.BloodtypeId = int.Parse(cBloodtype.SelectedValue.ToString());
                 this.Register.PlaceId = int.Parse(cDepartment.SelectedValue.ToString());
                 this.Register.AttachId = int.Parse(cAttachtype.SelectedValue.ToString());

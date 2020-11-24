@@ -10,6 +10,7 @@ namespace NotariaDB.Views.Components
     {
         private string _name;
         private bool _valid;
+        private bool _null;
 
         private Button _btnBlank = new Button();
         private Button _btnValidate = new Button();
@@ -148,6 +149,7 @@ namespace NotariaDB.Views.Components
             if (_btnValidate.Enabled)
             {
                 _valid = true;
+                _null = true;
                 _tDocument.Enabled = false;
                 _btnValidate.Enabled = false;
                 _btnBlank.Text = "Habilitar";
@@ -155,6 +157,7 @@ namespace NotariaDB.Views.Components
             else
             {
                 _valid = false;
+                _null = false;
                 _tDocument.Enabled = true;
                 _btnValidate.Enabled = true;
                 _btnBlank.Text = "Dejar en blanco";
@@ -192,6 +195,11 @@ namespace NotariaDB.Views.Components
         public string GetName()
         {
             return _name;
+        }
+
+        public bool GetIfNull()
+        {
+            return _null;
         }
     }
 }
