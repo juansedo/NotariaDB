@@ -464,28 +464,7 @@ namespace NotariaDB.Models
                     .HasConstraintName("fk_nacimientos_witness1_id");
             });
 
-            modelBuilder.Entity<Notarios>(entity =>
-            {
-                entity.HasKey(e => e.UserId)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("notarios");
-
-                entity.Property(e => e.UserId)
-                    .HasColumnName("user_id")
-                    .HasMaxLength(15);
-
-                entity.Property(e => e.Title)
-                    .IsRequired()
-                    .HasColumnName("title")
-                    .HasMaxLength(50);
-
-                entity.HasOne(d => d.User)
-                    .WithOne(p => p.Notarios)
-                    .HasForeignKey<Notarios>(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_notarios_user_id");
-            });
+            modelBuilder.ApplyConfiguration(new NotariosConfiguration());
 
             modelBuilder.ApplyConfiguration(new PlacesConfiguration());
 
