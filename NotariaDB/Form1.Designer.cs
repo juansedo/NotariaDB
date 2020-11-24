@@ -42,7 +42,7 @@ namespace NotariaDB
             this.tabPageDEF = new System.Windows.Forms.TabPage();
             this.tabPageUSER = new System.Windows.Forms.TabPage();
             this.btnNewRegister = new System.Windows.Forms.Button();
-            this.btnEditRegister = new CButton();
+            this.btnEditRegister = new System.Windows.Forms.Button();
             this.btnDeleteRegister = new CButton();
             this.btnUserInfo = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
