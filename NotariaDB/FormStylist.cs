@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NotariaDB.Commands;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace NotariaDB
@@ -18,7 +20,12 @@ namespace NotariaDB
                 catch (Exception ex) { };
             }
         }
-        
+
+        internal static void SetBgColorAndImage(deleteCommand deleteCommand, Color control, Bitmap deleteRegIcon)
+        {
+            throw new NotImplementedException();
+        }
+
         public static void SetBgColorAndImage(System.Windows.Forms.Button btn, System.Drawing.Color color, System.Drawing.Bitmap rsc)
         {
             btn.BackColor = color;

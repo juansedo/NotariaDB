@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NotariaDB.Utilities.Commands
+namespace NotariaDB.Commands
 {
-    class Class1
+    class command
     {
+        public void execute() { }
     }
 }

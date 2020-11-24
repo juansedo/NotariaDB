@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using NotariaDB.Utilities;
 
 namespace NotariaDB
 {
@@ -41,8 +42,8 @@ namespace NotariaDB
             this.tabPageDEF = new System.Windows.Forms.TabPage();
             this.tabPageUSER = new System.Windows.Forms.TabPage();
             this.btnNewRegister = new System.Windows.Forms.Button();
-            this.btnEditRegister = new System.Windows.Forms.Button();
-            this.btnDeleteRegister = new System.Windows.Forms.Button();
+            this.btnEditRegister = new CButton();
+            this.btnDeleteRegister = new CButton();
             this.btnUserInfo = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.btnPDF = new System.Windows.Forms.Button();
@@ -264,7 +265,7 @@ namespace NotariaDB
         private System.Windows.Forms.TabPage tabPageUSER;
         private Button btnNewRegister;
         private Button btnEditRegister;
-        private Button btnDeleteRegister;
+        private CButton btnDeleteRegister;
         private Button btnUserInfo;
         private ToolTip toolTip;
         private Button btnPDF;

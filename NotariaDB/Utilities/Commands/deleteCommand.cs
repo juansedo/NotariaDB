@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NotariaDB.Utilities.Commands
+namespace NotariaDB.Commands
 {
-    class Class1
+    class deleteCommand : command
     {
+        public void execute() { 
+            //delete stuff
+        }
     }
 }

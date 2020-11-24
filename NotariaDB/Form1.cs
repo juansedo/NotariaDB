@@ -65,7 +65,7 @@ namespace NotariaDB
         {
             FormStylist.SetBgColorAndImage(btnNewRegister, SystemColors.Control, Properties.Resources.NewRegIcon);
             FormStylist.SetBgColorAndImage(btnEditRegister, SystemColors.Control, Properties.Resources.EditRegIcon);
-            FormStylist.SetBgColorAndImage(btnDeleteRegister, SystemColors.Control, Properties.Resources.DeleteRegIcon);
+            btnDeleteRegister.SetBgColorAndImage(SystemColors.Control, Properties.Resources.DeleteRegIcon);
             FormStylist.SetBgColorAndImage(btnUserInfo, SystemColors.Control, Properties.Resources.UserIcon);
             FormStylist.SetBgColorAndImage(btnPDF, SystemColors.Control, Properties.Resources.PDFIcon);
             FormStylist.SetBgColorAndImage(btnExcel, SystemColors.Control, Properties.Resources.ExcelIcon);
