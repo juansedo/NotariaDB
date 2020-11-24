@@ -7,10 +7,9 @@ namespace NotariaDB.Factories
 {  
     class UserFactory
     {
-        public static Usuarios[]  generate()
+        public static List<Usuarios> create()
         {
-            Usuarios[] seeds = new Usuarios[300];
-            int pos = 0;
+            List<Usuarios> seeds = new List<Usuarios>();
             using (var reader = new StreamReader(@"D:\test.csv"))
             {
                 while (!reader.EndOfStream)
@@ -18,7 +17,7 @@ namespace NotariaDB.Factories
                     String[] user = reader.ReadLine().Split(',');
                     String[] EDate = user[5].Split("/");
                     String[] BDate = user[6].Split("/");
-                    seeds[pos] = new Usuarios
+                    seeds.Add(new Usuarios
                     {
                         Id = user[0],
                         DoctypeId = Int32.Parse(user[1]),
@@ -27,9 +26,7 @@ namespace NotariaDB.Factories
                         ExpeditionPlace = user[4],
                         ExpeditionDate = new DateTime(Int32.Parse(EDate[0]), Int32.Parse(EDate[1]), Int32.Parse(EDate[2])),
                         BirthDate = new DateTime(Int32.Parse(BDate[0]), Int32.Parse(BDate[1]), Int32.Parse(BDate[2]))
-                    };
-
-                    pos++;
+                    });
                 }
             }
             return seeds;
