@@ -124,6 +124,8 @@
             // 
             // cSex
             // 
+            this.cSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cSex.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cSex.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cSex.FormattingEnabled = true;
             this.cSex.Location = new System.Drawing.Point(191, 86);
@@ -190,6 +192,8 @@
             // 
             // cBloodtype
             // 
+            this.cBloodtype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cBloodtype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cBloodtype.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cBloodtype.FormattingEnabled = true;
             this.cBloodtype.Location = new System.Drawing.Point(191, 285);

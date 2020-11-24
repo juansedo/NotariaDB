@@ -12,7 +12,7 @@ namespace NotariaDB.Views.Components
         public ValidatorBox(ValidatorBoxFlyweight vb, int tabIndex, System.Drawing.Point location)
         {
             _vbf = vb;
-            
+
             _vbf.TabIndex = tabIndex;
             _vbf.SetLocation(location); //new System.Drawing.Point(494, 45);
         }
@@ -25,6 +25,11 @@ namespace NotariaDB.Views.Components
         public void SetLocation(System.Drawing.Point location)
         {
             _vbf.SetLocation(location);
+        }
+
+        public bool GetValid()
+        {
+            return _vbf.GetValid();
         }
 
         public string GetText()

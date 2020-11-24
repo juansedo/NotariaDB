@@ -77,6 +77,9 @@ namespace NotariaDB.Views
         {
             try
             {
+                if (!(gbMom.GetValid() && gbDad.GetValid() && gbWitness.GetValid()))
+                    throw new InvalidConstraintException();
+                
                 this.Register.Nuip = tNuip.Text;
                 this.Register.Serial = tSerial.Text;
                 this.Register.Sex = cSex.SelectedItem.ToString().Substring(0, 1);
@@ -101,6 +104,10 @@ namespace NotariaDB.Views
             catch (NullReferenceException ex)
             {
                 MessageBox.Show("Faltan campos por llenar", "Error 001 - " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InvalidConstraintException ex)
+            {
+                MessageBox.Show("Los campos de los usuarios no están validados", "Error 002 - " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

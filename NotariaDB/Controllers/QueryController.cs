@@ -34,5 +34,15 @@ namespace NotariaDB.Controllers
             var result = db.Usuarios.ToList();
             return result;
         }
+
+        public static Models.Usuarios userById(string id)
+        {
+            using Models.notariadbContext db = new Models.notariadbContext();
+            var result = db.Usuarios.Where(s => s.Id == id).ToList();
+
+            if (result.Count() == 0) return null;
+
+            return result.First();
+        }
     }
 }

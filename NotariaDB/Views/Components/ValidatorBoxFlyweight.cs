@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using NotariaDB.Controllers;
 
 namespace NotariaDB.Views.Components
 {
     class ValidatorBoxFlyweight: GroupBox
     {
         private string _name;
+        private bool _valid;
 
         private Button _btnBlank = new Button();
         private Button _btnValidate = new Button();
@@ -111,7 +113,7 @@ namespace NotariaDB.Views.Components
             this._btnValidate.TabIndex = 2;
             this._btnValidate.Text = "Validar";
             this._btnValidate.UseVisualStyleBackColor = true;
-
+            this._btnValidate.Click += new EventHandler(btnValidate_Click);
             /**
              * Button Blank
              */
@@ -123,11 +125,58 @@ namespace NotariaDB.Views.Components
             this._btnBlank.TabIndex = 3;
             this._btnBlank.Text = "Dejar en blanco";
             this._btnBlank.UseVisualStyleBackColor = true;
+            this._btnBlank.Click += new EventHandler(btnBlank_Click);
+        }
+
+        private void btnValidate_Click(object sender, EventArgs e)
+        {
+            NotariaDB.Models.Usuarios user = QueryController.userById(_tDocument.Text);
+            if (user != null)
+            {
+                SetValidationName(user.Name + " " + user.Surname);
+                SetValid(true);
+            }
+            else
+            {
+                SetValidationName("N/A");
+                SetValid(false);
+            }
+        }
+
+        private void btnBlank_Click(object sender, EventArgs e)
+        {
+            if (_btnValidate.Enabled)
+            {
+                _valid = true;
+                _tDocument.Enabled = false;
+                _btnValidate.Enabled = false;
+                _btnBlank.Text = "Habilitar";
+            }
+            else
+            {
+                _valid = false;
+                _tDocument.Enabled = true;
+                _btnValidate.Enabled = true;
+                _btnBlank.Text = "Dejar en blanco";
+                btnValidate_Click(sender, e);
+            }
         }
 
         public void SetValidationName(string text)
         {
             _nameConfirmation.Text = text;
+        }
+
+        public void SetValid(bool b)
+        {
+            _valid = b;
+            System.Drawing.Color color = b ? System.Drawing.Color.FromArgb(0, 176, 0) : System.Drawing.Color.Red;
+            _nameConfirmation.ForeColor = color;
+        }
+
+        public bool GetValid()
+        {
+            return _valid;
         }
 
         public void SetLocation(System.Drawing.Point location)
