@@ -186,7 +186,6 @@ namespace NotariaDB
             // btnUserInfo
             // 
             this.btnUserInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUserInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnUserInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUserInfo.FlatAppearance.BorderSize = 0;
             this.btnUserInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
