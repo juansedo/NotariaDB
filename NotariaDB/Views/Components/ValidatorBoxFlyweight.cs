@@ -98,5 +98,10 @@ namespace NotariaDB.Views.Components
         {
             this.Location = location;
         }
+
+        public string GetName()
+        {
+            return _name;
+        }
     }
 }
