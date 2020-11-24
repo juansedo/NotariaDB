@@ -24,24 +24,9 @@ namespace NotariaDB.Views.Components
 
             this.SuspendLayout();
 
+            SetButtons();
+
             SetControls();
-
-            this._btnValidate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._btnValidate.Location = new System.Drawing.Point(46, 86);
-            this._btnValidate.Name = _name + "btnValidate";
-            this._btnValidate.Size = new System.Drawing.Size(158, 32);
-            this._btnValidate.TabIndex = 2;
-            this._btnValidate.Text = "Validar";
-            this._btnValidate.UseVisualStyleBackColor = true;
-
-            this._btnBlank.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._btnBlank.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._btnBlank.Location = new System.Drawing.Point(234, 86);
-            this._btnBlank.Name = "btnDadBlank";
-            this._btnBlank.Size = new System.Drawing.Size(158, 32);
-            this._btnBlank.TabIndex = 3;
-            this._btnBlank.Text = "Dejar en blanco";
-            this._btnBlank.UseVisualStyleBackColor = true;
 
             this.Controls.Add(_btnBlank);
             this.Controls.Add(_btnValidate);
@@ -110,6 +95,34 @@ namespace NotariaDB.Views.Components
             _nameConfirmation.TabIndex = 0;
             _nameConfirmation.Text = "N/A";
             _nameConfirmation.Name = _name + "ConfirmText";
+        }
+
+        private void SetButtons()
+        {
+            System.Drawing.Font fontRegular = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            /**
+             * Button Validate
+             */
+            this._btnValidate.Font = fontRegular;
+            this._btnValidate.Location = new System.Drawing.Point(46, 86);
+            this._btnValidate.Name = _name + "btnValidate";
+            this._btnValidate.Size = new System.Drawing.Size(158, 32);
+            this._btnValidate.TabIndex = 2;
+            this._btnValidate.Text = "Validar";
+            this._btnValidate.UseVisualStyleBackColor = true;
+
+            /**
+             * Button Blank
+             */
+            this._btnBlank.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            this._btnBlank.Font = fontRegular;
+            this._btnBlank.Location = new System.Drawing.Point(234, 86);
+            this._btnBlank.Name = _name + "btnBlank";
+            this._btnBlank.Size = new System.Drawing.Size(158, 32);
+            this._btnBlank.TabIndex = 3;
+            this._btnBlank.Text = "Dejar en blanco";
+            this._btnBlank.UseVisualStyleBackColor = true;
         }
 
         public void SetValidationName(string text)

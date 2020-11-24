@@ -23,9 +23,13 @@ namespace NotariaDB.Views
 
         private void FormNacRegister_Load(object sender, EventArgs e)
         {
-            ValidatorBoxFlyweight test1 = ValidatorBoxFactory.getValidator("NewBox");
-            ValidatorBox test2 = new ValidatorBox(test1, 6, new Point(494,45));
-            Controls.Add(test2.toGroupBox());
+            ValidatorBox gbMom = new ValidatorBox(ValidatorBoxFactory.getValidator("madre"), 6, new Point(494, 45));
+            ValidatorBox gbDad = new ValidatorBox(ValidatorBoxFactory.getValidator("padre"), 6, new Point(494, 182));
+            ValidatorBox gbWitness = new ValidatorBox(ValidatorBoxFactory.getValidator("testigo"), 6, new Point(494, 319));
+
+            Controls.Add(gbMom.toGroupBox());
+            Controls.Add(gbDad.toGroupBox());
+            Controls.Add(gbWitness.toGroupBox());
 
             using (Models.notariadbContext db = new Models.notariadbContext())
             {
@@ -83,8 +87,8 @@ namespace NotariaDB.Views
                 this.Register.BirthDate = dtBirthDate.Value;
                 this.Register.BirthHour = new TimeSpan(decimal.ToInt32(tBirthHour.Value), decimal.ToInt32(tBirthMinutes.Value), 0);
                 //this.Register.MomId = tMomDocument.Text;
-                this.Register.DadId = tDadDocument.Text;
-                this.Register.WitnessId = tWitDocument.Text;
+                //this.Register.DadId = tDadDocument.Text;
+                //this.Register.WitnessId = tWitDocument.Text;
                 this.Register.BloodtypeId = int.Parse(cBloodtype.SelectedValue.ToString());
                 this.Register.PlaceId = int.Parse(cDepartment.SelectedValue.ToString());
                 this.Register.AttachId = int.Parse(cAttachtype.SelectedValue.ToString());
