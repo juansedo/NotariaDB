@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Linq;
 using NotariaDB.Models;
 using Org.BouncyCastle.Crypto.Agreement.Kdf;
+using NotariaDB.Views.Components;
 
 namespace NotariaDB.Views
 {
@@ -22,6 +23,10 @@ namespace NotariaDB.Views
 
         private void FormNacRegister_Load(object sender, EventArgs e)
         {
+            ValidatorBoxFlyweight test1 = ValidatorBoxFactory.getValidator("NewBox");
+            ValidatorBox test2 = new ValidatorBox(test1, 6, new Point(494,45));
+            Controls.Add(test2.toGroupBox());
+
             using (Models.notariadbContext db = new Models.notariadbContext())
             {
                 // Sexo
@@ -77,7 +82,7 @@ namespace NotariaDB.Views
                 this.Register.RegDate = DateTime.Now;
                 this.Register.BirthDate = dtBirthDate.Value;
                 this.Register.BirthHour = new TimeSpan(decimal.ToInt32(tBirthHour.Value), decimal.ToInt32(tBirthMinutes.Value), 0);
-                this.Register.MomId = tMomDocument.Text;
+                //this.Register.MomId = tMomDocument.Text;
                 this.Register.DadId = tDadDocument.Text;
                 this.Register.WitnessId = tWitDocument.Text;
                 this.Register.BloodtypeId = int.Parse(cBloodtype.SelectedValue.ToString());

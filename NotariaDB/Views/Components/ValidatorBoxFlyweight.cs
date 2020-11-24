@@ -22,7 +22,26 @@ namespace NotariaDB.Views.Components
         {
             _name = name;
 
+            this.SuspendLayout();
+
             SetControls();
+
+            this._btnValidate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._btnValidate.Location = new System.Drawing.Point(46, 86);
+            this._btnValidate.Name = _name + "btnValidate";
+            this._btnValidate.Size = new System.Drawing.Size(158, 32);
+            this._btnValidate.TabIndex = 2;
+            this._btnValidate.Text = "Validar";
+            this._btnValidate.UseVisualStyleBackColor = true;
+
+            this._btnBlank.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._btnBlank.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._btnBlank.Location = new System.Drawing.Point(234, 86);
+            this._btnBlank.Name = "btnDadBlank";
+            this._btnBlank.Size = new System.Drawing.Size(158, 32);
+            this._btnBlank.TabIndex = 3;
+            this._btnBlank.Text = "Dejar en blanco";
+            this._btnBlank.UseVisualStyleBackColor = true;
 
             this.Controls.Add(_btnBlank);
             this.Controls.Add(_btnValidate);
@@ -34,9 +53,12 @@ namespace NotariaDB.Views.Components
 
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "gb" + name;
-            this.Size = new System.Drawing.Size(422, 130);
+            this.Size = new System.Drawing.Size(422, 131);
             this.TabStop = false;
             this.Text = "Datos de " + name;
+
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         private void SetControls()
@@ -50,9 +72,10 @@ namespace NotariaDB.Views.Components
             _tDocument.Font = fontRegular;
             _tDocument.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             _tDocument.Location = new System.Drawing.Point(138, 22);
+            _tDocument.Name = _name + "tDocument";
             _tDocument.Size = new System.Drawing.Size(270, 26);
             _tDocument.TabIndex = 1;
-            _tDocument.Name = _name + "tDocument";
+            
 
             /**
              * Label "Nombre:"

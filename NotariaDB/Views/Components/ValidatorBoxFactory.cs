@@ -6,7 +6,7 @@ namespace NotariaDB.Views.Components
 {
     class ValidatorBoxFactory
     {
-        private static List<ValidatorBoxFlyweight> _validators;
+        private static List<ValidatorBoxFlyweight> _validators = new List<ValidatorBoxFlyweight>();
 
         public static ValidatorBoxFlyweight getValidator(string name)
         {

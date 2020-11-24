@@ -22,7 +22,7 @@ namespace NotariaDB.Views.Components
             _vbf.SetValidationName(text);
         }
 
-        public void SetLocationName(System.Drawing.Point location)
+        public void SetLocation(System.Drawing.Point location)
         {
             _vbf.SetLocation(location);
         }

@@ -30,6 +30,8 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbBasics = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.cSex = new System.Windows.Forms.ComboBox();
             this.tSerial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,13 +56,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.gbAttach = new System.Windows.Forms.GroupBox();
             this.cAttachtype = new System.Windows.Forms.ComboBox();
-            this.tMomDocument = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.gbMom = new System.Windows.Forms.GroupBox();
-            this.btnMomBlank = new System.Windows.Forms.Button();
-            this.btnMomValidate = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
             this.btnDadBlank = new System.Windows.Forms.Button();
             this.btnDadValidate = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -83,13 +78,10 @@
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cCity = new System.Windows.Forms.ComboBox();
-            this.cSex = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.gbBasics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBirthMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBirthHour)).BeginInit();
             this.gbAttach.SuspendLayout();
-            this.gbMom.SuspendLayout();
             this.gbDad.SuspendLayout();
             this.gbWitness.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -135,6 +127,25 @@
             this.gbBasics.TabIndex = 1;
             this.gbBasics.TabStop = false;
             this.gbBasics.Text = "Datos básicos";
+            // 
+            // label25
+            // 
+            this.label25.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label25.Location = new System.Drawing.Point(6, 91);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(172, 23);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Sexo:";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cSex
+            // 
+            this.cSex.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cSex.FormattingEnabled = true;
+            this.cSex.Location = new System.Drawing.Point(191, 86);
+            this.cSex.Name = "cSex";
+            this.cSex.Size = new System.Drawing.Size(265, 28);
+            this.cSex.TabIndex = 3;
             // 
             // tSerial
             // 
@@ -375,83 +386,6 @@
             this.cAttachtype.Name = "cAttachtype";
             this.cAttachtype.Size = new System.Drawing.Size(265, 28);
             this.cAttachtype.TabIndex = 1;
-            // 
-            // tMomDocument
-            // 
-            this.tMomDocument.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tMomDocument.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tMomDocument.Location = new System.Drawing.Point(138, 22);
-            this.tMomDocument.Name = "tMomDocument";
-            this.tMomDocument.Size = new System.Drawing.Size(270, 26);
-            this.tMomDocument.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(12, 56);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(123, 23);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Nombre:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label14
-            // 
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(12, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(123, 23);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Documento:";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // gbMom
-            // 
-            this.gbMom.Controls.Add(this.btnMomBlank);
-            this.gbMom.Controls.Add(this.btnMomValidate);
-            this.gbMom.Controls.Add(this.label15);
-            this.gbMom.Controls.Add(this.tMomDocument);
-            this.gbMom.Controls.Add(this.label13);
-            this.gbMom.Controls.Add(this.label14);
-            this.gbMom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.gbMom.Location = new System.Drawing.Point(494, 45);
-            this.gbMom.Name = "gbMom";
-            this.gbMom.Size = new System.Drawing.Size(422, 131);
-            this.gbMom.TabIndex = 4;
-            this.gbMom.TabStop = false;
-            this.gbMom.Text = "Datos de la madre";
-            // 
-            // btnMomBlank
-            // 
-            this.btnMomBlank.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMomBlank.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMomBlank.Location = new System.Drawing.Point(234, 86);
-            this.btnMomBlank.Name = "btnMomBlank";
-            this.btnMomBlank.Size = new System.Drawing.Size(158, 32);
-            this.btnMomBlank.TabIndex = 3;
-            this.btnMomBlank.Text = "Dejar en blanco";
-            this.btnMomBlank.UseVisualStyleBackColor = true;
-            // 
-            // btnMomValidate
-            // 
-            this.btnMomValidate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMomValidate.Location = new System.Drawing.Point(46, 86);
-            this.btnMomValidate.Name = "btnMomValidate";
-            this.btnMomValidate.Size = new System.Drawing.Size(158, 32);
-            this.btnMomValidate.TabIndex = 2;
-            this.btnMomValidate.Text = "Validar";
-            this.btnMomValidate.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(141, 56);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(267, 23);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "N/A";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnDadBlank
             // 
@@ -696,25 +630,6 @@
             this.cCity.Size = new System.Drawing.Size(265, 28);
             this.cCity.TabIndex = 2;
             // 
-            // cSex
-            // 
-            this.cSex.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cSex.FormattingEnabled = true;
-            this.cSex.Location = new System.Drawing.Point(191, 86);
-            this.cSex.Name = "cSex";
-            this.cSex.Size = new System.Drawing.Size(265, 28);
-            this.cSex.TabIndex = 3;
-            // 
-            // label25
-            // 
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(6, 91);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(172, 23);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Sexo:";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // FormNacRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -726,7 +641,6 @@
             this.Controls.Add(this.label22);
             this.Controls.Add(this.gbWitness);
             this.Controls.Add(this.gbDad);
-            this.Controls.Add(this.gbMom);
             this.Controls.Add(this.gbAttach);
             this.Controls.Add(this.gbBasics);
             this.Controls.Add(this.lblTitle);
@@ -740,8 +654,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tBirthHour)).EndInit();
             this.gbAttach.ResumeLayout(false);
             this.gbAttach.PerformLayout();
-            this.gbMom.ResumeLayout(false);
-            this.gbMom.PerformLayout();
             this.gbDad.ResumeLayout(false);
             this.gbDad.PerformLayout();
             this.gbWitness.ResumeLayout(false);
@@ -778,13 +690,6 @@
         private System.Windows.Forms.NumericUpDown tBirthMinutes;
         private System.Windows.Forms.NumericUpDown tBirthHour;
         private System.Windows.Forms.ComboBox cAttachtype;
-        private System.Windows.Forms.TextBox tMomDocument;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.GroupBox gbMom;
-        private System.Windows.Forms.Button btnMomBlank;
-        private System.Windows.Forms.Button btnMomValidate;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnDadBlank;
         private System.Windows.Forms.Button btnDadValidate;
         private System.Windows.Forms.Label label16;
