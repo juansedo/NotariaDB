@@ -13,6 +13,8 @@
     <Compile Remove="Database\Migrations\20201120010737_BloodtypesConfig2.Designer.cs" />
     <Compile Remove="Database\Migrations\20201120034952_Test2.cs" />
     <Compile Remove="Database\Migrations\20201120034952_Test2.Designer.cs" />
+    <Compile Remove="Database\Migrations\20201124075324_Notarios.cs" />
+    <Compile Remove="Database\Migrations\20201124075324_Notarios.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

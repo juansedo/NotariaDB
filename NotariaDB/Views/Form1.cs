@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NotariaDB.Controllers;
 
-namespace NotariaDB
+namespace NotariaDB.Views
 {
     
     public partial class formMain : Form

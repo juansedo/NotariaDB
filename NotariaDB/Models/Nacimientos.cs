@@ -39,13 +39,13 @@ namespace NotariaDB.Models
         public DateTime RegDate { get; set; }
 
         [System.ComponentModel.DisplayName("DOCUMENTO MADRE")]
-        public string MomId { get; set; }
+        public string? MomId { get; set; }
 
         [System.ComponentModel.DisplayName("DOCUMENTO PADRE")]
-        public string DadId { get; set; }
+        public string? DadId { get; set; }
 
         [System.ComponentModel.DisplayName("DOCUMENTO TESTIGO")]
-        public string WitnessId { get; set; }
+        public string? WitnessId { get; set; }
 
         [System.ComponentModel.DisplayName("USUARIO RELACIONADO")]
         public string RelateduserId { get; set; }

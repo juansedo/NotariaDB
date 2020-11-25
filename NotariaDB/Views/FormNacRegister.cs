@@ -8,12 +8,17 @@ using System.Windows.Forms;
 using System.Linq;
 using NotariaDB.Models;
 using Org.BouncyCastle.Crypto.Agreement.Kdf;
+using NotariaDB.Views.Components;
 
-namespace NotariaDB
+namespace NotariaDB.Views
 {
     public partial class FormNacRegister : Form
     {
         public Models.Nacimientos Register =new Models.Nacimientos();
+
+        ValidatorBox gbMom = new ValidatorBox(ValidatorBoxFactory.getValidator("madre"), 6, new Point(494, 45));
+        ValidatorBox gbDad = new ValidatorBox(ValidatorBoxFactory.getValidator("padre"), 6, new Point(494, 182));
+        ValidatorBox gbWitness = new ValidatorBox(ValidatorBoxFactory.getValidator("testigo"), 6, new Point(494, 319));
 
         public FormNacRegister()
         {
@@ -22,6 +27,10 @@ namespace NotariaDB
 
         private void FormNacRegister_Load(object sender, EventArgs e)
         {
+            Controls.Add(gbMom.toGroupBox());
+            Controls.Add(gbDad.toGroupBox());
+            Controls.Add(gbWitness.toGroupBox());
+
             using (Models.notariadbContext db = new Models.notariadbContext())
             {
                 // Sexo
@@ -68,6 +77,9 @@ namespace NotariaDB
         {
             try
             {
+                if (!(gbMom.GetValid() && gbDad.GetValid() && gbWitness.GetValid()))
+                    throw new InvalidConstraintException();
+                
                 this.Register.Nuip = tNuip.Text;
                 this.Register.Serial = tSerial.Text;
                 this.Register.Sex = cSex.SelectedItem.ToString().Substring(0, 1);
@@ -77,9 +89,9 @@ namespace NotariaDB
                 this.Register.RegDate = DateTime.Now;
                 this.Register.BirthDate = dtBirthDate.Value;
                 this.Register.BirthHour = new TimeSpan(decimal.ToInt32(tBirthHour.Value), decimal.ToInt32(tBirthMinutes.Value), 0);
-                this.Register.MomId = tMomDocument.Text;
-                this.Register.DadId = tDadDocument.Text;
-                this.Register.WitnessId = tWitDocument.Text;
+                this.Register.MomId = gbMom.GetIfNull()? null : gbMom.GetText();
+                this.Register.DadId = gbDad.GetIfNull()? null : gbDad.GetText();
+                this.Register.WitnessId = gbWitness.GetIfNull()? null : gbWitness.GetText();
                 this.Register.BloodtypeId = int.Parse(cBloodtype.SelectedValue.ToString());
                 this.Register.PlaceId = int.Parse(cDepartment.SelectedValue.ToString());
                 this.Register.AttachId = int.Parse(cAttachtype.SelectedValue.ToString());
@@ -92,6 +104,10 @@ namespace NotariaDB
             catch (NullReferenceException ex)
             {
                 MessageBox.Show("Faltan campos por llenar", "Error 001 - " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InvalidConstraintException ex)
+            {
+                MessageBox.Show("Los campos de los usuarios no están validados", "Error 002 - " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
